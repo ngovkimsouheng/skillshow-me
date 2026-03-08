@@ -21,7 +21,7 @@ import { Navigate } from "react-router";
 // dashboard
 import FavoritesPage from "./pages/Dashboard/components/FavoritesPage.jsx";
 // import MyTemplates from "./pages/Dashboard/components/MyTemplates.jsx";
-import DashboardComponent from "./template/DashBoardComponent06.jsx";
+
 import FormEducation from "../test/EducationForm.jsx";
 import UserTemplate01 from "./pages/Templates/UserTemplate01.jsx";
 import NotFoundPage from "./pages/NotFound/NotFoundPage.jsx";
@@ -174,7 +174,7 @@ function App() {
               </Route>
               <Route path="/portfolio/:id" element={<PortfolioPreview />} />
 
-              <Route path="/edit-template" element={<DashboardComponent />} />
+
               {/* Auth Routes */}
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
