@@ -8,6 +8,7 @@ import lay from "./Images/lay.png"
 import ri from "./Images/ri.png"
 import rea from "./Images/rea.png"
 import long from "./Images/long.png"
+import van from "./Images/van.png"
 export default function SectionMembers() {
   const members = [
     {
@@ -21,7 +22,7 @@ export default function SectionMembers() {
     },
     {
       id: 2,
-      name: "Phoeurn PoLyta",
+      name: "Phoeurn Solyta",
       role: "Sub Leader",
       image: lyta,
       facebook: "https://facebook.com",
@@ -30,7 +31,7 @@ export default function SectionMembers() {
     },
     {
       id: 3,
-      name: "Chanthy",
+      name: "Mon Narea",
       role: "Member",
       image: rea,
       facebook: "https://facebook.com",
@@ -39,16 +40,16 @@ export default function SectionMembers() {
     },
     {
       id: 4,
-      name: "Sok Dara",
+      name: "Hong Kimlong",
       role: "Member",
-      image: ri,
+      image: long,
       facebook: "https://facebook.com",
       github: "https://github.com",
       telegram: "https://t.me/username",
     },
     {
       id: 5,
-      name: "Sok Dara",
+      name: "Pheap Koemlay ",
       role: "Member",
       image: lay,
       facebook: "https://facebook.com",
@@ -57,18 +58,18 @@ export default function SectionMembers() {
     },
     {
       id: 6,
-      name: "Sok Dara",
+      name: "Oeurn SelaChhari",
       role: "Member",
-      image: long,
+      image: ri,
       facebook: "https://facebook.com",
       github: "https://github.com",
       telegram: "https://t.me/username",
     },
     {
       id: 7,
-      name: "Sok Dara",
+      name: "Ngoy Chivann",
       role: "Member",
-      image: rea,
+      image: van,
       facebook: "https://facebook.com",
       github: "https://github.com",
       telegram: "https://t.me/username",
