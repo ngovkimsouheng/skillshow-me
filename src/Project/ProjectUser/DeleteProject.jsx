@@ -3,7 +3,7 @@ import { useDeleteProjectMutation, useGetProjectsQuery } from "../../api/project
 
 export default function DeleteProject({ projectId }) {
     const [deleteProject, { isLoading }] = useDeleteProjectMutation();
-    const { refetch } = useGetProjectsQuery(); // optional if you want manual refetch
+    const { refetch } = useGetProjectsQuery();
 
     const handleDelete = async () => {
         const confirmDelete = window.confirm(
@@ -14,9 +14,7 @@ export default function DeleteProject({ projectId }) {
         try {
             await deleteProject(projectId).unwrap();
             console.log("Project deleted successfully");
-
-            // ✅ If your API uses providesTags / invalidatesTags correctly,
-            // this refetch is not necessary, the UI will auto-update
+            // Immediately refetch projects to update UI
             refetch();
         } catch (error) {
             console.error("Delete failed", error);

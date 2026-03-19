@@ -31,19 +31,19 @@ export const socialAccountApi = api.injectEndpoints({
         method: "POST",
         body,
       }),
-      invalidatesTags: ["SocialAccount"],
+      invalidatesTags: ["SocialAccount", "Portfolio"], // auto refresh portfolio after create social account
     }),
 
     /* ================= GET ALL (ME) ================= */
     getSocialAccounts: builder.query({
       query: () => "/social-account/me",
-      providesTags: ["SocialAccount"],
+      providesTags: ["SocialAccount", "Portfolio"],
     }),
 
     /* ================= GET BY ID ================= */
     getSocialAccountById: builder.query({
       query: (id) => `/social-account/me/${id}`,
-      providesTags: ["SocialAccount"],
+      providesTags: ["SocialAccount", "Portfolio"],
     }),
 
     /* ================= UPDATE ================= */
@@ -53,14 +53,14 @@ export const socialAccountApi = api.injectEndpoints({
         method: "PUT",
         body,
       }),
-      invalidatesTags: ["SocialAccount"],
+      invalidatesTags: ["SocialAccount", "Portfolio"], // auto refresh portfolio after update social account
     }),
     deleteSocialAccount: builder.mutation({
       query: (id) => ({
         url: `/social-account/me/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: ["SocialAccount"],
+      invalidatesTags: ["SocialAccount", "Portfolio"], // auto refresh portfolio after delete social account
     }),
   }),
 

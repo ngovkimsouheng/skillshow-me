@@ -6,8 +6,8 @@ export default function SectionMentors() {
   const members = [
     {
       id: 1,
-      name: "Sok Dara",
-      role: "Frontend Developer",
+      name: "Mom Reksmey",
+      role: "Mentor",
       image: teacher1,
       facebook: "https://facebook.com",
       github: "https://github.com",
@@ -15,16 +15,16 @@ export default function SectionMentors() {
     },
     {
       id: 2,
-      name: "Chanthy",
-      role: "UI/UX Designer",
+      name: "Sreng Chipor",
+      role: "Mentor",
       image: teacher2,
       facebook: "https://facebook.com",
-      github: "",
-      telegram: "",
+      github: "https://github.com",
+      telegram: "https://t.me/username",
     },
   ];
   return (
-    <section className="md:flex   py-8 gap-8 md:flex-col items-center  justify-center sm:gap-8 md:gap-10">
+    <section className="md:flex    py-8 gap-8 md:flex-col items-center  justify-center sm:gap-8 md:gap-10">
       <div className="max-sm:pb-8">
         <span className="text-center  max-sm:text-[40px] max-md:text-[43px]  text-[70px] leading-[75px] max-md:leading-[45px] font-bold">
           <p
@@ -44,11 +44,20 @@ export default function SectionMentors() {
           data-aos-delay="300"
           className="text-[24px] text-text-description max-sm:text-[14px] mx-auto max-w-4xl dark:text-cool-sky max-lg:text-[20px] max-lg:px-4 mt-4 text-center font-['Poppins-Light',_sans-serif] text-line-height-24"
         >
-          Guided by industry leaders who inspire excellence and innovation
+          Guided by industry leaders who inspire excellence and innovation.
         </p>
       </div>{" "}
-      <div className="flex   sm:flex-wrap max-sm:flex-col   justify-center md:gap-[97px]">
-        {" "}
+      <div className="flex  relative  sm:flex-wrap max-sm:flex-col   justify-center md:gap-[97px]">
+        {" "}     <div
+          data-aos="zoom-in"
+          data-aos-delay="400"
+          className="w-[100px] h-[100px] absolute -left-80 -top-10 blur-[100px] dark:bg-[#AAD9D9]/80 bg-amber-300"
+        ></div>
+        <div
+          data-aos="zoom-in"
+          data-aos-delay="500"
+          className="w-[100px] h-[100px] absolute -right-80 bottom-0 blur-[100px] dark:bg-[#AAD9D9]/80 bg-amber-300"
+        ></div>
         {members.map((member) => (
           <CardMembers
             key={member.id}
@@ -64,8 +73,9 @@ export default function SectionMentors() {
       <div
         data-aos="zoom-in"
         data-aos-delay="500"
-        className="md:w-180 border-dashed border border-b-2 border-secondary dash w-90 dash h-0.5 bg-secondary "
+        className="md:w-180  border border-b-2 dark:border-secondary-dark border-secondary w-90  h-0.5  "
       />
-    </section> 
+
+    </section>
   );
 }

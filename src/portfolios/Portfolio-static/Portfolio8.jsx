@@ -7,7 +7,20 @@ export default function Portfolio8() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
   const [hoveredJob, setHoveredJob] = useState(null);
+  const handleEditClick = (templateId) => {
+    const token = localStorage.getItem("token");
+    console.log("token:", token);
 
+    if (!token) {
+      console.log("no token, navigating to login");
+      alert("Please login to edit your portfolio");
+      window.location.href = "/login";
+      return;
+    }
+
+    console.log("has token, going to dashboard");
+    navigate(`/dashboard/portfolio/${templateId}`);
+  };
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
     const obs = new IntersectionObserver(
@@ -35,13 +48,11 @@ export default function Portfolio8() {
 
   return (
     <div
-      className="min-h-screen overflow-x-hidden"
+      className="min-h-screen my-18 overflow-x-hidden"
       style={{ background: "#FAFAF5", color: "#1C1C1C" }}
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,100;1,9..144,700&family=Epilogue:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300;1,700&display=swap');
-        * { font-family: 'Epilogue', sans-serif; }
-        .fraunces { font-family: 'Fraunces', serif; }
 
         :root {
           --lime: #C8F135;
@@ -248,18 +259,18 @@ export default function Portfolio8() {
         )}
 
       </nav>
-
+      <div className="fixed bottom-20 right-20 bg-secondary text-primary animate-bounce text-3xl z-99 rounded-md  px-8 py-1">Pro</div>
       {/* ── TICKER ── */}
-
-      {templates.map((template) => (
-        <NavLink key={template.id} to={`/dashboard/portfolio/3`}>
+      {/* <ButtonEdit onClick={() => handleEditClick(1)} /> */}
+      {/* {templates.map((template) => (
+        <NavLink className="z-100" key={template.id} to={`/dashboard/portfolio/3`}>
           <ButtonEdit />
         </NavLink>
-      ))}
+      ))} */}
       {/* ── HOME ── */}
       <section
         id="home"
-        className="relative mt-15 overflow-hidden"
+        className="relative my-10  overflow-hidden"
         style={{ background: "var(--cream)" }}
       >
         {/* Floating deco elements */}
@@ -283,8 +294,8 @@ export default function Portfolio8() {
           ✦
         </div>
 
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4  relative z-10">
-          <div className="flex max-lg:flex-col justify-between gap-8 items-center">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex max-lg:flex-col justify-center gap-8 items-center">
             {/* Left — text block */}
             <div className="lg:col-span-7 order-2 lg:order-1">
               {/* Status sticker */}
@@ -322,27 +333,21 @@ export default function Portfolio8() {
                   className="sticker px-4 py-1.5 text-xs font-black"
                   style={{ background: "var(--pink)" }}
                 >
-                  🎨 UI/UX Student
+                  Full Stack Developer
                 </span>
                 <span
                   className="sticker px-4 py-1.5 text-xs font-black"
                   style={{ background: "var(--sky)" }}
                 >
-                  💻 Frontend Dev
+                  Problem Solver
                 </span>
                 <span
                   className="hidden sm:inline-flex sticker px-4 py-1.5 text-xs font-black"
                   style={{ background: "var(--lime)" }}
                 >
-                  ✦ Creative
+                  ✦ Creative thinker
                 </span>
               </div>
-
-              {/* <p
-                className="text-sm leading-loose mb-10 max-w-md font-light"
-                style={{ color: "#555" }}
-              >User@gmail.com
-              </p> */}
 
               <div className="flex flex-wrap gap-4">
                 <button
@@ -361,36 +366,6 @@ export default function Portfolio8() {
                 </button>
               </div>
 
-              {/* Mini stats */}
-              {/* <div
-                className="flex flex-wrap gap-6 mt-12 pt-8"
-                style={{ borderTop: "2px dashed #DDD" }}
-              >
-                {[
-                  ["3+", "Years Learning", "var(--lime)"],
-                  ["15+", "Projects Done", "var(--sky)"],
-                  ["5", "Happy Clients", "var(--pink)"],
-                ].map(([n, l, c]) => (
-                  <div key={l} className="flex items-center gap-3">
-                    <span
-                      className="fraunces font-black text-3xl"
-                      style={{ color: "#1C1C1C" }}
-                    >
-                      {n}
-                    </span>
-                    <span
-                      className="text-xs font-medium leading-tight max-w-[70px]"
-                      style={{ color: "#888" }}
-                    >
-                      {l}
-                    </span>
-                    <div
-                      className="w-1.5 h-8 rounded-full"
-                      style={{ background: c }}
-                    />
-                  </div>
-                ))}
-              </div> */}
             </div>
 
             {/* Right — photo with decorative frame */}
@@ -409,10 +384,7 @@ export default function Portfolio8() {
 
                 <div
                   className="relative z-10 zine-card rounded-3xl overflow-hidden"
-                  style={{
-                    width: "clamp(500px, 40vw, 320px)",
-                    aspectRatio: "4/5",
-                  }}
+
                 >
                   <img
                     src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=600&q=80"
@@ -447,7 +419,7 @@ export default function Portfolio8() {
         </div>
       </section>
       <div
-        className="strip-lime mt-18 overflow-hidden py-2.5"
+        className="strip-lime overflow-hidden py-2.5"
         style={{ borderBottom: "2px solid #1C1C1C" }}
       >
         <div className="ticker inline-flex whitespace-nowrap">
@@ -474,154 +446,11 @@ export default function Portfolio8() {
           ))}
         </div>
       </div>
-      {/* ── ABOUT ── */}
-      <section
-        id="about"
-        className="py-20"
-        style={{ background: "#1C1C1C", color: "var(--cream)" }}
-      >
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-14">
-            <span
-              className="fraunces italic font-black text-4xl"
-              style={{ color: "var(--lime)" }}
-            >
-              02.
-            </span>
-            <h2
-              className="fraunces font-black text-4xl sm:text-5xl"
-              style={{ color: "var(--cream)" }}
-            >
-              About Me
-            </h2>
-            <div
-              className="flex-1 h-0.5 ml-4"
-              style={{ background: "rgba(255,255,255,0.1)" }}
-            />
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              {/* Big quote */}
-              <blockquote
-                className="fraunces text-3xl sm:text-4xl font-black leading-tight mb-8"
-                style={{ color: "var(--cream)" }}
-              >
-                "I design with{" "}
-                <span
-                  className="squiggle"
-                  style={{
-                    backgroundImage:
-                      "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='6'%3E%3Cpath d='M0 3 Q5 0 10 3 Q15 6 20 3' stroke='%23C8F135' stroke-width='2.5' fill='none'/%3E%3C/svg%3E\")",
-                  }}
-                >
-                  heart
-                </span>
-                ,<br />
-                code with{" "}
-                <span style={{ color: "var(--orange)" }}>passion</span>,<br />
-                and ship with{" "}
-                <span style={{ color: "var(--sky)" }}>pride.</span>"
-              </blockquote>
-
-              <p
-                className="text-sm leading-loose mb-6 font-light"
-                style={{ color: "rgba(250,250,245,0.6)" }}
-              >
-                Final-year student at Parsons School of Design, majoring in
-                Communication Design with a minor in Computer Science. I fell in
-                love with design when I realized it's the superpower that
-                connects art and technology.
-              </p>
-              <p
-                className="text-sm leading-loose mb-8 font-light"
-                style={{ color: "rgba(250,250,245,0.6)" }}
-              >
-                When I'm not designing, you'll find me at hackathons, running my
-                design blog, or obsessively reorganizing my Figma components
-                library. 😅
-              </p>
-
-              <div className="flex flex-wrap gap-3">
-                {[
-                  "Figma",
-                  "React",
-                  "Tailwind CSS",
-                  "After Effects",
-                  "Framer",
-                  "Webflow",
-                  "Notion",
-                  "Procreate",
-                ].map((t) => (
-                  <span
-                    key={t}
-                    className="text-xs font-bold px-4 py-2 rounded-full"
-                    style={{
-                      background: "rgba(255,255,255,0.07)",
-                      border: "1px solid rgba(255,255,255,0.15)",
-                      color: "rgba(250,250,245,0.8)",
-                    }}
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Feature tiles — varied colors */}
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                {
-                  icon: "🎨",
-                  title: "Visual Design",
-                  desc: "Making things beautiful is non-negotiable for me",
-                  bg: "var(--lime)",
-                  mt: "",
-                },
-                {
-                  icon: "📱",
-                  title: "Mobile First",
-                  desc: "Every pixel matters on every screen",
-                  bg: "white",
-                  mt: "mt-6",
-                },
-                {
-                  icon: "⚡",
-                  title: "Fast Learner",
-                  desc: "New tools? Give me a weekend",
-                  bg: "var(--orange)",
-                  color: "white",
-                  mt: "-mt-2",
-                },
-                {
-                  icon: "🤝",
-                  title: "Team Player",
-                  desc: "I thrive in collaborative environments",
-                  bg: "var(--sky)",
-                  mt: "mt-4",
-                },
-              ].map(({ icon, title, desc, bg, color, mt }) => (
-                <div
-                  key={title}
-                  className={`zine-card rounded-2xl p-6 ${mt}`}
-                  style={{ background: bg, color: color || "#1C1C1C" }}
-                >
-                  <span className="text-3xl block mb-3">{icon}</span>
-                  <h4 className="font-black text-sm mb-1">{title}</h4>
-                  <p className="text-xs leading-relaxed opacity-70 font-light">
-                    {desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── EXPERIENCE ── */}
       <section
         id="experience"
-        className="py-20"
+        className="py-10"
         style={{ background: "var(--warm)" }}
       >
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -755,7 +584,7 @@ export default function Portfolio8() {
       {/* ── JOB ── */}
       <section
         id="job"
-        className="py-20"
+        className="py-10"
         style={{ background: "var(--cream)" }}
       >
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -788,13 +617,13 @@ export default function Portfolio8() {
                 <br />
                 <span style={{ color: "var(--orange)" }}>grown. 🌱</span>
               </h3>
-              <p
+              {/* <p
                 className="text-sm leading-loose font-light mb-8"
                 style={{ color: "#777", maxWidth: "340px" }}
               >
                 From student clubs to real studios — every role taught me
                 something new about design, people, and myself.
-              </p>
+              </p> */}
               {/* Mini blob decoration */}
               <div
                 className="w-32 h-32 blob hidden lg:block"
@@ -868,14 +697,7 @@ export default function Portfolio8() {
                   >
                     {period}
                   </span>
-                  <span
-                    className="shrink-0 font-black transition-all"
-                    style={{
-                      color: hoveredJob === i ? "var(--orange)" : "#DDD",
-                    }}
-                  >
-                    →
-                  </span>
+
                 </div>
               ))}
             </div>
@@ -884,7 +706,7 @@ export default function Portfolio8() {
       </section>
 
       {/* ── SCHOOL ── */}
-      <section id="school" className="py-20" style={{ background: "#1C1C1C" }}>
+      <section id="school" className="py-10" style={{ background: "#1C1C1C" }}>
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-14">
             <span
@@ -1016,7 +838,7 @@ export default function Portfolio8() {
       {/* ── SKILL ── */}
       <section
         id="skill"
-        className="py-20"
+        className="py-10"
         style={{ background: "var(--warm)" }}
       >
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -1118,14 +940,14 @@ export default function Portfolio8() {
                   { name: "Tailwind CSS", emoji: "💨", bg: "var(--sky)" },
                   { name: "Framer", emoji: "🖱️", bg: "var(--lime)" },
                   { name: "Notion", emoji: "📝", bg: "white" },
-                  {
-                    name: "Procreate",
-                    emoji: "✏️",
-                    bg: "var(--orange)",
-                    color: "white",
-                  },
-                  { name: "Webflow", emoji: "🌊", bg: "var(--sky)" },
-                  { name: "Spline 3D", emoji: "🔮", bg: "var(--pink)" },
+                  // {
+                  //   name: "Procreate",
+                  //   emoji: "✏️",
+                  //   bg: "var(--orange)",
+                  //   color: "white",
+                  // },
+                  // { name: "Webflow", emoji: "🌊", bg: "var(--sky)" },
+                  // { name: "Spline 3D", emoji: "🔮", bg: "var(--pink)" },
                 ].map(({ name, emoji, bg, color }) => (
                   <div
                     key={name}
@@ -1166,11 +988,11 @@ export default function Portfolio8() {
       {/* ── CONTACT ── */}
       <section
         id="contact"
-        className="py-20"
+        className="py-10"
         style={{ background: "var(--cream)" }}
       >
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-14">
+          <div className="flex items-center gap-4 ">
             <span
               className="fraunces italic font-black text-4xl"
               style={{ color: "var(--lime)" }}
@@ -1193,23 +1015,14 @@ export default function Portfolio8() {
                 className="fraunces font-black leading-tight mb-6"
                 style={{ fontSize: "clamp(2.5rem,5vw,4rem)" }}
               >
-                Let's make
+
+
+                <span className="squiggle text-4xl">Socail</span>
                 <br />
-                something
-                <br />
-                <span className="squiggle">awesome</span>
-                <br />
-                <span style={{ color: "var(--orange)" }}>together. 🚀</span>
+                <span style={{ color: "var(--orange)" }}>account </span>
               </h3>
 
-              <p
-                className="text-sm leading-loose mb-8 font-light"
-                style={{ color: "#777", maxWidth: "360px" }}
-              >
-                Whether it's a full-time role, internship, freelance project, or
-                just a chat about design — I'm always down. No cold, corporate
-                emails here — just real conversations!
-              </p>
+
 
               <div className="space-y-4">
                 {[

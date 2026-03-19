@@ -11,6 +11,42 @@ import { DrawCircleText } from "./DrawCircleText";
 export default function Footer() {
   return (
     <footer className="bg-white dark:bg-gray-950">
+      <style>{`
+        .marquee { animation: marquee 18s linear infinite; }
+        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    
+      `}</style>
+      <div className="bg-secondary dark:bg-secondary-dark border-b-4 border-zinc-900 py-2 overflow-hidden whitespace-nowrap">
+        <div className="marquee inline-flex gap-0">
+          {[...Array(2)].map((_, i) => (
+            <span
+              key={i}
+              className="bebas text-zinc-900 text-lg tracking-widest mr-0"
+            >
+              {[
+                "UI DESIGN",
+                "✦",
+                "UX RESEARCH",
+                "✦",
+                "BRANDING",
+                "✦",
+                "FRONTEND DEV",
+                "✦",
+                "MOTION",
+                "✦",
+                "PROTOTYPING",
+                "✦",
+                "DESIGN SYSTEMS",
+                "✦",
+              ].map((t, j) => (
+                <span key={j} className="mx-6">
+                  {t}
+                </span>
+              ))}
+            </span>
+          ))}
+        </div>
+      </div>
       <DrawCircleText />
       <div className="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left text-sm sm:text-base">
         <div className="flex justify-center md:justify-start">
@@ -96,6 +132,11 @@ export default function Footer() {
           </NavLink>
         </div>
       </div>
+      {/* <div className="text-center text-sm text-gray-500 dark:text-gray-400 py-4">
+        <p>
+          Showcase your skill now .
+        </p>
+      </div> */}
     </footer>
   );
 }

@@ -824,7 +824,7 @@ export default function EditSkill() {
 
           <button
             type="submit"
-            disabled={isLoading || !isChanged}
+            disabled={isLoading}
             className="flex-1 py-3 rounded-xl font-semibold text-white
               bg-[#1e2e3e] hover:bg-[#16222f]
               disabled:opacity-50 disabled:cursor-not-allowed"

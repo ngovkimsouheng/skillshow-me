@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { useGetMyPortfolioQuery } from "../../api/portfolioApi";
-export default function GetPortfolio8() {
+import DeleteProject from "../../Project/ProjectUser/DeleteProject";
+import DeleteSkill from "../../Project/skill/DeleteSkill";
+import { Link } from "react-router-dom";
+import { FiEdit2 } from "react-icons/fi";
+export default function GetPortfolio8({ theme = {} }) {
     const [menuOpen, setMenuOpen] = useState(false);
     const [active, setActive] = useState("home");
     const [hoveredJob, setHoveredJob] = useState(null);
@@ -60,9 +64,7 @@ export default function GetPortfolio8() {
             style={{ background: "#FAFAF5", color: "#1C1C1C" }}
         >
             <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,100;1,9..144,700&family=Epilogue:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300;1,700&display=swap');
-        * { font-family: 'Epilogue', sans-serif; }
-        .fraunces { font-family: 'Fraunces', serif; }
+
 
         :root {
           --lime: #C8F135;
@@ -276,7 +278,7 @@ export default function GetPortfolio8() {
             {/* ── HOME ── */}
             <section
                 id="home"
-                className="relative mt-15 overflow-hidden"
+                className="relative overflow-hidden"
                 style={{ background: "var(--cream)" }}
             >
                 {/* Floating deco elements */}
@@ -340,13 +342,27 @@ export default function GetPortfolio8() {
                                     const bgColor = colors[index % colors.length];
 
                                     return (
-                                        <span
-                                            key={skill.id}
-                                            className={`sticker px-4 py-1.5 text-xs font-black ${index > 1 ? "hidden sm:inline-flex" : ""}`}
-                                            style={{ background: bgColor }}
-                                        >
-                                            {skill.name}
-                                        </span>
+                                        <div key={skill.id} className="relative">
+                                            <span
+                                                className={`sticker px-4 py-1.5 text-xs font-black ${index > 1 ? "hidden sm:inline-flex" : ""}`}
+                                                style={{ background: bgColor }}
+                                            >
+                                                {skill.name}
+                                            </span>
+                                            {/* Edit button */}
+                                            <Link
+                                                to={`/dashboard/skill/${skill.id}`}
+                                                className="absolute -top-2 -right-2 z-10"
+                                            >
+                                                <button className="flex items-center gap-1 px-1 py-1 text-xs font-medium uppercase tracking-widest border border-stone-300 bg-white text-stone-800 hover:bg-stone-800 hover:text-white transition-all rounded">
+                                                    <FiEdit2 size={8} />
+                                                </button>
+                                            </Link>
+                                            {/* Delete button */}
+                                            <div className="absolute -top-2 -right-8 z-10">
+                                                <DeleteSkill skillId={skill.id} />
+                                            </div>
+                                        </div>
                                     );
                                 })}
                             </div>
@@ -482,7 +498,7 @@ export default function GetPortfolio8() {
                 </div>
             </section>
             <div
-                className="strip-lime mt-18 overflow-hidden py-2.5"
+                className="strip-lime overflow-hidden py-2.5"
                 style={{ borderBottom: "2px solid #1C1C1C" }}
             >
                 <div className="ticker inline-flex whitespace-nowrap">
@@ -510,144 +526,12 @@ export default function GetPortfolio8() {
                 </div>
             </div>
             {/* ── ABOUT ── */}
-            <section
-                id="about"
-                className="py-20"
-                style={{ background: "#1C1C1C", color: "var(--cream)" }}
-            >
-                <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center gap-4 mb-14">
-                        <span
-                            className="fraunces italic font-black text-4xl"
-                            style={{ color: "var(--lime)" }}
-                        >
-                            02.
-                        </span>
-                        <h2
-                            className="fraunces font-black text-4xl sm:text-5xl"
-                            style={{ color: "var(--cream)" }}
-                        >
-                            About Me
-                        </h2>
-                        <div
-                            className="flex-1 h-0.5 ml-4"
-                            style={{ background: "rgba(255,255,255,0.1)" }}
-                        />
-                    </div>
-
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            {/* Big quote */}
-                            <blockquote
-                                className="fraunces text-3xl sm:text-4xl font-black leading-tight mb-8"
-                                style={{ color: "var(--cream)" }}
-                            >
-                                "I design with{" "}
-                                <span
-                                    className="squiggle"
-                                    style={{
-                                        backgroundImage:
-                                            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='6'%3E%3Cpath d='M0 3 Q5 0 10 3 Q15 6 20 3' stroke='%23C8F135' stroke-width='2.5' fill='none'/%3E%3C/svg%3E\")",
-                                    }}
-                                >
-                                    heart
-                                </span>
-                                ,<br />
-                                code with{" "}
-                                <span style={{ color: "var(--orange)" }}>passion</span>,<br />
-                                and ship with{" "}
-                                <span style={{ color: "var(--sky)" }}>pride.</span>"
-                            </blockquote>
-
-                            <p
-                                className="text-sm leading-loose mb-6 font-light"
-                                style={{ color: "rgba(250,250,245,0.6)" }}
-                            >
-                                {portfolio1?.user?.about_me}
-                            </p>
-                            {/* <p
-                                className="text-sm leading-loose mb-8 font-light"
-                                style={{ color: "rgba(250,250,245,0.6)" }}
-                            >
-                                When I'm not designing, you'll find me at hackathons, running my
-                                design blog, or obsessively reorganizing my Figma components
-                                library. 😅
-                            </p> */}
-
-                            <div className="flex flex-wrap gap-3">
-                                {Object.entries(portfolio1?.projects?.[0]?.technologies || {})
-                                    .filter(([tech, isActive]) => isActive)
-                                    .map(([tech]) => (
-                                        <span
-                                            key={tech}
-                                            className="text-xs font-bold px-4 py-2 rounded-full"
-                                            style={{
-                                                background: "rgba(255,255,255,0.07)",
-                                                border: "1px solid rgba(255,255,255,0.15)",
-                                                color: "rgba(250,250,245,0.8)",
-                                            }}
-                                        >
-                                            {tech}
-                                        </span>
-                                    ))}
-                            </div>
-                        </div>
-
-                        {/* Feature tiles — varied colors */}
-                        <div className="grid grid-cols-2 gap-4">
-                            {[
-                                {
-                                    icon: "🎨",
-                                    title: "Visual Design",
-                                    desc: "Making things beautiful is non-negotiable for me",
-                                    bg: "var(--lime)",
-                                    mt: "",
-                                },
-                                {
-                                    icon: "📱",
-                                    title: "Mobile First",
-                                    desc: "Every pixel matters on every screen",
-                                    bg: "white",
-                                    mt: "mt-6",
-                                },
-                                {
-                                    icon: "⚡",
-                                    title: "Fast Learner",
-                                    desc: "New tools? Give me a weekend",
-                                    bg: "var(--orange)",
-                                    color: "white",
-                                    mt: "-mt-2",
-                                },
-                                {
-                                    icon: "🤝",
-                                    title: "Team Player",
-                                    desc: "I thrive in collaborative environments",
-                                    bg: "var(--sky)",
-                                    mt: "mt-4",
-                                },
-                            ].map(({ icon, title, desc, bg, color, mt }) => (
-                                <div
-                                    key={title}
-                                    className={`zine-card rounded-2xl p-6 ${mt}`}
-                                    style={{ background: bg, color: color || "#1C1C1C" }}
-                                >
-                                    <span className="text-3xl block mb-3">{icon}</span>
-                                    <h4 className="font-black text-sm mb-1">{title}</h4>
-                                    <p className="text-xs leading-relaxed opacity-70 font-light">
-                                        {desc}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
 
 
             {/* ── EXPERIENCE ── */}
             <section
                 id="experience"
-                className="py-20"
+                className="py-8"
                 style={{ background: "var(--warm)" }}
             >
                 <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -781,7 +665,7 @@ export default function GetPortfolio8() {
             {/* ── JOB ── */}
             <section
                 id="job"
-                className="py-20"
+                className="py-8"
                 style={{ background: "var(--cream)" }}
             >
                 <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -835,12 +719,25 @@ export default function GetPortfolio8() {
                             {portfolio1?.projects?.slice(0, 5).map((project, i) => (
                                 <div
                                     key={project.id}
-                                    className="job-row flex items-center gap-5 px-7 py-5 cursor-default"
+                                    className="job-row flex items-center gap-5 px-7 py-5 cursor-default relative"
                                     style={{
                                         borderBottom:
                                             i < portfolio1.projects.length - 1 ? "2px solid #F0F0EA" : "none",
                                     }}
                                 >
+                                    {/* Edit button */}
+                                    <Link
+                                        to={`/dashboard/project/${project.id}`}
+                                        className="absolute top-2 right-16 z-10"
+                                    >
+                                        <button className="flex items-center gap-1 px-2 py-1 text-xs font-medium uppercase tracking-widest border border-stone-300 bg-white text-stone-800 hover:bg-stone-800 hover:text-white transition-all">
+                                            <FiEdit2 size={10} /> Edit
+                                        </button>
+                                    </Link>
+                                    {/* Delete button */}
+                                    <div className="absolute top-2 right-2 z-10">
+                                        <DeleteProject projectId={project.id} />
+                                    </div>
                                     <span
                                         className="fraunces font-black text-4xl min-w-[3rem] leading-none"
                                         style={{
@@ -874,7 +771,7 @@ export default function GetPortfolio8() {
             </section>
 
             {/* ── SCHOOL ── */}
-            <section id="school" className="py-20" style={{ background: "#1C1C1C" }}>
+            <section id="school" className="py-8" style={{ background: "#1C1C1C" }}>
                 <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center gap-4 mb-14">
                         <span
@@ -1006,7 +903,7 @@ export default function GetPortfolio8() {
             {/* ── SKILL ── */}
             <section
                 id="skill"
-                className="py-20"
+                className="py-8"
                 style={{ background: "var(--warm)" }}
             >
                 <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -1156,7 +1053,7 @@ export default function GetPortfolio8() {
             {/* ── CONTACT ── */}
             <section
                 id="contact"
-                className="py-20"
+                className="py-8"
                 style={{ background: "var(--cream)" }}
             >
                 <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

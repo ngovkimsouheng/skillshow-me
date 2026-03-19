@@ -17,5 +17,11 @@ export const api = createApi({
       return headers;
     },
   }),
+  tagTypes: ["Job", "Education", "Project", "Skill", "User"],
+  // tagTypes: ["Job"],
+  // tagTypes: ["Education"],
+  // tagTypes: ["Project"],
+  // tagTypes: ["Skill"],
+  // tagTypes: ["User"],
   endpoints: () => ({}),
 });

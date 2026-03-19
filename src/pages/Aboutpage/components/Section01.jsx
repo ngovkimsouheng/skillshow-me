@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router";
-import storySetImg from "../components/Images/image.png";
+import storySetImg from "../components/Images/image.gif";
+import storySetImgDark from "../components/Images/imageDark.gif";
 export default function Section01() {
   return (
     <section
@@ -20,7 +21,7 @@ export default function Section01() {
         >
           Why
           <br />
-          <span className="text-secondary">SkillShow </span>?
+          <span className="text-secondary dark:text-secondary-dark">SkillShow </span>?
         </h1>
         <p
           data-aos="fade-right"
@@ -61,8 +62,13 @@ export default function Section01() {
       </div>
       <div data-aos="fade-left" data-aos-delay="350">
         <img
-          className="w-[550px] max-sm:mb-4 rounded-[28px]"
+          className="w-[550px] block dark:hidden max-sm:mb-4 rounded-[28px]"
           src={storySetImg}
+          alt="storySetImg "
+        />
+        <img
+          className="w-[550px] hidden dark:block max-sm:mb-4 rounded-[28px]"
+          src={storySetImgDark}
           alt="storySetImg "
         />
       </div>

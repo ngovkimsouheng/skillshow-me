@@ -47,7 +47,7 @@ export default function Section01() {
         data-aos="fade-up"
         data-aos-delay="500"
         marqueeText="Build your Portfolio with our template ✦"
-        speed={1.5}
+        speed={2}
         curveAmount={270}
         direction="right"
         interactive

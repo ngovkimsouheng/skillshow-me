@@ -9,8 +9,7 @@ import template3 from "../components/Images/sampleTemplate3.png"
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import TextType from '../../Homepage/Components/TypeText';
 import { NavLink } from 'react-router';
-import GridMotion from './components/GridMotion';
-export default function Photographer() {
+export default function Developer() {
 
 
     const techLogos = [
@@ -27,45 +26,79 @@ export default function Photographer() {
         { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
     ];
 
-
-    // note: you'll need to make sure the parent container of this component is sized properly
-    const items = [
-        'Item 1',
-        <div key='jsx-item-1'>Custom JSX Content</div>,
-        'https://images.unsplash.com/photo-1723403804231-f4e9b515fe9d?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        'Item 2',
-        <div key='jsx-item-2'>Custom JSX Content</div>,
-        'Item 4',
-        <div key='jsx-item-2'>Custom JSX Content</div>,
-        'https://images.unsplash.com/photo-1723403804231-f4e9b515fe9d?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        'Item 5',
-        <div key='jsx-item-2'>Custom JSX Content</div>,
-        'Item 7',
-        <div key='jsx-item-2'>Custom JSX Content</div>,
-        'https://images.unsplash.com/photo-1723403804231-f4e9b515fe9d?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        'Item 8',
-        <div key='jsx-item-2'>Custom JSX Content</div>,
-        'Item 10',
-        <div key='jsx-item-3'>Custom JSX Content</div>,
-        'https://images.unsplash.com/photo-1723403804231-f4e9b515fe9d?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        'Item 11',
-        <div key='jsx-item-2'>Custom JSX Content</div>,
-        'Item 13',
-        <div key='jsx-item-4'>Custom JSX Content</div>,
-        'https://images.unsplash.com/photo-1723403804231-f4e9b515fe9d?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        'Item 14',
-        // Add more items as needed
-    ];
-
     return (
-        <section className=' bg-background dark:bg-primary'>
+        <section className=' bg-background dark:bg-blackground-dark'>
             <section>
-                <GridMotion items={items}
+                <div style={{ width: '100%', height: '600px', position: 'relative' }}>
+                    <Particles
+                        particleColors={["#ffffff"]}
+                        particleCount={200}
+                        particleSpread={10}
+                        speed={0.4}
+                        particleBaseSize={100}
+                        moveParticlesOnHover
+                        alphaParticles={false}
+                        disableRotation={false}
+                        pixelRatio={1}
+                    />
 
-                    gradientColor="black"
-                />
+                </div>
+                <div className="w-full  flex items-center justify-center">
+                    <div className="absolute inset-0 flex flex-col max-sm:gap-5 justify-center items-center text-center gap-10 px-6">
+                        {/* Title */}
+                        <h1
+                            data-aos="flip-up"
+                            data-aos-duration="1200"
+                            className="text-primary dark:text-white max-md:text-4xl text-[100px] font-bold leading-tight"
+                        >
+                            Showcase Your
+                            <br />
+                            <span className="text-secondary dark:text-[#1bfffb]">Technical Skills</span>
+                        </h1>
+
+                        {/* Subtitle */}
+                        <p
+                            data-aos="fade-up"
+                            data-aos-delay="200"
+                            className="text-[24px] text-text-description max-sm:text-[14px] mx-auto max-w-4xl dark:text-cool-sky max-lg:text-[20px] max-lg:px-4 mt-4 text-center font-['Poppins-Light',_sans-serif] text-line-height-24"
+                        >
+                            Transform your projects, skills, and experience into a modern developer portfolio that stands out to recruiters and clients.
+                        </p>
+
+
+
+                    </div>
+
+                </div>
+                <div className='h-[200px] relative overflow-hidden pt-8' >
+                    {/* Basic horizontal loop */}
+                    <LogoLoop
+                        logos={techLogos}
+                        speed={100}
+                        direction="left"
+                        logoHeight={60}
+                        gap={60}
+                        hoverSpeed={0}
+                        scaleOnHover
+                        fadeOut
+                        fadeOutColor="#ffffff"
+                        ariaLabel="Technology partners"
+                    />
+
+                    {/* Vertical loop with deceleration on hover */}
+                    {/* <LogoLoop
+                    logos={techLogos}
+                    speed={100}
+                    direction="right"
+                    logoHeight={60}
+                    gap={60}
+                    hoverSpeed={0}
+                    fadeOut
+                    useCustomRender={false}
+                /> */}
+                </div>
             </section>
-            <section className="flex pt-8 pb-8 justify-center items-center max-lg:pb-8 flex-col gap-8">
+            <section className="flex pb-8 justify-center items-center max-lg:pb-8 flex-col gap-8">
                 <div className="text-center font-['Poppins-Bold',_sans-serif] max-sm:text-[40px] max-md:text-[43px] text-[70px] leading-[75px] max-md:leading-[45px] font-bold">
                     <span>
                         <div className="text-primary dark:text-white">
@@ -193,13 +226,7 @@ export default function Photographer() {
                         </div>
                     </NavLink>
 
-
-
-
                 </div>
-
-
-
             </section>
         </section>
     )

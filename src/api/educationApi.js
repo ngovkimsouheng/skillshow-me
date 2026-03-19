@@ -9,14 +9,14 @@ export const educationApi = api.injectEndpoints({
         method: "POST",
         body,
       }),
-      invalidatesTags: ["Education"], // optional but good practice
+      invalidatesTags: ["Education", "Portfolio"], // optional but good practice
     }),
     getEducationById: builder.query({
       query: (id) => ({
         url: `educations/me/${id}`,
         method: "GET",
       }),
-      providesTags: ["Education"],
+      providesTags: ["Education", "Portfolio"],
     }),
 
     updateEducation: builder.mutation({
@@ -25,7 +25,7 @@ export const educationApi = api.injectEndpoints({
         method: "PUT",
         body,
       }),
-      invalidatesTags: ["Education"],
+      invalidatesTags: ["Education", "Portfolio"],
     }),
     /* ================= GET EDUCATION ================= */
     getEducation: builder.query({
@@ -33,7 +33,7 @@ export const educationApi = api.injectEndpoints({
         url: "educations/me",
         method: "GET",
       }),
-      providesTags: ["Education"],
+      providesTags: ["Education", "Portfolio"],
     }),
     deleteEducation: builder.mutation({
       query: (id) => ({
@@ -41,7 +41,7 @@ export const educationApi = api.injectEndpoints({
         method: "DELETE",
         responseHandler: (response) => response.text(),
       }),
-      invalidatesTags: ["Education"], // optional
+      invalidatesTags: ["Education", "Portfolio"], // optional
     }),
   }),
 

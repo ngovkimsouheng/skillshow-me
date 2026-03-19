@@ -9,7 +9,7 @@ export const skillApi = api.injectEndpoints({
         method: "POST",
         body,
       }),
-      invalidatesTags: ["Skill"],
+      invalidatesTags: ["Skill", "Portfolio"], // ✅ if skill changes, portfolio likely changes too
     }),
 
     /* ================= GET ================= */
@@ -18,7 +18,7 @@ export const skillApi = api.injectEndpoints({
         url: "/skills/me",
         method: "GET",
       }),
-      providesTags: ["Skill"],
+      providesTags: ["Skill", "Portfolio"], // ✅ if skills change, portfolio likely changes too
     }),
 
     /* ================= GET BY ID 🔥 NEW ================= */
@@ -36,7 +36,7 @@ export const skillApi = api.injectEndpoints({
         url: `/skills/me/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: ["Skill"],
+      invalidatesTags: ["Skill", "Portfolio"],
     }),
 
     /* ================= UPDATE ================= */
@@ -46,7 +46,7 @@ export const skillApi = api.injectEndpoints({
         method: "PUT",
         body,
       }),
-      invalidatesTags: ["Skill"],
+      invalidatesTags: ["Skill", "Portfolio"],
     }),
   }),
   overrideExisting: false,

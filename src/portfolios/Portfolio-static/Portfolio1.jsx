@@ -4,7 +4,7 @@ export default function Portfolio1() {
   return (
     <div className="min-h-screen bg-orange-50">
       {/* Navbar */}
-      <nav className="bg-white shadow-sm sticky top-0 z-50">
+      <nav className="bg-white shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
           <h1 className="text-2xl text-black font-bold">Istad</h1>
           <div className="flex gap-8">

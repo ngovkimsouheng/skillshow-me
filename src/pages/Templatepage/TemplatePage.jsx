@@ -15,7 +15,7 @@ export default function TemplatePage() {
   return (
     <div
       id="#template"
-      className="lg:pt-30 w-full overflow-hidden max-lg:pt-20 lg:pb-10  flex flex-col lg:gap-15 dark:bg-gray-950"
+      className="lg:pt-30 w-full overflow-hidden max-lg:pt-20 lg:pb-10   dark:bg-background-dark bg-background flex flex-col lg:gap-15 "
     >
       <Section01 />
       <AutoScrollSlider />

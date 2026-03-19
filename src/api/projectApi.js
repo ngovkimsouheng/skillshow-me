@@ -8,17 +8,19 @@ export const projectApi = api.injectEndpoints({
         method: "POST",
         body,
       }),
-      invalidatesTags: ["Project"],
+      invalidatesTags: ["Project", "Portfolio"], //  if project changes, portfolio likely changes too
     }),
 
     getProjects: builder.query({
       query: () => "/projects/me",
+      method: "GET",
       providesTags: ["Project"],
     }),
 
     getProjectById: builder.query({
       query: (id) => `/projects/me/${id}`,
-      providesTags: ["Project"],
+      method: "GET",
+      providesTags: ["Project", "Portfolio"],
     }),
 
     updateProject: builder.mutation({
@@ -27,14 +29,14 @@ export const projectApi = api.injectEndpoints({
         method: "PUT",
         body,
       }),
-      invalidatesTags: ["Project"],
+      invalidatesTags: [], // Don't invalidate to prevent backend duplication bug
     }),
     deleteProject: builder.mutation({
       query: (id) => ({
         url: `/projects/me/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: ["Project"], // ✅ automatically refresh getProjects
+      invalidatesTags: ["Project", "Portfolio"], //  refresh both projects and portfolio
     }),
   }),
   overrideExisting: false,

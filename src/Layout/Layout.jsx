@@ -14,12 +14,15 @@ import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { HiTemplate } from "react-icons/hi";
 import { IoLogOut } from "react-icons/io5";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoCloseSharp } from "react-icons/io5";
 export default function Layout() {
   const navigate = useNavigate();
   const { data, isLoading } = useGetMeQuery();
 
   const [showProfile, setShowProfile] = useState(false);
-  const user = data?.data; // 👈 because your API returns data.data
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const user = data?.data; // API returns data.data
   return (
     <section>
       <nav className="bg-white/5 dark:bg-gray-600/5 dark:backdrop:lg  w-full fixed top-0  z-99 backdrop-blur-lg   shadow-xs">
@@ -29,20 +32,36 @@ export default function Layout() {
         >
           <NavLink to="/">
             <img
-              data-aos="zoom-in"
+              data-aos="zoom-in" 
               className=" md:h-[65px] dark:hidden max-md:h-[40px]  max-sm:h-[35px]"
               src={Logo}
               alt=""
-            />{" "}
+            />{" "}  
             <img
               data-aos="zoom-in"
               className=" md:h-[65px] hidden dark:block max-md:h-[40px]  max-sm:h-[35px]"
               src={DarkModeLogo}
-              alt=""
+              alt=""   
             />
-          </NavLink>
-          <NavBar />
-          <div className="flex md:gap-4 max-md:gap-0.5 justify-center  items-center">
+          </NavLink>   
+          <NavBar
+            mobileMenuOpen={mobileMenuOpen}
+            setMobileMenuOpen={setMobileMenuOpen} 
+            user={user}
+            isLoading={isLoading}
+            setShowProfile={setShowProfile}
+            navigate={navigate}
+          />
+
+          {/* Hamburger Menu Button - Only visible on max-md */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden py-3  flex items-center justify-center text-2xl text-black dark:text-white z-50"
+          >
+            {mobileMenuOpen ? <IoCloseSharp /> : <GiHamburgerMenu />}
+          </button>
+
+          <div className="flex md:gap-4 max-md:gap-0.5 justify-center max-md:hidden items-center">
             {" "}
             <ThemeToggleButton />
             {/* {isLoading ? (

@@ -1,5 +1,6 @@
 import React from "react";
 import star from "./images/star.png";
+import starDark from "./images/starDark.png";
 import vector from "./images/vector.png";
 import vector01 from "./images/vector01.png";
 import cv1 from "./images/cv1.png";
@@ -24,8 +25,13 @@ export default function OverwrapImage() {
           alt=""
         /> */}
         <img
-          className="absolute w-15 top-3 z-20 right-75 zoom-rotate"
+          className="absolute block dark:hidden w-15 top-3 z-20 right-75 zoom-rotate"
           src={star}
+          alt=""
+        />
+        <img
+          className="absolute hidden dark:block w-15 top-3 z-20 right-75 zoom-rotate"
+          src={starDark}
           alt=""
         />
 
@@ -108,7 +114,11 @@ export default function OverwrapImage() {
           data-aos-delay="400"
           className="w-[100px] h-[250px] absolute left-0 -top-10 blur-[100px] dark:bg-[#AAD9D9]/80 bg-amber-300"
         ></div>
-
+        <div
+          data-aos="zoom-in"
+          data-aos-delay="500"
+          className="w-[100px] h-[250px] absolute right-0 bottom-0 blur-[100px] dark:bg-[#AAD9D9]/80 bg-amber-300"
+        ></div>
         <img
           data-aos="fade-left"
           data-aos-delay="300"
@@ -116,11 +126,7 @@ export default function OverwrapImage() {
           src={vector01}
         />
 
-        <div
-          data-aos="zoom-in"
-          data-aos-delay="500"
-          className="w-[100px] h-[250px] absolute right-0 bottom-0 blur-[100px] dark:bg-[#AAD9D9]/80 bg-amber-300"
-        ></div>
+
       </div>
     </>
   );

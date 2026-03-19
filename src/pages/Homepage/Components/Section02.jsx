@@ -1,7 +1,7 @@
 import React from "react";
 import Template1 from "./images/sampleTemplate1.png";
-import Template2 from "./images/sampleTemplate2.png";
-import Template3 from "./images/sampleTemplate3.png";
+import Template2 from "./images/popular2.png";
+import Template3 from "./images/popular3.png";
 import { FaEdit } from "react-icons/fa";
 import { IoMdEye } from "react-icons/io";
 import { NavLink, useNavigate } from "react-router";
@@ -48,12 +48,12 @@ export default function () {
         <div
           data-aos="zoom-in"
           data-aos-delay="400"
-          className="w-[100px] h-[250px] absolute left-10 -top-10 blur-[100px] dark:bg-[#AAD9D9]/80 bg-amber-300"
+          className="w-[100px] h-[230px] absolute left-10 -top-10 blur-[100px] dark:bg-[#AAD9D9]/80 bg-amber-300"
         ></div>
         <div
           data-aos="zoom-in"
           data-aos-delay="400"
-          className="w-[100px] h-[250px] absolute right-10 -bottom-10 blur-[100px] dark:bg-[#AAD9D9]/80 bg-amber-300"
+          className="w-[100px] h-[230px] absolute right-10 -bottom-10 blur-[100px] dark:bg-[#AAD9D9]/80 bg-amber-300"
         ></div>
 
         {/* tempalte 1 */}
@@ -65,7 +65,7 @@ export default function () {
         >
           {/* ✅ Image */}
           <img
-            className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108"
+            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 group-hover:scale-108"
             src={Template1}
             alt="template"
           />
@@ -105,11 +105,11 @@ export default function () {
           to="/portfolio5"
           data-aos="fade-up"
           data-aos-delay="400"
-          className="relative w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden"
+          className="relative  w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden"
         >
           {/* ✅ Image */}
           <img
-            className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108"
+            className="rounded-[16px] max-h-[230px] object-cover w-full transition-transform duration-300 group-hover:scale-108"
             src={Template2}
             alt="template"
           />
@@ -148,11 +148,11 @@ export default function () {
           to="/portfolio8"
           data-aos="fade-up"
           data-aos-delay="500"
-          className="relative w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden"
+          className="relative  w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden"
         >
           {/* ✅ Image */}
           <img
-            className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108"
+            className="rounded-[16px] object-cover max-h-[230px] w-full transition-transform duration-300 group-hover:scale-108"
             src={Template3}
             alt="template"
           />

@@ -1,11 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router";
-import section01 from "./Images/section01.png";
+import gif from "./Images/Developer activity.gif";
+import gifDark from "./Images/Developer activity dark.gif";
 export default function Section01() {
   return (
     <section
       id="tempalte"
-      className="container  relative mx-auto px-4 flex lg:flex-row max-lg:flex-col items-center justify-center"
+      className="container  md:min-h-[85vh] relative mx-auto px-4 flex lg:flex-row max-lg:flex-col-reverse items-center justify-center"
     >
       <div
         data-aos="zoom-in"
@@ -21,7 +22,7 @@ export default function Section01() {
         >
           Launch Your
           <br /> Portfolio
-          <span className="text-secondary">Today</span>
+          <span className="text-secondary dark:text-secondary-dark"> Today</span>
         </h1>
         <p
           data-aos="fade-right"
@@ -62,9 +63,14 @@ export default function Section01() {
       </div>
       <div data-aos="fade-left" data-aos-delay="350">
         <img
-          className="w-[550px] max-sm:mb-4 rounded-[28px]"
-          src={section01}
-          alt=""
+          className="w-[550px] block dark:hidden max-sm:mb-4 rounded-[28px]"
+          src={gif}
+          alt="Developer Activity"
+        />
+        <img
+          className="w-[550px] hidden dark:block max-sm:mb-4 rounded-[28px]"
+          src={gifDark}
+          alt="Developer Activity (Dark)"
         />
       </div>
     </section>

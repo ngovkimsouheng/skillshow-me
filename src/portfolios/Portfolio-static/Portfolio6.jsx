@@ -144,10 +144,9 @@ export default function Portfolio6() {
                   key={l}
                   onClick={() => scrollTo(l)}
                   className={`mono px-4 py-2 text-xs uppercase tracking-[0.15em] transition-all duration-200
-                    ${
-                      active === l
-                        ? "text-black bg-neon-mint font-bold"
-                        : "text-gray-500 hover:text-white hover:bg-white/5"
+                    ${active === l
+                      ? "text-black bg-neon-mint font-bold"
+                      : "text-gray-500 hover:text-white hover:bg-white/5"
                     }`}
                 >
                   {active === l ? `[${l}]` : l}
@@ -1015,8 +1014,8 @@ export default function Portfolio6() {
                     (e.currentTarget.style.background = `rgba(${color === "#00ffcc" ? "0,255,204" : "255,45,155"},0.08)`)
                   }
                   onMouseLeave={(e) =>
-                    (e.currentTarget.style.background =
-                      "rgba(255,255,255,0.02)")
+                  (e.currentTarget.style.background =
+                    "rgba(255,255,255,0.02)")
                   }
                 >
                   <span

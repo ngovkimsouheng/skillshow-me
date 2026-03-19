@@ -2,7 +2,8 @@ import React, { useEffect, useState, useRef, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import {
   useGetProjectByIdQuery,
-  useUpdateProjectMutation,
+  useCreateProjectMutation,
+  useDeleteProjectMutation,
 } from "../api/projectApi";
 import { useUploadFileMutation } from "../api/authApi";
 
@@ -25,8 +26,11 @@ const EditProject = () => {
     skip: !id,
   });
 
-  const [updateProject, { isLoading, isSuccess, isError, error }] =
-    useUpdateProjectMutation();
+  const [createProject, { isLoading: isCreating, isSuccess: isCreateSuccess, isError: isCreateError, error: createError }] =
+    useCreateProjectMutation();
+
+  const [deleteProject, { isLoading: isDeleting, isSuccess: isDeleteSuccess, isError: isDeleteError, error: deleteError }] =
+    useDeleteProjectMutation();
 
   const [uploadFile] = useUploadFileMutation();
 
@@ -61,7 +65,9 @@ const EditProject = () => {
         is_opensource: project.is_opensource || false,
         is_published: project.is_published ?? true,
         technologies: project.technologies
-          ? Object.keys(project.technologies).join(", ")
+          ? Array.isArray(project.technologies)
+            ? project.technologies.join(", ")
+            : Object.keys(project.technologies).join(", ")
           : "",
       });
 
@@ -123,29 +129,52 @@ const EditProject = () => {
           "";
       }
 
-      /* Convert technologies */
-      const technologiesObject = form.technologies
-        ? form.technologies.split(",").reduce((acc, tech) => {
-          const key = tech.trim();
-          if (key) acc[key] = true;
-          return acc;
-        }, {})
-        : {};
+      /* Convert technologies to array */
+      const technologiesArray = form.technologies
+        ? form.technologies.split(",").map(tech => tech.trim()).filter(tech => tech)
+        : [];
 
-      await updateProject({
-        id,
-        body: {
-          ...form,
-          project_url: uploadedUrl,
-          technologies: technologiesObject,
-        },
-      }).unwrap();
+      const payload = {
+        name: form.name,
+        description: form.description,
+        is_opensource: form.is_opensource,
+        is_published: form.is_published,
+      };
 
-      alert("✅ Project Updated Successfully");
+      // Only add github_url if provided
+      if (form.github_url.trim()) {
+        payload.github_url = form.github_url.trim();
+      }
+
+      // Only add project_url if we have an uploaded image
+      if (uploadedUrl) {
+        payload.project_url = uploadedUrl;
+      }
+
+      // Only add technologies if we have any
+      if (technologiesArray.length > 0) {
+        payload.technologies = technologiesArray;
+      }
+
+      console.log("🔄 Updating project - Creating new version");
+      console.log("📤 Create Payload:", payload);
+
+      // Create new project with updated data
+      await createProject(payload).unwrap();
+
+      console.log("✅ New project created, now deleting old one");
+
+      // Delete the old project
+      await deleteProject(id).unwrap();
+
+      console.log("✅ Old project deleted - Update complete");
+
+      alert("✅ Project Updated Successfully!");
 
       navigate(-1);
     } catch (err) {
       console.error("Update Error:", err);
+      alert("❌ Update failed. Please try again.");
     }
   };
 
@@ -292,14 +321,14 @@ const EditProject = () => {
         </div>
 
         {/* Error */}
-        {isError && (
+        {(isCreateError || isDeleteError) && (
           <div className="text-red-600 bg-red-50 p-3 rounded-xl">
-            {error?.data?.message || "Update Failed"}
+            {createError?.data?.message || deleteError?.data?.message || "Update Failed"}
           </div>
         )}
 
         {/* Success */}
-        {isSuccess && (
+        {isCreateSuccess && (
           <div className="text-green-600 bg-green-50 p-3 rounded-xl">
             Updated Successfully!
           </div>
@@ -308,10 +337,10 @@ const EditProject = () => {
         {/* Submit */}
         <button
           type="submit"
-          disabled={isLoading}
+          disabled={isCreating || isDeleting}
           className="w-full py-3 rounded-xl text-white bg-[#1e2e3e] disabled:opacity-50"
         >
-          {isLoading ? "Saving..." : "Save Changes"}
+          {(isCreating || isDeleting) ? "Saving..." : "Save Changes"}
         </button>
       </form>
     </div>

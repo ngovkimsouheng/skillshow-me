@@ -62,7 +62,7 @@ export default function Hero() {
               <div
                 data-aos="zoom-in"
                 data-aos-delay="500"
-                className="md:w-120 w-90 h-0.5 bg-secondary mt-10 mb-6"
+                className="md:w-120 w-90 h-0.5 dark:bg-secondary-dark bg-secondary mt-10 mb-6"
               />
               <h1 className="text-primary   dark:text-white leading-snug  text-2xl md:text-5xl">
                 <div
@@ -79,7 +79,7 @@ export default function Hero() {
                     className="text-center"
                     onAnimationComplete={handleAnimationComplete}
                   />
-                  <div className="text-secondary dark:text-[#1bfffb] max-md:pl-2 md:pl-3.5">
+                  <div className="text-secondary dark:text-secondary-dark max-md:pl-2 md:pl-3.5">
                     <BlurText
                       text="Story ."
                       delay={800}
@@ -118,7 +118,7 @@ export default function Hero() {
               <div
                 data-aos="zoom-in"
                 data-aos-delay="400"
-                className="w-55 h-0.5 bg-secondary mt-10 mb-6"
+                className="w-55 h-0.5 dark:bg-secondary-dark bg-secondary mt-10 mb-6"
               />
               <p
                 data-aos="fade-up"

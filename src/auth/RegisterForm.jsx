@@ -1,8 +1,8 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useRegisterMutation, useUploadFileMutation } from "../api/authApi";
 import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import img from "./Login-rafiki (1).svg"
 /** Convert a File → base64 data-URL, then strip the prefix to get raw base64 */
 function fileToBase64(file) {
@@ -34,17 +34,22 @@ export default function RegisterForm() {
   const [successMsg, setSuccessMsg] = useState("");
 
   const [uploadFile] = useUploadFileMutation();
-
   const fileInputRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
   const [loading, setLoading] = useState(false);
   const [register, { isLoading, error: apiError }] = useRegisterMutation();
+
+  // Check for Google user data
+  const googleUser = location.state?.googleUser;
+  const googleMessage = location.state?.message;
 
   const {
     register: field,
     handleSubmit,
     watch,
     setError,
+    setValue,
     formState: { errors },
   } = useForm({
     mode: "onSubmit", // validate only when submit
@@ -52,6 +57,27 @@ export default function RegisterForm() {
   });
 
   const password = watch("password");
+
+  // Pre-fill form with Google user data
+  useEffect(() => {
+    if (googleUser) {
+      // Split display name into first and last name
+      const nameParts = googleUser.displayName?.split(' ') || [];
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || '';
+
+      // Pre-fill form fields
+      setValue('first_name', firstName);
+      setValue('last_name', lastName);
+      setValue('email', googleUser.email || '');
+      setValue('username', googleUser.email?.split('@')[0] || '');
+
+      // Set avatar if available
+      if (googleUser.photoURL) {
+        setAvatarPreview(googleUser.photoURL);
+      }
+    }
+  }, [googleUser, setValue]);
 
   /* ── image handling ── */
   const processImage = useCallback((file) => {
@@ -78,14 +104,6 @@ export default function RegisterForm() {
   const onSubmit = async (data) => {
     setSuccessMsg("");
     setLoading(true);
-    // if (avatarFile) {
-    //   try {
-    //     profileValue = await fileToBase64(avatarFile);
-    //   } catch {
-    //     setError("profile", { message: "Failed to process image" });
-    //     return;
-    //   }
-    // }
 
     let profileUrl = "";
 
@@ -99,15 +117,21 @@ export default function RegisterForm() {
         uploadRes?.files?.[0]?.url || uploadRes?.data?.files?.[0]?.url || null;
 
       console.log("Sending profile:", profileUrl);
+    } else if (googleUser?.photoURL && !avatarFile) {
+      // Use Google profile photo if no custom avatar uploaded
+      profileUrl = googleUser.photoURL;
     }
+
+    // For Google users, generate a secure password
+    const finalPassword = googleUser ? `GoogleAuth_${Date.now()}_${Math.random().toString(36).substr(2, 9)}` : data.password;
 
     const payload = {
       first_name: data.first_name,
       last_name: data.last_name,
       username: data.username,
       email: data.email,
-      password: data.password,
-      confirm_password: data.confirm_password,
+      password: finalPassword,
+      confirm_password: finalPassword,
       about_me: data.about_me,
       profile: profileUrl,
     };
@@ -131,6 +155,8 @@ export default function RegisterForm() {
           });
         });
       }
+    } finally {
+      setLoading(false);
     }
   };
   {
@@ -167,6 +193,12 @@ export default function RegisterForm() {
           {successMsg && (
             <div className="bg-green-100 text-green-700 px-4 py-2 rounded-lg mb-6 text-sm">
               {successMsg}
+            </div>
+          )}
+
+          {googleMessage && (
+            <div className="bg-blue-100 text-blue-700 px-4 py-2 rounded-lg mb-6 text-sm">
+              {googleMessage}
             </div>
           )}
 
@@ -310,30 +342,40 @@ export default function RegisterForm() {
               <FieldError message={errors.about_me?.message} />
             </div>
 
-            {/* Password */}
-            <div>
-              <input
-                type="password"
-                placeholder="Password"
-                {...field("password", { required: "Password is required" })}
-                className="w-full border border-gray-300  rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#1e2e3e] outline-none"
-              />
-              <FieldError message={errors.password?.message} />
-            </div>
+            {/* Password - Only show for non-Google users */}
+            {!googleUser && (
+              <>
+                <div>
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    {...field("password", {
+                      required: !googleUser ? "Password is required" : false,
+                      minLength: !googleUser ? {
+                        value: 6,
+                        message: "Password must be at least 6 characters"
+                      } : undefined
+                    })}
+                    className="w-full border border-gray-300  rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#1e2e3e] outline-none"
+                  />
+                  <FieldError message={errors.password?.message} />
+                </div>
 
-            {/* Confirm Password */}
-            <div>
-              <input
-                type="password"
-                placeholder="Confirm Password"
-                {...field("confirm_password", {
-                  required: "Confirm your password",
-                  validate: (v) => v === password || "Passwords do not match",
-                })}
-                className="w-full border border-gray-300  rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#1e2e3e] outline-none"
-              />
-              <FieldError message={errors.confirm_password?.message} />
-            </div>
+                {/* Confirm Password */}
+                <div>
+                  <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    {...field("confirm_password", {
+                      required: !googleUser ? "Confirm your password" : false,
+                      validate: !googleUser ? (v) => v === password || "Passwords do not match" : undefined,
+                    })}
+                    className="w-full border border-gray-300  rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#1e2e3e] outline-none"
+                  />
+                  <FieldError message={errors.confirm_password?.message} />
+                </div>
+              </>
+            )}
 
             {/* API error */}
             {apiError && !Object.keys(errors).length && (

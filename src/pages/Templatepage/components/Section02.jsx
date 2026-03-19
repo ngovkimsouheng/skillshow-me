@@ -7,7 +7,7 @@ import arrowDark from "./Images/arrow-dark.png";
 import { NavLink } from "react-router";
 export default function Section02() {
   return (
-    <section className="flex px-2 relative mx-auto flex-wrap max-lg:gap-4 container max-lg:flex-col justify-center items-center">
+    <section className="flex px-2 lg:my-0 md:my-8 relative mx-auto flex-wrap max-lg:gap-4 container max-lg:flex-col justify-center items-center">
       <div
         data-aos="zoom-in"
         data-aos-delay="400"
@@ -25,7 +25,7 @@ export default function Section02() {
           className="text-primary  max-sm:text-center dark:text-white "
         >
           Pick a Template That Matches Your{" "}
-          <span className="underline text-secondary">Skill</span>
+          <span className="underline dark:text-secondary-dark text-secondary">Skill</span>
         </h2>
         {/* developer */}
         <div className="flex  max-md:justify-center max-md:items-center max-md:flex-col gap-4">

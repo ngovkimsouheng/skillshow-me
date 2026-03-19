@@ -55,8 +55,8 @@ export default function LoginForm() {
         console.log("Token not found in response");
       }
       // alert(" Login successfully!");
-      navigate("/", { replace: true });
-      setSuccessMsg("🎉 Login successful!");
+      setTimeout(() => navigate("/", { replace: true }), 300);
+      setSuccessMsg(" Login successful!");
     } catch (err) {
       console.error("Login failed:", err);
     }
@@ -149,8 +149,9 @@ export default function LoginForm() {
           <NavLink to="/register" className="text-[#1e2e3e] font-semibold">
             Create one
           </NavLink>
+          {/* <SignInWithGoogle /> */}
           {/* <p>or </p>
-          <SignInWithGoogle />
+      
           <SignInWithGithub /> */}
         </div>
       </div>{" "}

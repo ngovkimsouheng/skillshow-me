@@ -6,7 +6,7 @@ export const DrawCircleText = () => {
     <div className="grid   place-content-center bg-[#1e1e1e] px-4 py-10 text-yellow-50">
       <h1 className="max-w-2xl  text-center font-medium text-5xl leading-snug">
         Build your{"  "}
-        <span className="relative text-secondary">
+        <span className="relative dark:text-secondary-dark text-secondary">
           Portfolio
           <svg
             viewBox="0 0 286 73"

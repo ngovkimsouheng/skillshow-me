@@ -139,7 +139,7 @@ export default function EditSocialAccount() {
     );
 
   return (
-    <div className="max-w-xl mx-auto p-10 bg-white rounded-3xl shadow-2xl space-y-8">
+    <div className="max-w-7xl mx-auto p-10  rounded-3xl  space-y-8">
 
       {/* Title */}
       <h2 className="text-3xl font-bold text-[#1e2e3e]">

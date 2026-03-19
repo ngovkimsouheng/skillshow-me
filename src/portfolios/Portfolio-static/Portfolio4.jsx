@@ -1,13 +1,29 @@
 import { useState, useEffect } from "react";
 import img from "./souheng.png";
 import ButtonEdit from "./ButtonEdit";
-import { NavLink } from "react-router";
+// import { NavLink, useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router-dom";
 import { templates } from "../templates";
 export default function Portfolio4() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
   const [hoveredJob, setHoveredJob] = useState(null);
+  const navigate = useNavigate()
+  const isLoggedIn = localStorage.getItem("token");
+  const handleEditClick = (templateId) => {
+    const token = localStorage.getItem("token");
+    console.log("token:", token);
 
+    if (!token) {
+      console.log("no token, navigating to login");
+      alert("Please login to edit your portfolio");
+      navigate("/login"); // ✅ FIXED
+      return;
+    }
+
+    console.log("has token, going to dashboard");
+    navigate(`/dashboard/portfolio/${templateId}`);
+  };
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
     const obs = new IntersectionObserver(
@@ -21,7 +37,7 @@ export default function Portfolio4() {
 
   const links = [
     "home",
-    "about",
+    // "about",
     "experience",
     "job",
     "school",
@@ -35,17 +51,17 @@ export default function Portfolio4() {
   };
 
   return (
-    <div className="bg-zinc-50 text-zinc-900 min-h-screen overflow-x-hidden">
-      {templates.map((template) => (
+    <div className="bg-zinc-50 my-18 text-zinc-900 min-h-screen overflow-x-hidden">
+      {/* {templates.map((template) => (
         <NavLink key={template.id} to={`/dashboard/portfolio/1`}>
           <ButtonEdit />
         </NavLink>
-      ))}
+      ))} */}
+
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&display=swap');
         .bebas { font-family: 'Bebas Neue', cursive; letter-spacing: 0.04em; }
-        .syne { font-family: 'Syne', sans-serif; }
-        * { font-family: 'Syne', sans-serif; }
+      
         .border-brutal { border: 3px solid #18181b; }
         .shadow-brutal { box-shadow: 6px 6px 0px #18181b; }
         .shadow-brutal-coral { box-shadow: 6px 6px 0px #f43f5e; }
@@ -59,104 +75,10 @@ export default function Portfolio4() {
         .tag-pill { font-family: 'Bebas Neue', cursive; letter-spacing: 0.1em; }
       `}</style>
 
-      <header className="w-full fixed  z-99 ">
-        {/* ── NAV ── */}
-        <nav className="sticky w-full top-0 z-90 bg-zinc-50 border-b-4 border-zinc-900">
-          <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16">
-              <button
-                onClick={() => scrollTo("home")}
-                className="bebas text-3xl text-zinc-900 tracking-widest"
-              >
-                HENG<span className="text-rose-500">*</span>
-              </button>
-              {/* Desktop */}
-              <div className="hidden lg:flex items-center gap-0">
-                {links.map((l, i) => (
-                  <button
-                    key={l}
-                    onClick={() => scrollTo(l)}
-                    className={`px-4 py-2 text-xs font-bold uppercase tracking-widest border-r-2 border-zinc-200 transition-all duration-150
-                        ${active === l ? "bg-zinc-900 text-zinc-50" : "hover:bg-yellow-300 text-zinc-600 hover:text-zinc-900"}`}
-                  >
-                    {l}
-                  </button>
-                ))}
-                <button
-                  onClick={() => scrollTo("contact")}
-                  className="ml-4 px-5 py-2 bg-rose-500 text-white text-xs font-bold uppercase tracking-widest border-brutal shadow-brutal hover-lift"
-                >
-                  Hire Me
-                </button>
-              </div>
-              {/* Mobile */}
-              <button
-                onClick={() => setMenuOpen(!menuOpen)}
-                className="lg:hidden w-10 h-10 border-brutal flex flex-col items-center justify-center gap-1.5"
-              >
-                <span
-                  className={`block w-5 h-0.5 bg-zinc-900 transition-all ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
-                />
-                <span
-                  className={`block w-5 h-0.5 bg-zinc-900 transition-all ${menuOpen ? "opacity-0" : ""}`}
-                />
-                <span
-                  className={`block w-5 h-0.5 bg-zinc-900 transition-all ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-                />
-              </button>
-            </div>
-          </div>
-          {menuOpen && (
-            <div className="md:hidden border-t-4 border-zinc-900 bg-zinc-50">
-              {links.map((l) => (
-                <button
-                  key={l}
-                  onClick={() => scrollTo(l)}
-                  className={`w-full text-left px-6 py-4 text-sm font-bold uppercase tracking-widest border-b-2 border-zinc-200 transition
-                      ${active === l ? "bg-zinc-900 text-yellow-300" : "hover:bg-yellow-300 text-zinc-700"}`}
-                >
-                  {l}
-                </button>
-              ))}
-            </div>
-          )}
-        </nav>
-        {/* ── MARQUEE STRIP ── */}
-        <div className="bg-yellow-300 border-b-4 border-zinc-900 py-2 overflow-hidden whitespace-nowrap">
-          <div className="marquee inline-flex gap-0">
-            {[...Array(2)].map((_, i) => (
-              <span
-                key={i}
-                className="bebas text-zinc-900 text-lg tracking-widest mr-0"
-              >
-                {[
-                  "UI DESIGN",
-                  "✦",
-                  "UX RESEARCH",
-                  "✦",
-                  "BRANDING",
-                  "✦",
-                  "FRONTEND DEV",
-                  "✦",
-                  "MOTION",
-                  "✦",
-                  "PROTOTYPING",
-                  "✦",
-                  "DESIGN SYSTEMS",
-                  "✦",
-                ].map((t, j) => (
-                  <span key={j} className="mx-6">
-                    {t}
-                  </span>
-                ))}
-              </span>
-            ))}
-          </div>
-        </div>
-      </header>
+      <ButtonEdit onClick={() => handleEditClick(1)} />
 
       {/* ── HOME ── */}
-      <section id="home" className="min-h-screen pt-20 py-6  sm:py-25 max-lg:mt-18 lg:pt-35 diagonal-bg">
+      <section id="home" className=" py-6   diagonal-bg">
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8 ">
           <div className="grid lg:grid-cols-12 gap-6 items-start">
             {/* Big title — spans 7 cols */}
@@ -168,18 +90,19 @@ export default function Portfolio4() {
                 </span>
               </div>
 
-              <h1 className="bebas text-[clamp(4rem,12vw,9rem)] leading-none text-zinc-900 mb-0">
-                HELLO,
-              </h1>
-              <h1 className="bebas text-[clamp(3rem,9vw,7rem)] leading-none mb-0">
-                <span className="text-rose-500">I'M HENG</span>
-              </h1>
-              <h1 className="bebas text-[clamp(4rem,12vw,9rem)] leading-none text-zinc-900 mb-5">
-                DESIGNER
-              </h1>
-
+              <div>
+                <h1 className="bebas text-[clamp(3rem,9vw,rem)] leading-tight text-zinc-900 mb-0">
+                  HELLO,
+                </h1>
+                <h1 className="bebas text-[clamp(3rem,9vw,7rem)] leading-tight mb-0">
+                  <span className="text-rose-500">I'M HENG</span>
+                </h1>
+                <h1 className="bebas text-[clamp(3rem,9vw,9rem)] leading-tight text-zinc-900 mb-0">
+                  DESIGNER
+                </h1>
+              </div>
               <p className="text-zinc-500 text-base sm:text-lg max-w-lg leading-relaxed mb-10 font-medium">
-                user123@gmail.com
+                I specialize in designing modern web and mobile interfaces. I believe good design is simple, purposeful, and impactful .
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -236,102 +159,44 @@ export default function Portfolio4() {
             </div>
           </div>
         </div>
+
       </section>
 
       {/* ── ABOUT ── */}
-      <section id="about" className="py-24 bg-zinc-900 text-zinc-50">
-        <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-1 bg-yellow-300" />
-                <span className="bebas text-yellow-300 text-xl tracking-widest">
-                  About Me
-                </span>
-              </div>
-              <h2 className="bebas text-6xl sm:text-6xl lg:text-8xl leading-none mb-8 text-white">
-                DESIGN
-                <br />
-                IS MY
-                <br />
-                <span className="text-rose-500 sm:text-7xl">LANGUAGE</span>
-              </h2>
-              <p className="text-zinc-400 leading-relaxed mb-6 text-base">
-                I specialize in designing modern web and mobile interfaces. I
-                believe good design is simple, purposeful, and impactful —
-                serving the user while expressing the brand's identity.
-              </p>
-              {/* <p className="text-zinc-400 leading-relaxed mb-8 text-base">
-                6+ years across agencies and startups. I bring strategic
-                thinking to every project — from rough sketches to polished,
-                shipped products.
-              </p> */}
-              <div className="flex flex-wrap gap-3">
-                {[
-                  "Figma",
-                  "React",
-                  "Tailwind CSS",
-                  "Adobe XD",
-                  "Framer",
 
-                ].map((t) => (
-                  <span
-                    key={t}
-                    className="px-4 py-2 bg-zinc-800 border-2 border-zinc-600 text-yellow-300 text-xs font-bold uppercase tracking-widest hover:bg-yellow-300 hover:text-zinc-900 hover:border-zinc-900 transition-all cursor-default"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Feature boxes — staggered */}
-            <div className="grid place-content-start   max-lg:gap-2 sm:grid-cols-1  md:grid-cols-2 lg:gap-4">
+      <div className="bg-yellow-300 border-b-4 border-zinc-900 py-2 overflow-hidden whitespace-nowrap">
+        <div className="marquee inline-flex gap-0">
+          {[...Array(2)].map((_, i) => (
+            <span
+              key={i}
+              className="bebas text-zinc-900 text-lg tracking-widest mr-0"
+            >
               {[
-                {
-                  icon: "🎨",
-                  title: "Visual Design",
-                  desc: "Pixel-perfect interfaces that truly delight",
-                  accent: "bg-yellow-300 border-brutal shadow-brutal",
-                },
-                {
-                  icon: "📱",
-                  title: "Mobile First",
-                  desc: "Seamless on every screen, always",
-                  accent:
-                    "bg-white border-brutal shadow-brutal-coral text-zinc-900",
-                },
-                {
-                  icon: "⚡",
-                  title: "Fast Delivery",
-                  desc: "Quality work, never compromised",
-                  accent: "bg-rose-500 border-brutal shadow-brutal text-white",
-                },
-                {
-                  icon: "🤝",
-                  title: "Collaboration",
-                  desc: "Devs, PMs, and stakeholders love working with me",
-                  accent: "bg-zinc-800 border-2 border-zinc-600 text-zinc-100",
-                },
-              ].map(({ icon, title, desc, accent }, i) => (
-                <div
-                  key={title}
-                  className={`${accent} p-6 max-lg:p-4 transition-all duration-200 hover-lift ${i === 1 ? "mt-6" : ""} ${i === 3 ? "-mt-6" : ""}`}
-                >
-                  <span className="text-3xl mb-4 block">{icon}</span>
-                  <h4 className="font-black text-sm uppercase tracking-wide mb-1">
-                    {title}
-                  </h4>
-                  <p className="text-xs leading-relaxed opacity-70">{desc}</p>
-                </div>
+                "UI DESIGN",
+                "✦",
+                "UX RESEARCH",
+                "✦",
+                "BRANDING",
+                "✦",
+                "FRONTEND DEV",
+                "✦",
+                "MOTION",
+                "✦",
+                "PROTOTYPING",
+                "✦",
+                "DESIGN SYSTEMS",
+                "✦",
+              ].map((t, j) => (
+                <span key={j} className="mx-6">
+                  {t}
+                </span>
               ))}
-            </div>
-          </div>
+            </span>
+          ))}
         </div>
-      </section>
-
+      </div>
       {/* ── EXPERIENCE ── */}
-      <section id="experience" className="py-24 bg-zinc-50">
+      <section id="experience" className="py-10 bg-zinc-50">
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 border-b-4 border-zinc-900 pb-6">
             <div>
@@ -401,7 +266,7 @@ export default function Portfolio4() {
       {/* ── JOB ── */}
       <section
         id="job"
-        className="py-24 bg-yellow-300 border-y-4 border-zinc-900"
+        className="py-10 bg-yellow-300 border-y-4 border-zinc-900"
       >
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16">
@@ -472,11 +337,7 @@ export default function Portfolio4() {
                 >
                   {period}
                 </span>
-                <span
-                  className={`shrink-0 bebas text-3xl ${hoveredJob === i ? "text-rose-400" : "text-zinc-200"}`}
-                >
-                  →
-                </span>
+
               </div>
             ))}
           </div>
@@ -484,7 +345,7 @@ export default function Portfolio4() {
       </section>
 
       {/* ── SCHOOL ── */}
-      <section id="school" className="py-24 bg-zinc-50">
+      <section id="school" className="py-10 bg-zinc-50">
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 border-b-4 border-zinc-900 pb-6">
             <div>
@@ -560,7 +421,7 @@ export default function Portfolio4() {
       </section>
 
       {/* ── SKILL ── */}
-      <section id="skill" className="py-24 bg-zinc-900 text-white">
+      <section id="skill" className="py-10 bg-zinc-900 text-white">
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 border-b-4 border-zinc-600 pb-6">
             <div>
@@ -636,7 +497,7 @@ export default function Portfolio4() {
       </section>
 
       {/* ── CONTACT ── */}
-      <section id="contact" className="py-24 bg-zinc-50">
+      <section id="contact" className="py-10 bg-zinc-50">
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left side */}

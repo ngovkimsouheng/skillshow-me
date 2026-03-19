@@ -6,6 +6,13 @@ import { FaEdit } from 'react-icons/fa';
 import template1 from "../components/Images/sampleTemplate1.png"
 import template2 from "../components/Images/sampleTemplate2.png"
 import template3 from "../components/Images/sampleTemplate3.png"
+import cover1 from "../components/Images/cover1.jpg"
+import cover2 from "../components/Images/cover2.jpg"
+import cover3 from "../components/Images/cover3.jpg"
+import cover4 from "../components/Images/cover4.jpg"
+import cover5 from "../components/Images/cover5.jpg"
+import cover6 from "../components/Images/cover6.jpg"
+
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import TextType from '../../Homepage/Components/TypeText';
 import { NavLink } from 'react-router';
@@ -27,66 +34,67 @@ export default function Developer() {
     ];
 
     return (
-        <section className=' bg-background dark:bg-primary'>
-            <section>
-                <div style={{ width: '100%', height: '600px', position: 'relative' }}>
+        <section className=' bg-background  dark:bg-background-dark'>
+            <section className='max-md:flex max-md:flex-col max-md:gap-50'>
+                <div className='w-[100%]    md:h-[500px] lg:h-[600px] relative' >
                     <Particles
                         particleColors={["#ffffff"]}
                         particleCount={200}
                         particleSpread={10}
                         speed={0.4}
-                        particleBaseSize={100}
+                        particleBaseSize={150}
                         moveParticlesOnHover
                         alphaParticles={false}
                         disableRotation={false}
                         pixelRatio={1}
                     />
+                    <div className="w-full  flex items-center justify-center">
+                        <div className="absolute inset-0 flex flex-col max-sm:gap-5 justify-center items-center text-center gap-10 px-6">
+                            {/* Title */}
+                            <h1
+                                data-aos="flip-up"
+                                data-aos-duration="1200"
+                                className="text-primary dark:text-white sm:text-6xl  lg:text-[100px] font-bold leading-tight"
+                            >
+                                Showcase Your
+                                <br />
+                                <span className="text-secondary dark:text-[#1bfffb]">Technical Skills</span>
+                            </h1>
 
-                </div>
-                <div className="w-full  flex items-center justify-center">
-                    <div className="absolute inset-0 flex flex-col max-sm:gap-5 justify-center items-center text-center gap-10 px-6">
-                        {/* Title */}
-                        <h1
-                            data-aos="flip-up"
-                            data-aos-duration="1200"
-                            className="text-primary dark:text-white max-md:text-4xl text-[100px] font-bold leading-tight"
-                        >
-                            Showcase Your
-                            <br />
-                            <span className="text-secondary dark:text-[#1bfffb]">Technical Skills</span>
-                        </h1>
-
-                        {/* Subtitle */}
-                        <p
-                            data-aos="fade-up"
-                            data-aos-delay="200"
-                            className="text-[24px] text-text-description max-sm:text-[14px] mx-auto max-w-4xl dark:text-cool-sky max-lg:text-[20px] max-lg:px-4 mt-4 text-center font-['Poppins-Light',_sans-serif] text-line-height-24"
-                        >
-                            Transform your projects, skills, and experience into a modern developer portfolio that stands out to recruiters and clients.
-                        </p>
+                            {/* Subtitle */}
+                            <p
+                                data-aos="fade-up"
+                                data-aos-delay="200"
+                                className="text-[24px] text-text-description max-sm:text-[14px] mx-auto max-w-4xl dark:text-cool-sky max-lg:text-[20px] max-lg:px-4 mt-4 text-center font-['Poppins-Light',_sans-serif] text-line-height-24"
+                            >
+                                Transform your projects, skills, and experience into a modern developer portfolio that stands out to recruiters and clients.
+                            </p>
 
 
+                        </div>
 
                     </div>
-
                 </div>
-                <div className='h-[200px] relative overflow-hidden pt-8' >
-                    {/* Basic horizontal loop */}
-                    <LogoLoop
-                        logos={techLogos}
-                        speed={100}
-                        direction="left"
-                        logoHeight={60}
-                        gap={60}
-                        hoverSpeed={0}
-                        scaleOnHover
-                        fadeOut
-                        fadeOutColor="#ffffff"
-                        ariaLabel="Technology partners"
-                    />
 
-                    {/* Vertical loop with deceleration on hover */}
-                    {/* <LogoLoop
+
+            </section>
+            <div className='lg:h-[200px] md:h-[150px] max-sm:hidden overflow-hidden lg:pt-8' >
+                {/* Basic horizontal loop */}
+                <LogoLoop
+                    logos={techLogos}
+                    speed={100}
+                    direction="left"
+                    logoHeight={60}
+                    gap={60}
+                    hoverSpeed={0}
+                    scaleOnHover
+                    fadeOut
+                    fadeOutColor="#ffffff"
+                    ariaLabel="Technology partners"
+                />
+
+                {/* Vertical loop with deceleration on hover */}
+                {/* <LogoLoop
                     logos={techLogos}
                     speed={100}
                     direction="right"
@@ -96,16 +104,15 @@ export default function Developer() {
                     fadeOut
                     useCustomRender={false}
                 /> */}
-                </div>
-            </section>
-            <section className="flex pb-8 justify-center items-center max-lg:pb-8 flex-col gap-8">
+            </div>
+            <section className="flex pb-8 justify-center items-center max-lg:pb-8 flex-col md:gap-16 lg:gap-8">
                 <div className="text-center font-['Poppins-Bold',_sans-serif] max-sm:text-[40px] max-md:text-[43px] text-[70px] leading-[75px] max-md:leading-[45px] font-bold">
                     <span>
                         <div className="text-primary dark:text-white">
                             Discover Our <br className="lg:hidden block" />
-                            <span className="text-secondary">
+                            <span className="text-secondary dark:text-[#1bfffb]">
                                 <TextType
-                                    className="text-secondary"
+                                    className="text-secondary dark:text-[#1bfffb]"
                                     text={["Templates", "Interfaces"]}
                                     typingSpeed={75}
                                     pauseDuration={1500}
@@ -123,17 +130,17 @@ export default function Developer() {
                     {/* ✅ FIRST 3 (ALWAYS VISIBLE) */}
 
 
-                    <NavLink className="relative w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                    <NavLink className="relative w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
                         <img
-                            className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108"
-                            src={template1}
+                            className="rounded-[16px]  w-full transition-transform duration-300 group-hover:scale-108 h-[230px]"
+                            src={cover1}
                             alt="template"
                         />
                         <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                             <div className="flex gap-4">
-                                <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                                {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                                     <FaEdit /> Edit
-                                </button>
+                                </button> */}
                                 <button className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
                                     <IoMdEye className="text-[20px]" /> Preview
                                 </button>
@@ -141,17 +148,17 @@ export default function Developer() {
                         </div>
                     </NavLink>
 
-                    <NavLink className="relative w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                    <NavLink className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
                         <img
-                            className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108"
-                            src={template2}
+                            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 group-hover:scale-108"
+                            src={cover2}
                             alt="template"
                         />
                         <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                             <div className="flex gap-4">
-                                <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                                {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                                     <FaEdit /> Edit
-                                </button>
+                                </button> */}
                                 <button className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
                                     <IoMdEye className="text-[20px]" /> Preview
                                 </button>
@@ -159,10 +166,10 @@ export default function Developer() {
                         </div>
                     </NavLink>
 
-                    <NavLink className="relative w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                    <NavLink className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
                         <img
-                            className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108"
-                            src={template3}
+                            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 group-hover:scale-108"
+                            src={cover3}
                             alt="template"
                         />
                         <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
@@ -174,17 +181,17 @@ export default function Developer() {
                             </div>
                         </div>
                     </NavLink>
-                    <NavLink className="relative w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                    <NavLink className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
                         <img
-                            className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108"
-                            src={template1}
+                            className="rounded-[16px]  w-[370px] lg:w-[390px] w-full transition-transform duration-300 group-hover:scale-108"
+                            src={cover4}
                             alt="template"
                         />
                         <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                             <div className="flex gap-4">
-                                <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                                {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                                     <FaEdit /> Edit
-                                </button>
+                                </button> */}
                                 <button className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
                                     <IoMdEye className="text-[20px]" /> Preview
                                 </button>
@@ -192,17 +199,17 @@ export default function Developer() {
                         </div>
                     </NavLink>
 
-                    <NavLink className="relative w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                    <NavLink className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
                         <img
-                            className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108"
-                            src={template2}
+                            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 group-hover:scale-108"
+                            src={cover5}
                             alt="template"
                         />
                         <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                             <div className="flex gap-4">
-                                <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                                {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                                     <FaEdit /> Edit
-                                </button>
+                                </button> */}
                                 <button className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
                                     <IoMdEye className="text-[20px]" /> Preview
                                 </button>
@@ -210,10 +217,10 @@ export default function Developer() {
                         </div>
                     </NavLink>
 
-                    <NavLink className="relative w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                    <NavLink className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
                         <img
-                            className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108"
-                            src={template3}
+                            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 group-hover:scale-108"
+                            src={cover6}
                             alt="template"
                         />
                         <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
@@ -225,14 +232,8 @@ export default function Developer() {
                             </div>
                         </div>
                     </NavLink>
-
-
-
 
                 </div>
-
-
-
             </section>
         </section>
     )

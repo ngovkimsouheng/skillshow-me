@@ -68,7 +68,7 @@ export default function Herosection() {
         <section
           data-aos="fade-up"
           data-aos-duration="1400"
-          className="container max-sm:place-content-center place-items-center max-sm:place-items-center relative md:px-4 grid md:grid-cols-3 max-lg:gap-6 max-w-6xl mx-auto mt-8"
+          className="container max-sm:place-content-center place-items-center max-sm:place-items-center max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:flex max-sm:items-center relative md:px-4 sm:items-center sm:place-content-center sm:place-items-center md:grid md:grid-cols-3 max-lg:gap-6 max-w-6xl mx-auto mt-8"
         >
           {/* <!-- div1 --> */}
           <div

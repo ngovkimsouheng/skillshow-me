@@ -2,40 +2,46 @@ import React from "react";
 import CardMembers from "./CardMembers";
 import teacher1 from "./Images/teacher1.png";
 import teacher2 from "./Images/teacher2.png";
+import leader from "./Images/leader.png"
+import lyta from "./Images/lyta.png"
+import lay from "./Images/lay.png"
+import ri from "./Images/ri.png"
+import rea from "./Images/rea.png"
+import long from "./Images/long.png"
 export default function SectionMembers() {
   const members = [
     {
       id: 1,
-      name: "Sok Dara",
-      role: "Frontend Developer",
-      image: teacher1,
+      name: "Ngov Kimsouheng",
+      role: "Leader",
+      image: leader,
       facebook: "https://facebook.com",
       github: "https://github.com",
       telegram: "https://t.me/username",
     },
     {
       id: 2,
-      name: "Chanthy",
-      role: "UI/UX Designer",
-      image: teacher2,
+      name: "Phoeurn PoLyta",
+      role: "Sub Leader",
+      image: lyta,
       facebook: "https://facebook.com",
-      github: "",
-      telegram: "",
+      github: "https://facebook.com",
+      telegram: "https://facebook.com",
     },
     {
       id: 3,
       name: "Chanthy",
-      role: "UI/UX Designer",
-      image: teacher2,
+      role: "Member",
+      image: rea,
       facebook: "https://facebook.com",
-      github: "",
-      telegram: "",
+      github: "https://facebook.com",
+      telegram: "https://facebook.com",
     },
     {
       id: 4,
       name: "Sok Dara",
-      role: "Frontend Developer",
-      image: teacher1,
+      role: "Member",
+      image: ri,
       facebook: "https://facebook.com",
       github: "https://github.com",
       telegram: "https://t.me/username",
@@ -43,8 +49,8 @@ export default function SectionMembers() {
     {
       id: 5,
       name: "Sok Dara",
-      role: "Frontend Developer",
-      image: teacher1,
+      role: "Member",
+      image: lay,
       facebook: "https://facebook.com",
       github: "https://github.com",
       telegram: "https://t.me/username",
@@ -52,8 +58,8 @@ export default function SectionMembers() {
     {
       id: 6,
       name: "Sok Dara",
-      role: "Frontend Developer",
-      image: teacher1,
+      role: "Member",
+      image: long,
       facebook: "https://facebook.com",
       github: "https://github.com",
       telegram: "https://t.me/username",
@@ -61,7 +67,7 @@ export default function SectionMembers() {
     {
       id: 7,
       name: "Sok Dara",
-      role: "Frontend Developer",
+      role: "Member",
       image: teacher1,
       facebook: "https://facebook.com",
       github: "https://github.com",
@@ -89,7 +95,7 @@ export default function SectionMembers() {
           data-aos-delay="500"
           className="text-[24px] text-text-description max-sm:text-[14px] mx-auto max-w-4xl dark:text-cool-sky max-lg:text-[20px] max-lg:px-4 mt-4 text-center font-['Poppins-Light',_sans-serif] text-line-height-24"
         >
-          The passionate people driving Skillshow forward
+          The passionate people driving Skillshow forward.
         </p>
       </div>{" "}
       <div className="flex flex-wrap  justify-center gap-y-[35px] gap-x-[97px]">

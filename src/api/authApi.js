@@ -37,7 +37,7 @@ export const authApi = api.injectEndpoints({
         method: "PUT",
         body,
       }),
-      invalidatesTags: ["User"], // auto refresh
+      invalidatesTags: ["User", "Portfolio"], // auto refresh
     }),
   }),
   overrideExisting: false,

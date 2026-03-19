@@ -84,14 +84,14 @@ const ProjectForm = () => {
     try {
       let uploadedUrl = "";
 
-      /* ✅ 1. Upload Image First */
+      /*  1. Upload Image First */
       if (imageFile) {
         const formData = new FormData();
         formData.append("file", imageFile);
 
         const uploadRes = await uploadFile(formData).unwrap();
 
-        console.log("🔥 Upload Response:", uploadRes);
+        console.log(" Upload Response:", uploadRes);
 
         uploadedUrl =
           uploadRes?.files?.[0]?.url || uploadRes?.data?.files?.[0]?.url || "";
@@ -99,28 +99,37 @@ const ProjectForm = () => {
         console.log("✅ Image URL:", uploadedUrl);
       }
 
-      /* ✅ 2. Convert technologies to object */
-      const technologiesObject = form.technologies
-        ? form.technologies.split(",").reduce((acc, tech) => {
-          const key = tech.trim();
-          if (key) acc[key] = true;
-          return acc;
-        }, {})
-        : {};
+      /*  2. Convert technologies to array */
+      const technologiesArray = form.technologies
+        ? form.technologies.split(",").map(tech => tech.trim()).filter(tech => tech)
+        : [];
 
-      /* ✅ 3. Prepare Final Payload */
+      /*  3. Prepare Final Payload */
       const payload = {
         name: form.name,
         description: form.description,
-        github_url: form.github_url,
-        project_url: uploadedUrl, // ✅ IMAGE URL SENT HERE
         is_opensource: form.is_opensource,
         is_published: form.is_published,
-        technologies: technologiesObject,
       };
 
-      console.log("Project response:", payload);
-      navigate("/dashboard/portfolio/1#project");
+      // Only add github_url if provided
+      if (form.github_url.trim()) {
+        payload.github_url = form.github_url.trim();
+      }
+
+      // Only add project_url if we have an uploaded image
+      if (uploadedUrl) {
+        payload.project_url = uploadedUrl;
+      }
+
+      // Only add technologies if we have any
+      if (technologiesArray.length > 0) {
+        payload.technologies = technologiesArray;
+      }
+
+      console.log(" Project Payload:", payload);
+      console.log(" Uploaded URL:", uploadedUrl);
+      console.log(" Technologies Array:", technologiesArray);
       await createProject(payload).unwrap();
 
       /* ================= RESET ================= */
@@ -138,10 +147,10 @@ const ProjectForm = () => {
       setImageFile(null);
       setPreview(null);
       setErrors({});
-
+      
       if (fileInputRef.current) fileInputRef.current.value = "";
     } catch (err) {
-      console.error("❌ Failed:", err);
+      console.error(" Failed:", err);
     }
   };
 

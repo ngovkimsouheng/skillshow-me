@@ -22,28 +22,9 @@ export default function HomePage() {
   const image = "https://www.skillshow.com/logo.png"; // absolute URL to your thumbnail
 
   return (
-    <div className="dark:bg-[#030423] overflow-hidden bg-background w-full">
+    <div className="dark:bg-background-dark overflow-hidden bg-background w-full">
       {/* SEO & Social Meta */}
-      <Helmet>
-        {/* Basic Meta */}
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="canonical" href={url} />
 
-        {/* Open Graph / Facebook / Telegram */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:url" content={url} />
-        <meta property="og:image" content={image} />
-        <meta property="og:image:alt" content="SkillShow modern portfolio thumbnail" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={image} />
-      </Helmet>
 
       <div>
         <Herosection />

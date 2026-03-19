@@ -115,7 +115,7 @@ export default function PreviewToggle({ setPreviewOpen }) {
 
                 <button
                     onClick={() => setPreviewOpen(true)}
-                    className="w-full flex justify-center items-center gap-2 py-2 rounded-lg bg-secondary"
+                    className="w-full text-primary font-medium flex justify-center items-center gap-2 py-2 rounded-lg bg-secondary"
                 >
                     <BsEyeFill />
                     Preview

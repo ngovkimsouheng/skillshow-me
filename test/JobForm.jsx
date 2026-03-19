@@ -30,7 +30,7 @@ const JobForm = () => {
 
     try {
       const response = await createJob(form).unwrap();
-      refetch();
+
       console.log("Job Response:", response);
 
       setForm({

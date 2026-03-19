@@ -6,8 +6,13 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { FiEdit2 } from "react-icons/fi";
 import { templates } from "../templates";
+import DeleteJob from "../../Project/Job/DeleteJob";
+import DeleteSkill from "../../Project/skill/DeleteSkill";
+import DeleteEducation from "../../Project/Education/DeleteEducation";
+import DeleteSocialAccount from "../../Project/SocailAccount/DeleteSocailAccount";
+import DeleteProject from "../../Project/ProjectUser/DeleteProject";
 
-export default function GetPortfolio5() {
+export default function GetPortfolio5({ theme = {} }) {
     const [menuOpen, setMenuOpen] = useState(false);
     const [active, setActive] = useState("home");
     const [hoveredJob, setHoveredJob] = useState(null);
@@ -38,8 +43,6 @@ export default function GetPortfolio5() {
 
     const links = [
         "home",
-        "about",
-        "experience",
         "job",
         "school",
         "skill",
@@ -52,11 +55,10 @@ export default function GetPortfolio5() {
     };
 
     return (
-        <div className="bg-rose-50 text-stone-800 min-h-screen overflow-x-hidden">
+        <div className="bg-rose-50 z-0 text-stone-800 min-h-screen overflow-x-hidden">
             <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Mono:wght@300;400;500&display=swap');
-        * { font-family: 'DM Mono', monospace; }
-        .cormorant { font-family: 'Cormorant Garamond', serif; }
+
+       
         .border-chic { border: 2px solid #44403c; }
         .border-chic-thin { border: 1px solid #d6c5b8; }
         .shadow-chic { box-shadow: 5px 5px 0px #44403c; }
@@ -77,7 +79,7 @@ export default function GetPortfolio5() {
       `}</style>
 
             {/* ── NAV ── */}
-            <nav className="sticky top-0 z-50 bg-rose-50/95 backdrop-blur border-b-2 border-stone-800">
+            <nav className="sticky top-0  bg-rose-50/95 backdrop-blur border-b-2 border-stone-800">
                 <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                         <button
@@ -145,18 +147,13 @@ export default function GetPortfolio5() {
                 )}
             </nav>
 
-            {/* {templates.map((template) => (
-                <NavLink key={template.id} to={`/dashboard/portfolio/${template.id}`}>
-                    <ButtonEdit />
-                </NavLink>
-            ))} */}
 
             {/* ── HOME ── */}
-            <section id="home" className="min-h-screen dot-bg">
-                <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
-                    <div className="flex justify-between items-center">
+            <section id="home" className=" dot-bg">
+                <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+                    <div className="grid justify-items-start lg:grid-cols-12 gap-8 items-start">
                         {/* Text */}
-                        <div className="lg:col-span-7 order-2 lg:order-1">
+                        <div className="lg:col-span-7  order-2 lg:order-1">
                             <div className="inline-flex items-center gap-3 bg-white border-chic px-5 py-2.5 mb-10 shadow-chic-rose">
                                 <span className="w-2 h-2 bg-rose-400 rounded-full animate-pulse" />
                                 <span className="text-xs tracking-[0.2em] uppercase font-medium text-stone-600">
@@ -187,9 +184,7 @@ export default function GetPortfolio5() {
                             </div>
 
                             <p className="text-stone-500 text-sm leading-loose max-w-lg mb-10 font-light">
-                                I craft digital experiences that feel as beautiful as they are
-                                intuitive. Blending fine-art sensibility with strategic design
-                                thinking to create work that lingers.
+                                {portfolio?.user?.about_me}
                             </p>
 
                             <div className="flex flex-wrap gap-4">
@@ -210,13 +205,13 @@ export default function GetPortfolio5() {
 
                         {/* Image */}
                         <div className="lg:col-span-5 order-1 lg:order-2 flex justify-center lg:justify-end">
-                            <div className="relative mt-8">
+                            <div className="relative mb-6 mt-8">
                                 <div className="absolute -top-4 -left-4 w-full h-full border-chic bg-rose-200/40" />
                                 <div className="absolute -bottom-4 -right-4 w-full h-full border-chic-thin bg-stone-800/5" />
                                 <img
                                     src={portfolio?.user?.profile}
                                     alt={portfolio?.user?.first_name}
-                                    className="relative w-64 sm:w-72 lg:w-80 xl:w-115 aspect-[3/4] object-cover border-chic"
+                                    className="relative w-full sm:w-80 lg:w-80 xl:w-115 aspect-[3/4] object-cover border-chic"
                                 />
                                 <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-rose-400 border-chic px-6 py-2.5 shadow-chic whitespace-nowrap">
                                     <p className="text-white text-xs tracking-[0.2em] uppercase font-medium">
@@ -251,99 +246,9 @@ export default function GetPortfolio5() {
                 </div>
             </div>
 
-            {/* ── ABOUT ── */}
-            <section id="about" className="py-24 bg-stone-800 text-rose-50">
-                <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-px bg-rose-400" />
-                                <span className="text-xs tracking-[0.25em] uppercase text-rose-400 font-medium">
-                                    About Me
-                                </span>
-                            </div>
-                            <h2
-                                className="cormorant font-bold leading-none mb-8 text-white"
-                                style={{ fontSize: "clamp(3.5rem,8vw,6rem)" }}
-                            >
-                                Design is
-                                <br />
-                                <em className="text-rose-400">my craft,</em>
-                                <br />
-                                beauty is
-                                <br />
-                                my standard.
-                            </h2>
-                            <p className="text-stone-400 leading-loose mb-5 text-sm font-light">
-                                I specialize in designing modern web and mobile interfaces
-                                rooted in emotional resonance. I believe the best design
-                                whispers — it guides without demanding, delights without
-                                overwhelming.
-                            </p>
-                            {/* Technologies from first project */}
-                            <div className="flex flex-wrap gap-3">
-                                {Object.keys(project0?.technologies || {}).map((tech) => (
-                                    <span
-                                        key={tech}
-                                        className="px-4 py-2 border border-stone-600 text-stone-300 text-xs tracking-[0.15em] uppercase hover:bg-rose-400 hover:text-white hover:border-rose-400 transition-all cursor-default"
-                                    >
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Staggered cards */}
-                        <div className="grid grid-cols-2 gap-4">
-                            {[
-                                {
-                                    icon: "✦",
-                                    title: "Visual Direction",
-                                    desc: "Crafting identities that stop the scroll",
-                                    accent: "bg-rose-400 border-chic shadow-chic text-white",
-                                },
-                                {
-                                    icon: "◎",
-                                    title: "Mobile First",
-                                    desc: "Fluid experiences on every device",
-                                    accent: "bg-white border-chic shadow-chic-rose text-stone-800",
-                                    mt: "mt-8",
-                                },
-                                {
-                                    icon: "◈",
-                                    title: "Fast Delivery",
-                                    desc: "Precision without compromise",
-                                    accent: "bg-stone-700 border border-stone-600 text-stone-100",
-                                    mt: "-mt-4",
-                                },
-                                {
-                                    icon: "❋",
-                                    title: "Collaboration",
-                                    desc: "Seamlessly working across teams",
-                                    accent: "bg-rose-100 border-chic text-stone-800",
-                                    mt: "mt-4",
-                                },
-                            ].map(({ icon, title, desc, accent, mt = "" }) => (
-                                <div
-                                    key={title}
-                                    className={`${accent} ${mt} p-6 hover-chic transition-all duration-200`}
-                                >
-                                    <span className="text-2xl block mb-4 font-light">{icon}</span>
-                                    <h4 className="text-xs font-medium uppercase tracking-[0.15em] mb-2">
-                                        {title}
-                                    </h4>
-                                    <p className="text-xs leading-relaxed opacity-70 font-light">
-                                        {desc}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             {/* ── EXPERIENCE (Projects) ── */}
-            <section id="experience" className="py-24 bg-rose-50 stripe-bg">
+            <section id="experience" className="py-8 bg-rose-50 stripe-bg">
                 <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 border-b-2 border-stone-800 pb-6">
                         <div>
@@ -373,12 +278,16 @@ export default function GetPortfolio5() {
                                     {/* Edit button */}
                                     <Link
                                         to={`/dashboard/project/${project.id}`}
-                                        className="absolute top-4 right-6 z-10"
+                                        className="absolute top-4 right-24 z-10"
                                     >
                                         <button className="flex items-center gap-1 px-3 py-1 text-xs font-medium uppercase tracking-widest border-chic bg-rose-100 text-stone-800 hover:bg-stone-800 hover:text-rose-100 transition-all">
                                             <FiEdit2 size={12} /> Edit
                                         </button>
                                     </Link>
+                                    {/* Delete button */}
+                                    <div className="absolute top-4 right-6 z-10">
+                                        <DeleteProject projectId={project.id} />
+                                    </div>
 
                                     <a
                                         href={project.github_url}
@@ -433,7 +342,7 @@ export default function GetPortfolio5() {
             </section>
 
             {/* ── JOB ── */}
-            <section id="job" className="py-24 bg-rose-200 border-y-2 border-stone-800">
+            <section id="job" className="py-8 bg-rose-200 border-y-2 border-stone-800">
                 <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16">
                         <div>
@@ -468,6 +377,9 @@ export default function GetPortfolio5() {
                                             <FiEdit2 size={12} /> Edit
                                         </button>
                                     </Link>
+                                    <div className="absolute top-4 right-30">
+                                        <DeleteJob jobId={job.id} />
+                                    </div>
 
                                     <div
                                         onMouseEnter={() => setHoveredJob(i + 100)}
@@ -477,17 +389,17 @@ export default function GetPortfolio5() {
                       ${hoveredJob === i + 100 ? "bg-stone-800 text-rose-50" : "bg-transparent text-stone-800"}`}
                                     >
                                         <span
-                                            className={`cormorant font-light text-5xl sm:text-6xl min-w-[4rem] leading-none italic
+                                            className={` font-light text-5xl sm:text-6xl min-w-[4rem] leading-none italic
                         ${hoveredJob === i + 100 ? "text-rose-300" : "text-rose-200"}`}
                                         >
                                             {no}
                                         </span>
                                         <div className="flex-1 min-w-0">
-                                            <h4 className="cormorant font-bold text-2xl sm:text-3xl leading-none truncate">
+                                            <h4 className="cormorant uppercase mb-4 font-bold text-2xl sm:text-3xl leading-none truncate">
                                                 {job.company_name}
                                             </h4>
                                             <p
-                                                className={`text-xs font-medium uppercase tracking-[0.15em] mt-1 ${hoveredJob === i + 100 ? "text-rose-300" : "text-rose-400"}`}
+                                                className={` font-medium  mt-1 ${hoveredJob === i + 100 ? "text-rose-300" : "text-rose-400"}`}
                                             >
                                                 {job.role}
                                             </p>
@@ -508,11 +420,7 @@ export default function GetPortfolio5() {
                                         >
                                             {job.started_at} – {job.is_ended ? job.ended_at : "Present"}
                                         </span>
-                                        <span
-                                            className={`cormorant italic text-3xl shrink-0 ${hoveredJob === i + 100 ? "text-rose-300" : "text-rose-200"}`}
-                                        >
-                                            →
-                                        </span>
+
                                     </div>
                                 </div>
                             );
@@ -522,7 +430,7 @@ export default function GetPortfolio5() {
             </section>
 
             {/* ── SCHOOL (Education) ── */}
-            <section id="school" className="py-24 bg-rose-50">
+            <section id="school" className="py-8 bg-rose-50">
                 <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 border-b-2 border-stone-800 pb-6">
                         <div>
@@ -569,6 +477,9 @@ export default function GetPortfolio5() {
                                             <FiEdit2 size={12} /> Edit
                                         </button>
                                     </Link>
+                                    <div className="absolute top-4 right-25">
+                                        <DeleteEducation educationId={edu.id} />
+                                    </div>
 
                                     <span className="text-rose-300 text-3xl shrink-0 mt-1 font-light">
                                         {icons[i % icons.length]}
@@ -602,7 +513,7 @@ export default function GetPortfolio5() {
             </section>
 
             {/* ── SKILL ── */}
-            <section id="skill" className="py-24 bg-stone-800 text-white">
+            <section id="skill" className="py-8 bg-stone-800 text-white">
                 <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 border-b-2 border-stone-600 pb-6">
                         <div>
@@ -653,10 +564,15 @@ export default function GetPortfolio5() {
                             {portfolio?.skills?.map((skill, i) => (
                                 <div
                                     key={skill.id}
-                                    className={`p-6 sm:p-8 text-center bg-stone-900 hover:bg-rose-400 transition-all duration-200 group cursor-default
+                                    className={`relative p-6 sm:p-8 text-center bg-stone-900 hover:bg-rose-400 transition-all duration-200 group cursor-default
                     ${i % 3 !== 2 ? "border-r-2 border-stone-700" : ""}
                     ${i < 3 ? "border-b-2 border-stone-700" : ""}`}
                                 >
+                                    {/* Delete button */}
+                                    <div className="absolute top-2 right-2">
+                                        <DeleteSkill skillId={skill.id} />
+                                    </div>
+
                                     {skill.logo_url ? (
                                         <img
                                             src={skill.logo_url}
@@ -689,7 +605,7 @@ export default function GetPortfolio5() {
             </section>
 
             {/* ── CONTACT ── */}
-            <section id="contact" className="py-24 bg-rose-50 dot-bg">
+            <section id="contact" className="py-8 bg-rose-50 dot-bg">
                 <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-16 items-start">
                         {/* Left */}
@@ -726,17 +642,21 @@ export default function GetPortfolio5() {
                                                 className="w-5 h-5 object-cover rounded"
                                             />
                                         )}
-                                        <span className="text-rose-400 text-xs font-medium uppercase tracking-[0.2em] w-20 shrink-0">
-                                            {account.name}
+                                        <span className="text-rose-400 underline text-xs font-medium uppercase tracking-[0.2em] w-20 shrink-0">
+
+                                            <a href={account.url} target="_blank" rel="noopener noreferrer">
+                                                {account.name
+                                                }
+                                            </a>
                                         </span>
-                                        <a
+                                        {/* <a
                                             href={account.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="text-stone-600 text-xs font-medium hover:underline"
                                         >
                                             {account.url.replace(/^https?:\/\//, "")}
-                                        </a>
+                                        </a> */}
 
                                         {/* Edit button */}
                                         <Link to={`/dashboard/social/${account.id}`} className="ml-auto">
@@ -744,6 +664,9 @@ export default function GetPortfolio5() {
                                                 <FiEdit2 size={11} /> Edit
                                             </button>
                                         </Link>
+                                        <div className="ml-2">
+                                            <DeleteSocialAccount socialId={account.id} />
+                                        </div>
                                     </div>
                                 ))}
                             </div>

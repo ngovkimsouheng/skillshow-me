@@ -15,14 +15,6 @@ import ContactForm from "../../../test/ContactForm";
 export default function GetPortfolio4() {
 
 
-
-
-
-
-
-
-
-
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
   const [hoveredJob, setHoveredJob] = useState(null);
@@ -68,9 +60,8 @@ export default function GetPortfolio4() {
 
   const links = [
     "home",
-    "about",
-    "experience",
     "job",
+    "project",
     "school",
     "skill",
     "contact",
@@ -85,9 +76,7 @@ export default function GetPortfolio4() {
     <div className="bg-zinc-50 text-zinc-900 min-h-screen overflow-x-hidden">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&display=swap');
-        .bebas { font-family: 'Bebas Neue', cursive; letter-spacing: 0.04em; }
-        .syne { font-family: 'Syne', sans-serif; }
-        * { font-family: 'Syne', sans-serif; }
+       
         .border-brutal { border: 3px solid #18181b; }
         .shadow-brutal { box-shadow: 6px 6px 0px #18181b; }
         .shadow-brutal-coral { box-shadow: 6px 6px 0px #f43f5e; }
@@ -164,44 +153,13 @@ export default function GetPortfolio4() {
             </div>
           )}
         </nav>
-        {/* ── MARQUEE STRIP ── */}
-        <div className="bg-yellow-300 border-b-4 border-zinc-900 py-2 overflow-hidden whitespace-nowrap">
-          <div className="marquee inline-flex gap-0">
-            {[...Array(2)].map((_, i) => (
-              <span
-                key={i}
-                className="bebas text-zinc-900 text-lg tracking-widest mr-0"
-              >
-                {[
-                  "UI DESIGN",
-                  "✦",
-                  "UX RESEARCH",
-                  "✦",
-                  "BRANDING",
-                  "✦",
-                  "FRONTEND DEV",
-                  "✦",
-                  "MOTION",
-                  "✦",
-                  "PROTOTYPING",
-                  "✦",
-                  "DESIGN SYSTEMS",
-                  "✦",
-                ].map((t, j) => (
-                  <span key={j} className="mx-6">
-                    {t}
-                  </span>
-                ))}
-              </span>
-            ))}
-          </div>
-        </div>
+
       </header>
 
       {/* ── HOME ── */}
-      <section id="home" className="min-h-screen mt-10 diagonal-bg">
-        <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          <div className="grid lg:grid-cols-12 gap-8 items-start">
+      <section id="home" className=" mt-10 diagonal-bg">
+        <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8 ">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
             {/* Big title — spans 7 cols */}
             <div className="lg:col-span-7">
               <div className="inline-flex items-center gap-2 bg-yellow-300 border-brutal px-4 py-2 mb-8 shadow-brutal">
@@ -211,21 +169,23 @@ export default function GetPortfolio4() {
                 </span>
               </div>
 
-              <h1 className="bebas text-[clamp(4rem,12vw,9rem)] leading-none text-zinc-900 mb-0">
+              <h1 className="bebas  leading-none text-zinc-900 mb-0">
                 HELLO,
               </h1>
               <h1 className="bebas text-[clamp(3rem,9vw,7rem)] leading-none mb-0">
+                <p>I'm</p>
                 <span className="text-rose-500 uppercase">
-                  I'M {portfolio?.user?.first_name}
+                  {portfolio?.user?.first_name}
                 </span>
               </h1>
-              <h1 className="bebas text-[clamp(4rem,12vw,9rem)] leading-none text-zinc-900 mb-8">
+              {/* <h1 className="bebas text-[clamp(4rem,12vw,9rem)] leading-none text-zinc-900 mb-8">
                 DESIGNER
-              </h1>
+              </h1> */}
 
               <p className="text-zinc-500 flex gap-4 items-center text-base sm:text-lg max-w-lg leading-relaxed mb-10 font-medium">
-                <MdOutlineMail className="text-2xl text-zinc-900" />{" "}
-                {portfolio?.user?.email}
+
+                {portfolio?.user?.about_me
+                }
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -245,14 +205,41 @@ export default function GetPortfolio4() {
             </div>
 
             {/* Right side — image + stats */}
-            <div className="lg:col-span-5 flex flex-col gap-6">
+            <div className="lg:col-span-5  flex flex-col gap-6">
               <div className="relative">
-                <div className="absolute -top-3 -right-3 w-full h-full bg-yellow-300 border-brutal" />
+                {/* <div className="absolute -top-3 -right-3 w-full h-full bg-yellow-300 border-brutal" />
                 <img
                   src={portfolio?.user?.profile}
                   alt="Profile"
                   className="relative w-full aspect-[4/5] object-cover border-brutal"
+                /> */}
+                {/* Role badge */}
+                {/* <div className="absolute bottom-4 left-4 bg-rose-500 border-brutal px-4 py-2 shadow-brutal">
+                  <p className="text-white text-xs font-bold uppercase tracking-widest">
+                    Senior UI/UX Designer
+                  </p>
+                </div> */}
+              </div>
+              <div className="relative">
+                <div className="absolute -top-3 -right-3 w-full h-full bg-yellow-300 border-brutal" />
+
+                <img
+                  src={portfolio?.user?.profile || "https://static.vecteezy.com/system/resources/previews/018/765/757/non_2x/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg"}
+                  alt="Profile"
+                  className="relative w-full aspect-[4/5] object-cover border-brutal"
                 />
+
+                {/* Edit Button */}
+                <NavLink
+                  to="/dashboard/profile"
+                  className="absolute top-4 right-4 inline-flex"
+                >
+                  <button className="flex items-center gap-2 px-3 py-1.5 text-xs font-bold uppercase tracking-widest border-2 border-zinc-900 bg-yellow-300 text-zinc-900 hover:bg-zinc-900 hover:text-yellow-300 transition-all duration-200 shadow-brutal">
+                    <FiEdit2 size={14} />
+                    Edit
+                  </button>
+                </NavLink>
+
                 {/* Role badge */}
                 <div className="absolute bottom-4 left-4 bg-rose-500 border-brutal px-4 py-2 shadow-brutal">
                   <p className="text-white text-xs font-bold uppercase tracking-widest">
@@ -262,7 +249,7 @@ export default function GetPortfolio4() {
               </div>
 
               {/* Stats row */}
-              <div className="grid grid-cols-3 gap-0 border-brutal overflow-hidden">
+              {/* <div className="grid grid-cols-3 gap-0 border-brutal overflow-hidden">
                 {[
                   ["6+", "Years"],
                   ["50+", "Projects"],
@@ -278,116 +265,17 @@ export default function GetPortfolio4() {
                     </p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
       </section>
 
       {/* ── ABOUT ── */}
-      <section id="about" className="py-24 bg-zinc-900 text-zinc-50">
-        <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-1 bg-yellow-300" />
-                <span className="bebas text-yellow-300 text-xl tracking-widest">
-                  About Me
-                </span>
-              </div>
-              <h2 className="bebas text-6xl sm:text-7xl lg:text-8xl leading-none mb-8 text-white">
-                DESIGN
-                <br />
-                IS MY
-                <br />
-                <span className="text-rose-500 max-sm:text-[40px] sm:text-[80px]">LANGUAGE</span>
-              </h2>
-              <p className="text-zinc-400 leading-relaxed mb-6 text-base">
-                I specialize in designing modern web and mobile interfaces. I
-                believe good design is simple, purposeful, and impactful —
-                serving the user while expressing the brand's identity.
-              </p>
-              {/* <p className="text-zinc-400 leading-relaxed mb-8 text-base">
-                6+ years across agencies and startups. I bring strategic
-                thinking to every project — from rough sketches to polished,
-                shipped products.
-              </p> */}
-              {/* <div key={project.id} className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-zinc-800 border-2 border-zinc-600 text-yellow-300 text-xs font-bold uppercase tracking-widest hover:bg-yellow-300 hover:text-zinc-900 hover:border-zinc-900 transition-all cursor-default">
-                  {portfolio?.project?.technologies}
-                </span>
-              </div> */}
-              {/* {portfolio?.projects?.map((project) => (
-                <div key={project.id} className="flex flex-wrap gap-3">
-                  {Object.keys(project.technologies[0] || {}).map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-4 py-2 bg-zinc-800 border-2 border-zinc-600 text-yellow-300 text-xs font-bold uppercase tracking-widest hover:bg-yellow-300 hover:text-zinc-900 hover:border-zinc-900 transition-all cursor-default"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              ))} */}
-              <div className="flex flex-wrap gap-3">
-                {Object.keys(project0?.technologies || {}).map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-4 py-2 bg-zinc-800 border-2 border-zinc-600 text-yellow-300 text-xs font-bold uppercase tracking-widest hover:bg-yellow-300 hover:text-zinc-900 hover:border-zinc-900 transition-all"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
 
-            {/* Feature boxes — staggered */}
-            <div className="grid  lg:grid-cols-2 sm:gap-4">
-              {[
-                {
-                  icon: "🎨",
-                  title: "Visual Design",
-                  desc: "Pixel-perfect interfaces that truly delight",
-                  accent: "bg-yellow-300 border-brutal shadow-brutal",
-                },
-                {
-                  icon: "📱",
-                  title: "Mobile First",
-                  desc: "Seamless on every screen, always",
-                  accent:
-                    "bg-white border-brutal shadow-brutal-coral text-zinc-900",
-                },
-                {
-                  icon: "⚡",
-                  title: "Fast Delivery",
-                  desc: "Quality work, never compromised",
-                  accent: "bg-rose-500 border-brutal shadow-brutal text-white",
-                },
-                {
-                  icon: "🤝",
-                  title: "Collaboration",
-                  desc: "Devs, PMs, and stakeholders love working with me",
-                  accent: "bg-zinc-800 border-2 border-zinc-600 text-zinc-100",
-                },
-              ].map(({ icon, title, desc, accent }, i) => (
-                <div
-                  key={title}
-                  className={`${accent} max-sm:p-4  sm:p-6 transition-all duration-200 hover-lift `}
-                >
-                  <span className="text-3xl mb-4 block">{icon}</span>
-                  <h4 className="font-black text-sm uppercase tracking-wide mb-1">
-                    {title}
-                  </h4>
-                  <p className="text-xs leading-relaxed opacity-70">{desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── EXPERIENCE ── */}
-      <section id="job" className="py-24 bg-zinc-50">
+      <section id="job" className="py-10 bg-zinc-50">
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 border-b-4 border-zinc-900 pb-6">
             <div>
@@ -425,16 +313,23 @@ export default function GetPortfolio4() {
                   <div className="absolute top-4 right-20">
                     <DeleteJob jobId={job.id} />
                   </div>
-                  {current && (
+                  {current ? (
                     <div className="inline-flex items-center gap-2 bg-yellow-300 border-2 border-zinc-900 px-3 py-1 mb-5">
                       <span className="w-1.5 h-1.5 bg-rose-500 rounded-full animate-pulse" />
                       <span className="text-xs font-black uppercase tracking-widest">
                         Current Job
                       </span>
                     </div>
+                  ) : (
+                    <div className="inline-flex items-center gap-2 bg-green-300 border-2 border-zinc-900 px-3 py-1 ">
+                      <span className="w-1.5 h-1.5 bg-green-700 rounded-full" />
+                      <span className="text-xs font-black uppercase tracking-widest">
+                        Finished Job
+                      </span>
+                    </div>
                   )}
 
-                  {!current && <div className="h-8 mb-5" />}
+                  {!current && <div className="h-5 " />}
 
                   {/* Company Name */}
                   <h4 className="bebas text-3xl text-zinc-900 leading-none mb-1">
@@ -464,7 +359,7 @@ export default function GetPortfolio4() {
       {/* ─Project ── */}
       <section
         id="project"
-        className="py-24 bg-yellow-300 border-y-4 border-zinc-900"
+        className="py-10 bg-yellow-300 border-y-4 border-zinc-900"
       >
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16">
@@ -545,7 +440,7 @@ export default function GetPortfolio4() {
 
               return (
                 <div key={project.id} className="relative">
-                  {/* ✅ EDIT BUTTON */}
+                  {/*  EDIT BUTTON */}
                   <Link
                     to={`/dashboard/project/${project.id}`}
                     className="absolute top-4 right-24 z-10" // shift right to make space for delete
@@ -555,12 +450,12 @@ export default function GetPortfolio4() {
                     </button>
                   </Link>
 
-                  {/* ✅ DELETE BUTTON */}
-                  {/* <div className="absolute top-4 right-6 z-10">
+                  {/*  DELETE BUTTON */}
+                  <div className="absolute top-4 right-6 z-10">
                     <DeleteProject projectId={project.id} />
-                  </div> */}
+                  </div>
 
-                  {/* ✅ Project Row */}
+                  {/*  Project Row */}
                   <a
                     href={project.github_url}
                     target="_blank"
@@ -599,9 +494,9 @@ export default function GetPortfolio4() {
                     </div>
 
                     {/* Arrow */}
-                    <span className={`shrink-0 bebas text-3xl ${hoveredJob === i ? "text-rose-400" : "text-zinc-200"}`}>
+                    {/* <span className={`shrink-0 bebas text-3xl ${hoveredJob === i ? "text-rose-400" : "text-zinc-200"}`}>
                       →
-                    </span>
+                    </span> */}
                   </a>
                 </div>
               );
@@ -611,7 +506,7 @@ export default function GetPortfolio4() {
       </section>
 
       {/* ── SCHOOL ── */}
-      <section id="education" className="py-24 bg-zinc-50">
+      <section id="school" className="py-10 bg-zinc-50">
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 border-b-4 border-zinc-900 pb-6">
             <div>
@@ -746,7 +641,7 @@ export default function GetPortfolio4() {
       </section>
 
       {/* ── SKILL ── */}
-      <section id="skill" className="py-24 bg-zinc-900 text-white">
+      <section id="skill" className="py-10 bg-zinc-900 text-white">
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 border-b-4 border-zinc-600 pb-6">
             <div>
@@ -906,7 +801,7 @@ export default function GetPortfolio4() {
       </section>
 
       {/* ── CONTACT ── */}
-      <section id="socail-account" className="py-24 bg-zinc-50">
+      <section id="socail-account" className="py-10 bg-zinc-50">
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left side */}
@@ -940,18 +835,21 @@ export default function GetPortfolio4() {
                       />
                     )}
 
-                    <span className="bebas text-rose-500 text-sm tracking-widest w-20">
-                      {account.name}
+                    <span className="bebas underline text-rose-500 text-sm tracking-widest w-20">
+                      {/* {account.name} */}
+                      <a href={account.url} target="_blank" rel="noopener noreferrer">
+                        {account.name}
+                      </a>
                     </span>
 
-                    <a
+                    {/* <a
                       href={account.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-zinc-600 text-sm font-bold hover:underline"
                     >
                       {account.url.replace(/^https?:\/\//, "")}
-                    </a>
+                    </a> */}
 
                     {/*  EDIT BUTTON */}
                     <a href={`/dashboard/social/${account.id}`} className="sm:ml-auto max-sm:-top-6 max-sm:-right-5 max-sm:absolute max-sm:mr-10">
@@ -959,17 +857,19 @@ export default function GetPortfolio4() {
                         Edit
                       </button>
                     </a>
+                    <DeleteSocialAccount socialId={account.id} />
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Right side - Form */}
-            <div className="">  <h2 className="bebas text-6xl sm:text-7xl lg:text-8xl leading-none text-zinc-900 mb-8">
-           
+            <div id="contact" className="">  <h2 className="bebas text-6xl sm:text-7xl lg:text-8xl leading-none text-zinc-900 mb-8">
+
               <span className="text-zinc-900">Contact</span>
-          
-            </h2>  <ContactForm /></div>
+
+            </h2>  <ContactForm />
+            </div>
           </div>
         </div>
       </section>

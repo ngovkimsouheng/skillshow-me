@@ -119,7 +119,7 @@ export default function UserDetail({ user, onClose }) {
           ✕
         </button>
 
-        <h2 className="text-2xl font-bold mb-6 text-center">Profile Details</h2>
+        <h2 className="text-2xl dark:text-white text-text-description font-bold mb-6 text-center">Profile Details</h2>
         <div className="flex flex-col items-center mb-4">
           {/* Hidden File Input */}
           <input
@@ -140,9 +140,8 @@ export default function UserDetail({ user, onClose }) {
 
           <label
             htmlFor={isEditing ? "profileUpload" : undefined}
-            className={`relative ${
-              isEditing ? "cursor-pointer group" : "cursor-default"
-            }`}
+            className={`relative ${isEditing ? "cursor-pointer group" : "cursor-default"
+              }`}
           >
             {/* Image */}
             <img

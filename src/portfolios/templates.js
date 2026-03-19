@@ -5,7 +5,7 @@ import GetPortfolio5 from "./Portfolio/GetPortfolio5";
 export const templates = [
   {
     id: 1,
-    component: GetPortfolio4,
+    component: GetPortfolio5,
   },
   {
     id: 2,

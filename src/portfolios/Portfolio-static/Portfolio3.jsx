@@ -42,13 +42,13 @@ export default function Portfolio3() {
     <div className="bg-amber-50 text-stone-800 min-h-screen">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
-        body { font-family: 'DM Sans', sans-serif; }
-        .display { font-family: 'Playfair Display', serif; }
+       
+      
         .section-divider { border-color: #d6cfc4; }
       `}</style>
 
       {/* ── NAV ── */}
-      <nav className="sticky top-0 z-50 bg-amber-50/95 backdrop-blur border-b border-amber-200">
+      <nav className="my-20 z-50 bg-amber-50/95 backdrop-blur border-b border-amber-200">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <span className="display text-2xl font-black text-emerald-800 tracking-tight">
@@ -62,10 +62,9 @@ export default function Portfolio3() {
                   <button
                     onClick={() => scrollTo(l)}
                     className={`px-4 py-2 rounded-lg text-sm font-medium capitalize transition-all duration-200
-                      ${
-                        active === l
-                          ? "bg-emerald-800 text-amber-50"
-                          : "text-stone-600 hover:text-emerald-800 hover:bg-emerald-50"
+                      ${active === l
+                        ? "bg-emerald-800 text-amber-50"
+                        : "text-stone-600 hover:text-emerald-800 hover:bg-emerald-50"
                       }`}
                   >
                     {l}
@@ -138,7 +137,7 @@ export default function Portfolio3() {
         className="min-h-screen flex items-center bg-gradient-to-br from-amber-50 via-orange-50 to-emerald-50"
       >
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16  items-center">
             {/* Text */}
             <div className="order-2 lg:order-1">
               <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 text-sm font-semibold px-4 py-2 rounded-full mb-8 border border-emerald-200">
@@ -163,7 +162,7 @@ export default function Portfolio3() {
                   onClick={() => scrollTo("experience")}
                   className="px-8 py-3.5 bg-emerald-800 hover:bg-emerald-700 text-amber-50 font-semibold rounded-full transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-emerald-800/25"
                 >
-                  View My Work →
+                  View My Work
                 </button>
                 <button
                   onClick={() => scrollTo("contact")}
@@ -174,7 +173,7 @@ export default function Portfolio3() {
               </div>
 
               {/* Stats row */}
-              <div className="grid grid-cols-3 gap-6 pt-8 border-t-2 border-amber-200">
+              {/* <div className="grid grid-cols-3 gap-6 pt-8 border-t-2 border-amber-200">
                 {[
                   ["6+", "Years"],
                   ["50+", "Projects"],
@@ -187,7 +186,7 @@ export default function Portfolio3() {
                     <p className="text-stone-500 text-sm font-medium">{l}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Image */}
@@ -203,7 +202,7 @@ export default function Portfolio3() {
                 <img
                   src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=600&q=80"
                   alt="Profile"
-                  className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-[420px] object-cover rounded-3xl shadow-2xl shadow-stone-300/60"
+                  className="relative  object-cover rounded-3xl shadow-2xl shadow-stone-300/60"
                 />
 
                 {/* Float badges */}
@@ -212,7 +211,7 @@ export default function Portfolio3() {
                     Current role
                   </p>
                   <p className="text-sm font-bold text-stone-800">
-                    Senior UI/UX Designer
+                    Doing random thing
                   </p>
                 </div>
                 <div className="absolute -top-3 -right-3 bg-emerald-800 rounded-2xl px-4 py-3 shadow-lg">
@@ -239,55 +238,57 @@ export default function Portfolio3() {
                 About Me
               </p>
               <h2 className="display text-4xl sm:text-5xl font-black text-stone-900 mb-6 leading-tight">
-                Design with heart,
+                Capture real moments,
                 <br />
-                <span className="text-stone-400">build with care</span>
+                <span className="text-stone-400">tell visual stories</span>
               </h2>
+
               <p className="text-stone-500 leading-relaxed mb-5">
-                I specialize in designing modern web and mobile interfaces. I
-                believe good design is simple, clean, and impactful — serving
-                the user's needs while expressing the brand's identity.
+                I’m a passionate photographer focused on capturing authentic
+                moments and emotions. My work blends creativity, lighting,
+                and storytelling to create photographs that feel natural,
+                timeless, and meaningful.
               </p>
-              <p className="text-stone-500 leading-relaxed mb-8">
-                With 6+ years across agencies and startups, I bring a strategic
-                design mindset to every project — from early wireframes all the
-                way to polished, shipped products.
-              </p>
+
+              {/* <p className="text-stone-500 leading-relaxed mb-8">
+      With years of experience shooting portraits, lifestyle,
+      and events, I aim to create images that not only look
+      beautiful but also preserve memories that last forever.
+    </p> */}
+
               <div className="flex flex-wrap gap-3">
-                {["Figma", "React", "Tailwind", "Adobe XD", "Framer"].map(
-                  (t) => (
-                    <span
-                      key={t}
-                      className="bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-semibold px-4 py-1.5 rounded-full"
-                    >
-                      {t}
-                    </span>
-                  ),
-                )}
+                {["Portrait", "Wedding", "Lifestyle", "Travel", "Street"].map((t) => (
+                  <span
+                    key={t}
+                    className="bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-semibold px-4 py-1.5 rounded-full"
+                  >
+                    {t}
+                  </span>
+                ))}
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               {[
                 {
-                  icon: "🎨",
-                  title: "Visual Design",
-                  desc: "Pixel-perfect interfaces that delight users",
+                  icon: "📷",
+                  title: "Portrait Photography",
+                  desc: "Capturing genuine emotions and personalities",
                 },
                 {
-                  icon: "📱",
-                  title: "Mobile First",
-                  desc: "Responsive on every screen size",
+                  icon: "🌅",
+                  title: "Outdoor Shoots",
+                  desc: "Natural light and beautiful environments",
                 },
                 {
                   icon: "⚡",
-                  title: "Fast Delivery",
-                  desc: "Quick turnarounds without compromise",
+                  title: "Creative Vision",
+                  desc: "Unique perspectives in every frame",
                 },
                 {
-                  icon: "🤝",
-                  title: "Collaboration",
-                  desc: "Seamless work with devs & stakeholders",
+                  icon: "🎞️",
+                  title: "Storytelling",
+                  desc: "Turning moments into visual stories",
                 },
               ].map(({ icon, title, desc }) => (
                 <div
@@ -295,12 +296,8 @@ export default function Portfolio3() {
                   className="bg-amber-50 border-2 border-amber-100 hover:border-emerald-300 hover:bg-emerald-50 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1"
                 >
                   <span className="text-3xl mb-4 block">{icon}</span>
-                  <h4 className="font-bold text-stone-800 mb-1 text-sm">
-                    {title}
-                  </h4>
-                  <p className="text-stone-500 text-xs leading-relaxed">
-                    {desc}
-                  </p>
+                  <h4 className="font-bold text-stone-800 mb-1 text-sm">{title}</h4>
+                  <p className="text-stone-500 text-xs leading-relaxed">{desc}</p>
                 </div>
               ))}
             </div>
@@ -316,30 +313,31 @@ export default function Portfolio3() {
               Experience
             </p>
             <h2 className="display text-4xl sm:text-5xl font-black">
-              My Journey
+              My Photography Journey
             </h2>
           </div>
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                title: "Senior Designer",
-                company: "PixelCraft Studio",
+                title: "Professional Photographer",
+                company: "Freelance Studio",
                 period: "2022 – Present",
-                desc: "Leading design projects and creative direction for enterprise digital products.",
+                desc: "Capturing portraits, lifestyle, and event photography for clients, brands, and personal projects.",
                 tag: "Current",
               },
               {
-                title: "UI/UX Designer",
-                company: "Webflow Agency",
-                period: "2019 – 2022",
-                desc: "Designed user-centered web and mobile interfaces, improving engagement by 40%.",
+                title: "Event Photographer",
+                company: "Creative Events Co.",
+                period: "2020 – 2022",
+                desc: "Photographed weddings, corporate events, and celebrations while documenting real moments and emotions.",
                 tag: null,
               },
               {
-                title: "Visual Designer",
-                company: "Freelance",
-                period: "2017 – 2019",
-                desc: "Brand identities, landing pages, and UI kits for 20+ international clients.",
+                title: "Photography Assistant",
+                company: "Local Photo Studio",
+                period: "2018 – 2020",
+                desc: "Assisted professional photographers with lighting setups, editing workflows, and studio shoots.",
                 tag: null,
               },
             ].map(({ title, company, period, desc, tag }) => (
@@ -352,14 +350,19 @@ export default function Portfolio3() {
                     {tag}
                   </span>
                 )}
+
                 <div className="w-10 h-10 bg-amber-400/10 border border-amber-400/20 rounded-xl flex items-center justify-center mb-5">
-                  <span className="text-amber-400">✦</span>
+                  <span className="text-amber-400">📸</span>
                 </div>
+
                 <h4 className="text-lg font-bold mb-1 text-white">{title}</h4>
+
                 <p className="text-amber-400 text-sm font-semibold mb-1">
                   {company}
                 </p>
+
                 <p className="text-stone-500 text-xs mb-4">{period}</p>
+
                 <p className="text-stone-400 text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
@@ -372,40 +375,42 @@ export default function Portfolio3() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-emerald-700 font-semibold text-sm uppercase tracking-widest mb-3">
-              Job History
+              Work History
             </p>
+
             <h2 className="display text-4xl sm:text-5xl font-black text-stone-900">
-              Where I've Worked
+              Photography Experience
             </h2>
           </div>
-          <div className="max-w-3xl mx-auto space-y-4">
+
+          <div className="max-w-7xl mx-auto space-y-4">
             {[
               {
-                company: "PixelCraft Studio",
-                role: "Lead Designer",
+                company: "Freelance Photography",
+                role: "Professional Photographer",
                 period: "2022 – Present",
-                logo: "P",
+                logo: "📸",
                 color: "bg-emerald-100 text-emerald-800 border-emerald-200",
               },
               {
-                company: "Webflow Agency",
-                role: "Product Designer",
-                period: "2019 – 2022",
-                logo: "W",
+                company: "Creative Events Studio",
+                role: "Event Photographer",
+                period: "2020 – 2022",
+                logo: "🎉",
                 color: "bg-blue-100 text-blue-800 border-blue-200",
               },
               {
-                company: "Creative Collective",
-                role: "Junior UI Designer",
-                period: "2017 – 2019",
-                logo: "C",
+                company: "Urban Portrait Studio",
+                role: "Portrait Photographer",
+                period: "2018 – 2020",
+                logo: "👤",
                 color: "bg-amber-100 text-amber-800 border-amber-200",
               },
               {
-                company: "Freelance",
-                role: "Visual Designer",
-                period: "2015 – 2017",
-                logo: "F",
+                company: "Local Photo Studio",
+                role: "Photography Assistant",
+                period: "2016 – 2018",
+                logo: "🎞️",
                 color: "bg-rose-100 text-rose-800 border-rose-200",
               },
             ].map(({ company, role, period, logo, color }) => (
@@ -418,12 +423,12 @@ export default function Portfolio3() {
                 >
                   {logo}
                 </div>
+
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-bold text-stone-900 truncate">
-                    {company}
-                  </h4>
+                  <h4 className="font-bold text-stone-900 truncate">{company}</h4>
                   <p className="text-stone-500 text-sm">{role}</p>
                 </div>
+
                 <span className="shrink-0 text-stone-500 text-sm font-medium bg-white border border-stone-200 px-3 py-1.5 rounded-full">
                   {period}
                 </span>
@@ -443,39 +448,41 @@ export default function Portfolio3() {
             <p className="text-amber-300 font-semibold text-sm uppercase tracking-widest mb-3">
               Education
             </p>
+
             <h2 className="display text-4xl sm:text-5xl font-black">
-              Academic Background
+              Photography Education
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+          <div className="grid sm:grid-cols-2 gap-6 max-w-7xl mx-auto">
             {[
               {
-                degree: "Bachelor of Design",
-                school: "Royal Institute of Design",
-                period: "2015 – 2019",
-                badge: "GPA 3.9 / 4.0",
+                degree: "Bachelor of Photography",
+                school: "Institute of Visual Arts",
+                period: "2016 – 2020",
+                badge: "Graduated with Honors",
                 icon: "🎓",
               },
               {
-                degree: "UI/UX Bootcamp",
-                school: "Interaction Design Foundation",
-                period: "2020",
-                badge: "Certificate of Excellence",
-                icon: "🏅",
-              },
-              {
-                degree: "Motion Design Course",
-                school: "School of Motion",
+                degree: "Professional Photography Course",
+                school: "Creative Photography Academy",
                 period: "2021",
-                badge: "Advanced Level",
-                icon: "🎬",
+                badge: "Certified Photographer",
+                icon: "📸",
               },
               {
-                degree: "Design Systems",
-                school: "Figma Academy",
+                degree: "Photo Editing & Retouching",
+                school: "Adobe Creative Training",
                 period: "2022",
-                badge: "Professional Cert.",
-                icon: "📐",
+                badge: "Advanced Lightroom & Photoshop",
+                icon: "🖥️",
+              },
+              {
+                degree: "Lighting for Photography",
+                school: "Studio Lighting Workshop",
+                period: "2023",
+                badge: "Professional Certificate",
+                icon: "💡",
               },
             ].map(({ degree, school, period, badge, icon }) => (
               <div
@@ -485,12 +492,16 @@ export default function Portfolio3() {
                 <div className="w-12 h-12 shrink-0 bg-white/10 rounded-xl flex items-center justify-center text-2xl">
                   {icon}
                 </div>
+
                 <div>
                   <h4 className="font-bold text-white mb-0.5">{degree}</h4>
+
                   <p className="text-amber-300 text-sm font-medium mb-1">
                     {school}
                   </p>
+
                   <p className="text-emerald-300 text-xs mb-3">{period}</p>
+
                   <span className="inline-block bg-white/10 border border-white/20 text-white/80 text-xs px-3 py-1 rounded-full">
                     {badge}
                   </span>
@@ -511,10 +522,12 @@ export default function Portfolio3() {
             <p className="text-emerald-700 font-semibold text-sm uppercase tracking-widest mb-3">
               Skills
             </p>
+
             <h2 className="display text-4xl sm:text-5xl font-black text-stone-900">
-              What I Do Best
+              What I Capture Best
             </h2>
           </div>
+
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Bars */}
             <div className="space-y-7">
@@ -529,10 +542,12 @@ export default function Portfolio3() {
                         {tools}
                       </span>
                     </div>
+
                     <span className="text-emerald-700 font-black text-sm">
                       {pct}%
                     </span>
                   </div>
+
                   <div className="h-3 bg-amber-100 rounded-full overflow-hidden border border-amber-200">
                     <div
                       className="h-full bg-gradient-to-r from-emerald-700 to-emerald-500 rounded-full"
@@ -547,28 +562,28 @@ export default function Portfolio3() {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {[
                 {
-                  label: "Figma",
-                  bg: "bg-pink-50 border-pink-200 text-pink-700 hover:bg-pink-100",
-                },
-                {
-                  label: "React",
-                  bg: "bg-cyan-50 border-cyan-200 text-cyan-700 hover:bg-cyan-100",
-                },
-                {
-                  label: "Tailwind",
+                  label: "Lightroom",
                   bg: "bg-sky-50 border-sky-200 text-sky-700 hover:bg-sky-100",
                 },
                 {
-                  label: "Adobe XD",
-                  bg: "bg-violet-50 border-violet-200 text-violet-700 hover:bg-violet-100",
+                  label: "Photoshop",
+                  bg: "bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100",
                 },
                 {
-                  label: "After Effects",
+                  label: "Capture One",
                   bg: "bg-indigo-50 border-indigo-200 text-indigo-700 hover:bg-indigo-100",
                 },
                 {
-                  label: "Framer",
+                  label: "Drone Photography",
                   bg: "bg-emerald-50 border-emerald-200 text-emerald-700 hover:bg-emerald-100",
+                },
+                {
+                  label: "Studio Lighting",
+                  bg: "bg-amber-50 border-amber-200 text-amber-700 hover:bg-amber-100",
+                },
+                {
+                  label: "Photo Retouching",
+                  bg: "bg-rose-50 border-rose-200 text-rose-700 hover:bg-rose-100",
                 },
               ].map(({ label, bg }) => (
                 <div
@@ -589,7 +604,7 @@ export default function Portfolio3() {
         className="py-24 bg-amber-50 border-t-2 border-amber-100"
       >
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <p className="text-emerald-700 font-semibold text-sm uppercase tracking-widest mb-3">
                 Contact
@@ -626,16 +641,7 @@ export default function Portfolio3() {
                     />
                   </div>
                 </div>
-                <div>
-                  <label className="block text-stone-700 text-sm font-semibold mb-2">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Project inquiry…"
-                    className="w-full bg-amber-50 border-2 border-amber-200 focus:border-emerald-500 text-stone-800 placeholder-stone-400 px-4 py-3 rounded-xl outline-none transition text-sm"
-                  />
-                </div>
+
                 <div>
                   <label className="block text-stone-700 text-sm font-semibold mb-2">
                     Message
@@ -668,7 +674,7 @@ export default function Portfolio3() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="border-t-2 border-amber-200 bg-stone-900 py-8">
+      <footer className="border-t-2 mb-5 border-amber-200 bg-stone-900 py-8">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <span className="display text-xl font-black text-amber-400">
             Sok<span className="text-white">.</span>

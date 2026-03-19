@@ -357,11 +357,10 @@ function SaveButton() {
   return (
     <button
       onClick={handle}
-      className={`self-start px-8 py-3 rounded-xl text-sm font-black uppercase tracking-widest transition-all ${
-        saved
+      className={`self-start px-8 py-3 rounded-xl text-sm font-black uppercase tracking-widest transition-all ${saved
           ? "bg-green-500 text-white"
           : "bg-black text-white hover:bg-gray-800"
-      }`}
+        }`}
     >
       {saved ? "✓ Saved!" : "Save Changes"}
     </button>
@@ -406,11 +405,10 @@ export default function DashboardComponent() {
             <button
               key={key}
               onClick={() => setActive(key)}
-              className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all text-left ${
-                active === key
+              className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all text-left ${active === key
                   ? "bg-black text-white"
                   : "text-gray-500 hover:bg-gray-50 hover:text-black"
-              }`}
+                }`}
             >
               <Icon size={16} />
               {label}
