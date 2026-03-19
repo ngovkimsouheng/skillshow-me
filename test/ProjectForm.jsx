@@ -147,7 +147,7 @@ const ProjectForm = () => {
       setImageFile(null);
       setPreview(null);
       setErrors({});
-      
+
       if (fileInputRef.current) fileInputRef.current.value = "";
     } catch (err) {
       console.error(" Failed:", err);
@@ -175,6 +175,7 @@ const ProjectForm = () => {
             value={form.name}
             onChange={handleChange}
             className={inputClass}
+            placeholder="e.g... My Awesome Project"
           />
           {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
         </div>
@@ -187,6 +188,7 @@ const ProjectForm = () => {
             value={form.description}
             onChange={handleChange}
             className={inputClass}
+            placeholder="A brief description of your project"
           />
           {errors.description && (
             <p className="text-red-500 text-sm">{errors.description}</p>
@@ -202,6 +204,7 @@ const ProjectForm = () => {
             value={form.github_url}
             onChange={handleChange}
             className={inputClass}
+            placeholder="https://github.com/user/repo"
           />
         </div>
 
