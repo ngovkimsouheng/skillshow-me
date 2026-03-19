@@ -68,7 +68,7 @@ export default function SectionMembers() {
       id: 7,
       name: "Sok Dara",
       role: "Member",
-      image: teacher1,
+      image: rea,
       facebook: "https://facebook.com",
       github: "https://github.com",
       telegram: "https://t.me/username",
