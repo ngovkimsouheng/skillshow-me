@@ -12,7 +12,8 @@ export default function PublishButton({ username }) {
 
         try {
             await updateMyPortfolio().unwrap();
-            setPublicUrl(`http://localhost:5173/${username}`);
+            // setPublicUrl(`http://localhost:5173/${username}`);
+            setPublicUrl(`https://skillshow-me.vercel.app/${username}`);
             setSuccess(true);
         } catch (err) {
             // Error is handled by the hook

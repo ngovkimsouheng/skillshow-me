@@ -191,7 +191,7 @@ function App() {
                 <Route path="admin/logs" element={<ProtectedRoute requiredRole="admin"><div className="p-6"><h1 className="text-2xl font-bold">System Logs</h1><p>System logs coming soon...</p></div></ProtectedRoute>} />
                 <Route path="admin/backup" element={<ProtectedRoute requiredRole="admin"><div className="p-6"><h1 className="text-2xl font-bold">Backup & Restore</h1><p>Backup functionality coming soon...</p></div></ProtectedRoute>} />
               </Route>
-              <Route path="/edit-template" element={<DashboardComponent />} />
+              {/* <Route path="/edit-template" element={<DashboardComponent />} /> */}
               {/* Admin Routes */}
               {/* <Route path="/admin" element={<ProtectedRoute requiredRole="admin"><AdminDashboard /></ProtectedRoute>}>
                 <Route index element={<AdminUsers />} />
