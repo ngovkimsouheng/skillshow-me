@@ -1,6 +1,6 @@
 import React from "react";
 import star from "./images/star.png";
-import starDark from "./images/starDark.png";
+import starDark from "./images/starDark.PNG";
 import vector from "./images/vector.png";
 import vector01 from "./images/vector01.png";
 import cv1 from "./images/cv1.png";
