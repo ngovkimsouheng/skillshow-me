@@ -22,7 +22,7 @@ import { Navigate } from "react-router";
 // dashboard
 import FavoritesPage from "./pages/Dashboard/components/FavoritesPage.jsx";
 // import MyTemplates from "./pages/Dashboard/components/MyTemplates.jsx";
-import DashboardComponent from "./template/DashBoardComponent06.jsx";
+// import DashboardComponent from "./template/DashBoardComponent06.jsx";
 import FormEducation from "../test/EducationForm.jsx";
 import UserTemplate01 from "./pages/Templates/UserTemplate01.jsx";
 import NotFoundPage from "./pages/NotFound/NotFoundPage.jsx";
@@ -69,7 +69,7 @@ import AdminTemplates from "./pages/Admin/AdminTemplates.jsx";
 import AdminSettings from "./pages/Admin/AdminSettings.jsx";
 import AdminPermissions from "./pages/Admin/AdminPermissions.jsx";
 import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
-// import DashboardComponent06 from "./template/DashBoardComponent06.jsx";
+
 import AdminContact from "./pages/Admin/AdminContact.jsx";
 import AdminJob from "./pages/Admin/AdminJob.jsx";
 import AdminProject from "./pages/Admin/AdminProject.jsx";
@@ -98,7 +98,7 @@ function App() {
               <Route path="/contact/edit/:id" element={<EditContact />} />
               <Route path="/education/edit/:id" element={<EditEducation />} />
               <Route path="/skills/edit/:id" element={<EditSkill />} />
-              {/* <Route path="/1" element={<DashboardComponent06 />}></Route> */}
+
 
               <Route path="/*" element={<NotFoundPage />}></Route>
               <Route path="/template1" element={<UserTemplate01 />}></Route>
