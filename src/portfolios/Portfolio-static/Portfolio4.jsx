@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import img from "./souheng.png";
+import img from "./image.png";
 import ButtonEdit from "./ButtonEdit";
 // import { NavLink, useNavigate } from "react-router";
 import { NavLink, useNavigate } from "react-router-dom";

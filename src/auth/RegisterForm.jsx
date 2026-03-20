@@ -4,6 +4,7 @@ import { useRegisterMutation, useUploadFileMutation } from "../api/authApi";
 import { NavLink } from "react-router-dom";
 import { useNavigate, useLocation } from "react-router-dom";
 import img from "./Login-rafiki (1).svg"
+
 /** Convert a File → base64 data-URL, then strip the prefix to get raw base64 */
 function fileToBase64(file) {
   return new Promise((resolve, reject) => {
@@ -32,14 +33,15 @@ export default function RegisterForm() {
   const [avatarFile, setAvatarFile] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
   const [successMsg, setSuccessMsg] = useState("");
-
+  const [showAlert, setShowAlert] = useState(false);
   const [uploadFile] = useUploadFileMutation();
   const fileInputRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
   const [loading, setLoading] = useState(false);
   const [register, { isLoading, error: apiError }] = useRegisterMutation();
-
+  const [showError, setShowError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   // Check for Google user data
   const googleUser = location.state?.googleUser;
   const googleMessage = location.state?.message;
@@ -138,23 +140,38 @@ export default function RegisterForm() {
 
     try {
       const result = await register(payload).unwrap();
-
-      alert("Account created successfully!");
+      setShowAlert(true);
+      // alert("Account created successfully!");
       console.log(" User Info:", result?.data);
       //  Redirect to login
       setTimeout(() => {
         navigate("/login", { replace: true });
-      }, 1500);
+      }, 8000);
     } catch (err) {
       console.error("Registration error:", err);
 
+      setShowError(true);
+
       if (err?.data) {
+        const firstError = Object.values(err.data)[0];
+
+        setErrorMessage(
+          Array.isArray(firstError) ? firstError[0] : firstError
+        );
+
         Object.entries(err.data).forEach(([key, val]) => {
           setError(key, {
             message: Array.isArray(val) ? val[0] : val,
           });
         });
+      } else {
+        setErrorMessage("Registration failed. Please try again.");
       }
+
+      // auto hide
+      setTimeout(() => {
+        setShowError(false);
+      }, 4000);
     } finally {
       setLoading(false);
     }
@@ -169,6 +186,21 @@ export default function RegisterForm() {
   /* ── UI ── */
   return (
     <div className="w-full sm:my-5  sm:px-2 md:h-screen flex items-center justify-center container mx-auto">
+      {showAlert && (
+        <div className="fixed bottom-5 right-5 z-50 
+                   p-4 rounded-lg shadow-sm
+                   bg-green-100/80 border border-cool-sky   text-green-700 animate-slide-in">
+          ✅ Account created successfully
+        </div>
+      )}
+      {showError && (
+        <div className="fixed bottom-5 right-5 z-50 
+                  p-4 rounded-lg shadow-sm
+                  bg-red-100/80 border border-red-300 
+                  text-red-700 animate-slide-in">
+          ❌ {errorMessage || "Registration failed. Please try again."}
+        </div>
+      )}
       <div className="grid place-content-center md:grid-cols-2 items-center border border-cool-sky shadow-sm rounded-[20px] overflow-hidden bg-white">
         <div>
           <div className="text-center justify-center items-center flex flex-col gap-4">
@@ -388,10 +420,10 @@ export default function RegisterForm() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-[#1e2e3e] text-white py-3 rounded-lg font-semibold hover:opacity-90 transition flex justify-center items-center"
+              className="w-full cursor-pointer bg-[#1e2e3e] text-white py-3 rounded-lg font-semibold hover:opacity-90 transition flex justify-center items-center"
             >
               {isLoading ? (
-                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                <div className="w-5 h-5  border-2 border-white border-t-transparent rounded-full animate-spin"></div>
               ) : (
                 "Create Account"
               )}

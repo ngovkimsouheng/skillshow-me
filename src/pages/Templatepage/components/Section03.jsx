@@ -65,7 +65,7 @@
 
 //               <button
 //                 onClick={() => console.log("Preview")}
-//                 className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+//                 className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition"
 //               >
 //                 <IoMdEye className="text-[20px]" /> Preview
 //               </button>
@@ -102,7 +102,7 @@
 
 //               <button
 //                 onClick={() => console.log("Preview")}
-//                 className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+//                 className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition"
 //               >
 //                 <IoMdEye className="text-[20px]" /> Preview
 //               </button>
@@ -139,7 +139,7 @@
 
 //               <button
 //                 onClick={() => console.log("Preview")}
-//                 className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+//                 className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition"
 //               >
 //                 <IoMdEye className="text-[20px]" /> Preview
 //               </button>
@@ -176,7 +176,7 @@
 
 //               <button
 //                 onClick={() => console.log("Preview")}
-//                 className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+//                 className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition"
 //               >
 //                 <IoMdEye className="text-[20px]" /> Preview
 //               </button>
@@ -213,7 +213,7 @@
 
 //               <button
 //                 onClick={() => console.log("Preview")}
-//                 className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+//                 className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition"
 //               >
 //                 <IoMdEye className="text-[20px]" /> Preview
 //               </button>
@@ -250,7 +250,7 @@
 
 //               <button
 //                 onClick={() => console.log("Preview")}
-//                 className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+//                 className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition"
 //               >
 //                 <IoMdEye className="text-[20px]" /> Preview
 //               </button>
@@ -286,8 +286,8 @@
 //   );
 // }
 import React, { useState } from "react";
-import template1 from "./Images/sampleTemplate1.png";
-import template2 from "./Images/sampleTemplate2.png";
+import template1 from "./Images/popular2.png";
+import template2 from "./Images/popular3.png";
 import template3 from "./Images/sampleTemplate3.png";
 import { FaEdit } from "react-icons/fa";
 import { IoMdEye } from "react-icons/io";
@@ -344,7 +344,7 @@ export default function Section03() {
               {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                 <FaEdit /> Edit
               </button> */}
-              <button className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+              <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition">
                 <IoMdEye className="text-[20px]" /> Preview
               </button>
             </div>
@@ -362,7 +362,7 @@ export default function Section03() {
               {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                 <FaEdit /> Edit
               </button> */}
-              <button className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+              <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition">
                 <IoMdEye className="text-[20px]" /> Preview
               </button>
             </div>
@@ -380,7 +380,7 @@ export default function Section03() {
               {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                 <FaEdit /> Edit
               </button> */}
-              <button className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+              <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition">
                 <IoMdEye className="text-[20px]" /> Preview
               </button>
             </div>
@@ -398,7 +398,7 @@ export default function Section03() {
               {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                 <FaEdit /> Edit
               </button> */}
-              <button className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+              <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition">
                 <IoMdEye className="text-[20px]" /> Preview
               </button>
             </div>
@@ -416,7 +416,7 @@ export default function Section03() {
               {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                 <FaEdit /> Edit
               </button> */}
-              <button className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+              <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition">
                 <IoMdEye className="text-[20px]" /> Preview
               </button>
             </div>
@@ -434,7 +434,7 @@ export default function Section03() {
               {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                 <FaEdit /> Edit
               </button> */}
-              <button className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+              <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition">
                 <IoMdEye className="text-[20px]" /> Preview
               </button>
             </div>
@@ -456,7 +456,7 @@ export default function Section03() {
                   {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                     <FaEdit /> Edit
                   </button> */}
-                  <button className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+                  <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition">
                     <IoMdEye className="text-[20px]" /> Preview
                   </button>
                 </div>
@@ -473,13 +473,13 @@ export default function Section03() {
                   {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                     <FaEdit /> Edit
                   </button> */}
-                  <button className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+                  <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition">
                     <IoMdEye className="text-[20px]" /> Preview
                   </button>
                 </div>
               </div>
             </NavLink>
-            {/* <NavLink className="relative md:w-[370px] lg:w-[390px] w-[360px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+            <NavLink className="relative md:w-[370px] lg:w-[390px] w-[360px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
               <img
                 className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108 h-[240px]"
                 src={img9}
@@ -487,10 +487,8 @@ export default function Section03() {
               />
               <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                 <div className="flex gap-4">
-                  <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                    <FaEdit /> Edit
-                  </button>
-                  <button className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+
+                  <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition">
                     <IoMdEye className="text-[20px]" /> Preview
                   </button>
                 </div>
@@ -504,10 +502,8 @@ export default function Section03() {
               />
               <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                 <div className="flex gap-4">
-                  <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                    <FaEdit /> Edit
-                  </button>
-                  <button className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+
+                  <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition">
                     <IoMdEye className="text-[20px]" /> Preview
                   </button>
                 </div>
@@ -521,10 +517,8 @@ export default function Section03() {
               />
               <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                 <div className="flex gap-4">
-                  <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                    <FaEdit /> Edit
-                  </button>
-                  <button className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+
+                  <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition">
                     <IoMdEye className="text-[20px]" /> Preview
                   </button>
                 </div>
@@ -538,10 +532,8 @@ export default function Section03() {
               />
               <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                 <div className="flex gap-4">
-                  <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                    <FaEdit /> Edit
-                  </button>
-                  <button className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+
+                  <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition">
                     <IoMdEye className="text-[20px]" /> Preview
                   </button>
                 </div>
@@ -555,15 +547,13 @@ export default function Section03() {
               />
               <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                 <div className="flex gap-4">
-                  <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                    <FaEdit /> Edit
-                  </button>
-                  <button className="px-5 flex gap-2 items-center py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+
+                  <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 cursor-pointer transition">
                     <IoMdEye className="text-[20px]" /> Preview
                   </button>
                 </div>
               </div>
-            </NavLink> */}
+            </NavLink>
 
           </>
         )}
@@ -575,7 +565,7 @@ export default function Section03() {
         onClick={() => setShowAll(!showAll)}
         className="group dark:bg-cool-sky shadow-md w-fit relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-primary px-6 font-medium transition duration-200 hover:scale-110"
       >
-        <span className="flex dark:text-primary text-secondary items-center">
+        <span className="flex dark:text-primary cursor-pointer text-secondary items-center">
           {showAll ? "See Less" : "See More"}
         </span>
       </button>

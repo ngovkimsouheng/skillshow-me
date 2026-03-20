@@ -114,7 +114,7 @@ export default function EditSocialAccount() {
         body: finalPayload,
       }).unwrap();
 
-      alert("✅ Updated Successfully");
+      // alert("✅ Updated Successfully");
 
       navigate(-1);
     } catch (err) {

@@ -104,7 +104,7 @@ const SocialAccountForm = () => {
     "focus:outline-none focus:ring-2 focus:ring-[#1e2e3e] focus:border-[#1e2e3e] " +
     "transition-all duration-200";
 
-  const labelClass = "block text-sm font-medium mb-2 text-gray-600";
+  const labelClass = "blockZ text-sm font-medium mb-2 text-gray-600";
 
   return (
     <div className="space-y-8">

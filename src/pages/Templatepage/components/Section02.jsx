@@ -1,7 +1,8 @@
 import React from "react";
-import template1 from "./Images/sampleTemplate1.png";
-import template2 from "./Images/sampleTemplate2.png";
-import template3 from "./Images/sampleTemplate3.png";
+import template1 from "./Images/cover19.jpg";
+import template2 from "./Images/cover20.jpg";
+import template3 from "./Images/cover21.jpg";
+import template4 from "./Images/cover23.jpg";
 import arrow from "./Images/arrow.png";
 import arrowDark from "./Images/arrow-dark.png";
 import { NavLink } from "react-router";
@@ -35,7 +36,7 @@ export default function Section02() {
             data-aos-delay="350"
             className="w-[300px] hover:shadow-md ring ring-cool-sky shadow-2xs p-4 bg-white rounded-[24px]"
           >
-            <img className="rounded-[8px]" src={template1} alt="" />
+            <img className="rounded-[8px] h-[200px] w-full object-cover" src={template1} alt="" />
             <div className="flex flex-col pt-3.5 gap-3">
               {" "}
               <div className="flex flex-col gap-0.5">
@@ -57,7 +58,7 @@ export default function Section02() {
             data-aos-delay="550"
             className="w-[300px] hover:shadow-md ring ring-cool-sky shadow-2xs p-4 bg-white rounded-[24px]"
           >
-            <img className="rounded-[8px]" src={template2} alt="" />
+            <img className="rounded-[8px] border border-gray-200  h-[200px] w-full object-cover" src={template2} alt="" />
             <div className="flex flex-col pt-3.5 gap-3">
               {" "}
               <div className="flex flex-col gap-0.5">
@@ -77,11 +78,12 @@ export default function Section02() {
       <div className=" relative">
         <div className="flex max-md:flex-col gap-4 max-lg:pb-8 lg:pb-13">
           <NavLink
+            to="/freelancer-category"
             data-aos="fade-left"
             data-aos-delay="350"
             className="w-[300px] hover:shadow-md ring ring-cool-sky shadow-2xs p-4 bg-white rounded-[24px]"
           >
-            <img className="rounded-[8px]" src={template3} alt="" />
+            <img className="rounded-[8px] border border-gray-200/40 h-[200px] w-full object-cover" src={template3} alt="" />
             <div className="flex flex-col pt-3.5 gap-3">
               {" "}
               <div className="flex flex-col gap-0.5">
@@ -97,11 +99,12 @@ export default function Section02() {
             </div>
           </NavLink>{" "}
           <NavLink
+            to="/designer-category"
             data-aos="fade-left"
             data-aos-delay="450"
             className="w-[300px] hover:shadow-md  ring ring-cool-sky shadow-2xs p-4 bg-white rounded-[24px]"
           >
-            <img className="rounded-[8px]" src={template1} alt="" />
+            <img className="rounded-[8px] border border-gray-100 rounded-[8px] h-[200px] w-full object-cover" src={template4} alt="" />
             <div className="flex flex-col pt-3.5 gap-3">
               {" "}
               <div className="flex flex-col gap-0.5">

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router";
+
 import { useState } from "react";
 import Layout from "./Layout/Layout";
 import HomePage from "./pages/Homepage/HomePage";
@@ -23,7 +24,7 @@ import { Navigate } from "react-router";
 import FavoritesPage from "./pages/Dashboard/components/FavoritesPage.jsx";
 // import MyTemplates from "./pages/Dashboard/components/MyTemplates.jsx";
 // import DashboardComponent from "./template/DashBoardComponent06.jsx";
-import FormEducation from "../test/EducationForm.jsx";
+import FormEducation from "../post/EducationForm.jsx";
 import UserTemplate01 from "./pages/Templates/UserTemplate01.jsx";
 import NotFoundPage from "./pages/NotFound/NotFoundPage.jsx";
 import EditContact from "./Update/EditContact.jsx";
@@ -44,11 +45,11 @@ import Portfolio11 from "./portfolios/Portfolio-static/Portfolio11.jsx";
 import Portfolio12 from "./portfolios/Portfolio-static/Portfolio12.jsx";
 import GetPortfolio4 from "./portfolios/Portfolio/GetPortfolio4.jsx";
 import GetPortfolio8 from "./portfolios/Portfolio/GetPortfolio8.jsx";
-import SkillForm from "../test/SkillForm.jsx";
-import JobForm from "../test/JobForm.jsx";
-import EducationForm from "../test/EducationForm.jsx";
-import SocialAccountForm from "../test/SocialAccountForm.jsx";
-import ProjectForm from "../test/ProjectForm.jsx";
+import SkillForm from "../post/SkillForm.jsx";
+import JobForm from "../post/JobForm.jsx";
+import EducationForm from "../post/EducationForm.jsx";
+import SocialAccountForm from "../post/SocialAccountForm.jsx";
+import ProjectForm from "../post/ProjectForm.jsx";
 import Template from "./pages/Dashboard/components/Template.jsx";
 import EditJob from "./Update/EditJob.jsx";
 import EditSocialAccount from "./Update/EditSocialAccount.jsx";
@@ -69,7 +70,8 @@ import AdminTemplates from "./pages/Admin/AdminTemplates.jsx";
 import AdminSettings from "./pages/Admin/AdminSettings.jsx";
 import AdminPermissions from "./pages/Admin/AdminPermissions.jsx";
 import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
-
+import Designer from "./pages/Templatepage/Categories/Designer.jsx";
+import Freelancer from "./pages/Templatepage/Categories/Freelancer.jsx";
 import AdminContact from "./pages/Admin/AdminContact.jsx";
 import AdminJob from "./pages/Admin/AdminJob.jsx";
 import AdminProject from "./pages/Admin/AdminProject.jsx";
@@ -128,6 +130,8 @@ function App() {
                 {/*  category*/}
                 <Route path="/developer-category" element={<Developer />}></Route>
                 <Route path="/photographer-category" element={<Photographer />}></Route>
+                <Route path="/designer-category" element={<Designer />}></Route>
+                <Route path="/freelancer-category" element={<Freelancer />}></Route>
                 <Route index element={<HomePage />} />
                 <Route path="about" element={<AboutPage />} />
                 <Route path="template" element={<TemplatePage />} />

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import img from "./souheng.png";
+import img from "./profileForTemplate10.png";
 export default function Portfolio10() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -35,9 +35,7 @@ export default function Portfolio10() {
     <div className="bg-white text-zinc-900 min-h-screen overflow-x-hidden">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap');
-        * { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .anton { font-family: 'Anton', sans-serif; letter-spacing: 0.02em; }
-        .marquee { animation: marquee 16s linear infinite; }
+      
         @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
         .bounce { transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease; }
         .bounce:hover { transform: translate(-3px,-3px); box-shadow: 8px 8px 0px #0f766e; }
@@ -66,7 +64,7 @@ export default function Portfolio10() {
               onClick={() => scrollTo("home")}
               className="flex items-center gap-2.5 shrink-0"
             >
-              <span className="anton text-2xl text-zinc-900">SOUHENG</span>
+              <span className="anton text-2xl text-zinc-900">san</span>
             </button>
 
             {/* Desktop links */}
@@ -76,10 +74,9 @@ export default function Portfolio10() {
                   key={l}
                   onClick={() => scrollTo(l)}
                   className={`px-3 py-2 text-xs font-bold uppercase tracking-widest capitalize transition-all duration-150 border-b-2
-                    ${
-                      active === l
-                        ? "border-teal-500 text-teal-600"
-                        : "border-transparent text-zinc-400 hover:text-zinc-800 hover:bg-teal-50"
+                    ${active === l
+                      ? "border-teal-500 text-teal-600"
+                      : "border-transparent text-zinc-400 hover:text-zinc-800 hover:bg-teal-50"
                     }`}
                 >
                   {l}
@@ -165,7 +162,7 @@ export default function Portfolio10() {
       {/* ── HOME ── */}
       <section
         id="home"
-        className="min-h-screen bg-white relative overflow-hidden"
+        className="min-h-screen pt-18 bg-white relative overflow-hidden"
       >
         {/* Dot-grid background */}
         <div
@@ -184,7 +181,7 @@ export default function Portfolio10() {
           ✦
         </div>
 
-        <div className="container mx-auto lg:max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative z-10">
+        <div className="container mx-auto lg:max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-10 relative z-10">
           <div className="grid lg:grid-cols-12 gap-8 items-start">
             {/* Left — 7 cols */}
             <div className="lg:col-span-7">
@@ -207,7 +204,7 @@ export default function Portfolio10() {
                 className="anton leading-none text-teal-500 mb-2"
                 style={{ fontSize: "clamp(3.5rem,11vw,8.5rem)" }}
               >
-                SOUHENG
+                SanZy
               </h1>
               <h1
                 className="anton leading-none mb-8"
@@ -298,7 +295,7 @@ export default function Portfolio10() {
       </section>
 
       {/* ── ABOUT ── */}
-      <section id="about" className="py-24 bg-zinc-900 text-white">
+      <section id="about" className="py-10 bg-zinc-900 text-white">
         <div className="container mx-auto lg:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left */}
@@ -407,7 +404,7 @@ export default function Portfolio10() {
       </section>
 
       {/* ── EXPERIENCE ── */}
-      <section id="experience" className="py-24 bg-slate-50">
+      <section id="experience" className="py-10 bg-slate-50">
         <div className="container mx-auto lg:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 border-b-4 border-zinc-900 pb-6">
             <div>
@@ -485,7 +482,7 @@ export default function Portfolio10() {
       {/* ── JOB ── */}
       <section
         id="job"
-        className="py-24 bg-teal-500 border-y-4 border-zinc-900"
+        className="py-10 bg-teal-500 border-y-4 border-zinc-900"
       >
         <div className="container mx-auto lg:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16">
@@ -571,7 +568,7 @@ export default function Portfolio10() {
       </section>
 
       {/* ── SCHOOL ── */}
-      <section id="school" className="py-24 bg-white">
+      <section id="school" className="py-10 bg-white">
         <div className="container mx-auto lg:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 border-b-4 border-zinc-900 pb-6">
             <div>
@@ -659,7 +656,7 @@ export default function Portfolio10() {
       </section>
 
       {/* ── SKILL ── */}
-      <section id="skill" className="py-24 bg-zinc-900 text-white">
+      <section id="skill" className="py-10 bg-zinc-900 text-white">
         <div className="container mx-auto lg:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 border-b-4 border-zinc-700 pb-6">
             <div>
@@ -737,7 +734,7 @@ export default function Portfolio10() {
       </section>
 
       {/* ── CONTACT ── */}
-      <section id="contact" className="py-24 bg-slate-50">
+      <section id="contact" className="py-10 bg-slate-50">
         <div className="container mx-auto lg:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left */}

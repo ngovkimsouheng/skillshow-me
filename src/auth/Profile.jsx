@@ -57,9 +57,10 @@ export default function Profile() {
 
   if (isError || !user) {
     return (
-      <div className="flex justify-center items-center h-screen text-red-500">
-       Profile not found
-      </div>
+      // <div className="flex justify-center items-center h-screen text-red-500">
+      //  img
+      // </div>
+      <img className="w-13 rounded-full" src="https://static.vecteezy.com/system/resources/previews/018/765/757/non_2x/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg" alt="user profile" />
     );
   }
 

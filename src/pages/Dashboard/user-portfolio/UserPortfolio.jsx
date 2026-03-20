@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { FiEdit2 } from "react-icons/fi";
-import ContactForm from "../../../../test/ContactForm";
+import ContactForm from "../../../../post/ContactForm";
 export default function UserPortfolio({ portfolio: propPortfolio, isPublic = false }) {
     const [menuOpen, setMenuOpen] = useState(false);
     const [active, setActive] = useState("home");
@@ -17,7 +17,7 @@ export default function UserPortfolio({ portfolio: propPortfolio, isPublic = fal
     const location = useLocation();
     useEffect(() => {
         if (location.hash) {
-            const el = document.querySelector(location.hash);
+            const elD = document.querySelector(location.hash);
             if (el) {
                 el.scrollIntoView({ behavior: "smooth" });
             }

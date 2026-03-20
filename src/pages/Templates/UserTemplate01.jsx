@@ -3,7 +3,7 @@ import GetEducation from "../../Project/Education/GetEducation";
 import GetJob from "../../Project/Job/GetJob";
 import GetSkill from "../../Project/skill/GetSkill";
 import GetSocailAccount from "../../Project/SocailAccount/GetSocailAccount";
-import ContactForm from "../../../test/ContactForm";
+import ContactForm from "../../../post/ContactForm";
 import GetUserProfile from "../../Project/HeroSection-UserProfile/GetUserProfile";
 import GetContact from "../../Project/Contact/GetContact";
 import GetProject from "../../Project/ProjectUser/GetProject";

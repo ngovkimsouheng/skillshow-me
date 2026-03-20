@@ -51,7 +51,7 @@ export default function AutoScrollSlider() {
               key={`first-${index}`}
               src={img}
               alt="slider"
-              className=" rounded-[20px] h-full overflow-hidden object-cover rounded-xl"
+              className=" rounded-[20px] h-[250px]  w-[390px] h-full overflow-hidden object-cover rounded-xl"
             />
           </div>
         ))}

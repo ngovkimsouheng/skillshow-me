@@ -31,36 +31,6 @@ export default function UserDetail({ user, onClose }) {
     });
   };
 
-  // const handleSave = async () => {
-  //   navigate(`/users/${user.id}`); //
-  //   try {
-  //     await updateUser({
-  //       id: user.id,
-  //       body: formData,
-  //     }).unwrap();
-  //     navigate("/");
-  //     setIsEditing(false);
-  //     alert("Profile updated successfully ✅");
-  //   } catch (error) {
-  //     alert("Update failed ❌");
-  //   }
-  // };
-  // const handleSave = async () => {
-  //   try {
-  //     await updateUser({
-  //       id: user.id,
-  //       body: formData,
-  //     }).unwrap();
-
-  //     setIsEditing(false); // 🔥 close edit mode
-  //     alert("Profile updated successfully ✅");
-
-  //     navigate("/"); // ✅ go home after save
-  //   } catch (error) {
-  //     console.error(error);
-  //     alert("Update failed ❌");
-  //   }
-  // };
   const handleSave = async () => {
     try {
       let profileUrl = formData.profile;
@@ -92,7 +62,7 @@ export default function UserDetail({ user, onClose }) {
       setIsEditing(false);
       alert("Profile updated successfully ✅");
 
-      // 🔥 CLOSE MODAL HERE
+      //  CLOSE MODAL HERE
       onClose();
 
       // optional
@@ -154,7 +124,7 @@ export default function UserDetail({ user, onClose }) {
               className="w-24 h-24 rounded-full object-cover border-2 border-primary transition duration-300"
             />
 
-            {/* 🔥 Overlay ONLY WHEN Editing */}
+            {/*  Overlay ONLY WHEN Editing */}
             {isEditing && (
               <div className="absolute inset-0 flex items-center justify-center rounded-full bg-black/50 text-white text-sm font-semibold opacity-0 group-hover:opacity-100 transition">
                 Edit Profile
@@ -179,19 +149,6 @@ export default function UserDetail({ user, onClose }) {
               </p>
             )}
 
-            {/* we dont allow uses to change  mail */}
-            {/* {isEditing ? (
-              <input
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full border p-2 rounded"
-              />
-            ) : (
-              <p>
-                <strong>Email:</strong> {formData.email}
-              </p>
-            )} */}
 
             {/* First Name */}
             {isEditing ? (

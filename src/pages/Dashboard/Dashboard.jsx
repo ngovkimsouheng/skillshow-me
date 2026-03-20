@@ -302,6 +302,7 @@ import { useGetMeQuery } from "../../api/authApi";
 import { useSelector } from "react-redux";
 import { selectToken } from "../../api/authSlice";
 import { templates } from "../../portfolios/templates";
+import ThemeToggle from "../../components/ThemeToggleButton";
 
 /* ── Sidebar item ── */
 function SideItem({ to, label, icon, closeSidebarOnMobile }) {
@@ -648,15 +649,15 @@ export default function Dashboard() {
 
       {/* MAIN CONTENT */}
       <main
-        className={`flex flex-col min-h-screen transition-all duration-300 ${sideOpen ? "ml-55" : "ml-0"
+        className={`flex dark:bg-background-dark flex-col min-h-screen transition-all duration-300 ${sideOpen ? "ml-55" : "ml-0"
           }`}
       >
         <header
-          className={`sticky w-full top-0 z-50 backdrop-blur-lg h-16 flex items-center justify-between px-5 border-b ${topbar}`}
+          className={`sticky dark:bg-background-dark w-full top-0 z-50 backdrop-blur-lg h-16 flex items-center justify-between px-5 border-b ${topbar}`}
         >
           <div className="flex items-center gap-3">
             <button
-              className={`md:hidden bg-white w-9 h-9 rounded-xl flex items-center justify-center transition-all ${iconBtn}`}
+              className={`md:hidden  bg-white w-9 h-9 rounded-xl flex items-center justify-center transition-all ${iconBtn}`}
               onClick={() => setSideOpen(!sideOpen)}
             >
               {IC.menu}
@@ -668,11 +669,12 @@ export default function Dashboard() {
           </div>
 
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <Profile />
           </div>
         </header>
 
-        <main className="lg:p-6 p-4">
+        <main className="lg:p-6 dark:bg-background-dark p-4">
           <Outlet context={{ dark }} />
 
           {previewOpen && (

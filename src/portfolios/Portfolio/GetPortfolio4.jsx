@@ -11,7 +11,7 @@ import DeleteSkill from "../../Project/skill/DeleteSkill";
 import DeleteEducation from "../../Project/Education/DeleteEducation";
 import DeleteSocialAccount from "../../Project/SocailAccount/DeleteSocailAccount";
 import DeleteProject from "../../Project/ProjectUser/DeleteProject";
-import ContactForm from "../../../test/ContactForm";
+import ContactForm from "../../../post/ContactForm";
 export default function GetPortfolio4() {
 
 

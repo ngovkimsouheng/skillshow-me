@@ -24,7 +24,7 @@ const SummaryCard = ({ title, count, icon: Icon, actionLabel, onAction, loading 
       {actionLabel && onAction ? (
         <button
           onClick={onAction}
-          className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-primary/90"
+          className="mt-4 cursor-pointer inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-primary/90"
         >
           {actionLabel}
         </button>
@@ -122,31 +122,31 @@ export default function OverviewPage() {
         <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <button
             onClick={() => navigate("/dashboard/create-skill")}
-            className="rounded-xl border border-white/10 px-4 py-3 text-left text-white/80 transition hover:bg-white/10"
+            className="rounded-xl cursor-pointer border border-white/10 px-4 py-3 text-left text-white/80 transition hover:bg-white/10"
           >
             Create a new skill
           </button>
           <button
             onClick={() => navigate("/dashboard/create-job")}
-            className="rounded-xl border border-white/10 px-4 py-3 text-left text-white/80 transition hover:bg-white/10"
+            className="rounded-xl cursor-pointer border border-white/10 px-4 py-3 text-left text-white/80 transition hover:bg-white/10"
           >
             Add new experience
           </button>
           <button
             onClick={() => navigate("/dashboard/create-project")}
-            className="rounded-xl border border-white/10 px-4 py-3 text-left text-white/80 transition hover:bg-white/10"
+            className="rounded-xl cursor-pointer border border-white/10 px-4 py-3 text-left text-white/80 transition hover:bg-white/10"
           >
             Add a project
           </button>
           <button
             onClick={() => navigate("/dashboard/create-education")}
-            className="rounded-xl border border-white/10 px-4 py-3 text-left text-white/80 transition hover:bg-white/10"
+            className="rounded-xl cursor-pointer border border-white/10 px-4 py-3 text-left text-white/80 transition hover:bg-white/10"
           >
             Add education
           </button>
           <button
             onClick={() => navigate("/dashboard/create-social-account")}
-            className="rounded-xl border border-white/10 px-4 py-3 text-left text-white/80 transition hover:bg-white/10"
+            className="rounded-xl cursor-pointer border border-white/10 px-4 py-3 text-left text-white/80 transition hover:bg-white/10"
           >
             Add social links
           </button>

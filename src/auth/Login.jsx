@@ -55,7 +55,7 @@ export default function LoginForm() {
         console.log("Token not found in response");
       }
       // alert(" Login successfully!");
-      setTimeout(() => navigate("/", { replace: true }), 300);
+      setTimeout(() => navigate("/", { replace: true }), 1000);
       setSuccessMsg(" Login successful!");
     } catch (err) {
       console.error("Login failed:", err);
@@ -63,6 +63,13 @@ export default function LoginForm() {
   };
   return (
     <div className="min-h-screen max-md:mx-3 relative bg-background flex items-center justify-center">
+      {successMsg && (
+        <div className="fixed bottom-5 right-5 z-50 
+                   p-4 rounded-lg shadow-sm
+                   bg-green-100/80 border border-cool-sky   text-green-700 animate-slide-in">
+          ✅ Account created successfully
+        </div>
+      )}
       <div className="bg-primary max-sm:hidden z-1 rounded-3xl absolute rotate-8 h-[390px] w-[450px]"></div>
       <div className="w-full border border-cool-sky absolute z-2 max-w-md bg-white  rounded-2xl shadow-sm px-8 py-10">
         {/* Header */}
@@ -73,11 +80,11 @@ export default function LoginForm() {
           </p> */}
         </div>
 
-        {successMsg && (
+        {/* {successMsg && (
           <div className="bg-green-100 text-green-700 px-4 py-2 rounded-lg mb-6 text-sm">
             {successMsg}
           </div>
-        )}
+        )} */}
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           {/* Email */}
@@ -134,10 +141,10 @@ export default function LoginForm() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-[#1e2e3e] text-white py-3 rounded-lg font-semibold hover:opacity-90 transition flex justify-center items-center"
+            className="w-full bg-[#1e2e3e] cursor-pointer text-white py-3 rounded-lg font-semibold hover:opacity-90 transition flex justify-center items-center"
           >
             {isLoading ? (
-              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+              <div className="w-5 cursor-pointer h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
             ) : (
               "Login"
             )}

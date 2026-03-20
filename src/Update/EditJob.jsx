@@ -12,7 +12,7 @@ import {
 export default function EditJob() {
   const { id } = useParams();
   const navigate = useNavigate();
-
+  const [showAlert, setShowAlert] = useState(false);
   /* ================= API ================= */
 
   const {
@@ -76,7 +76,8 @@ export default function EditJob() {
         body: form,
       }).unwrap();
 
-      alert("✅ Job Updated Successfully");
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 3000);
 
       navigate(-1); // go back
     } catch (err) {
@@ -116,6 +117,14 @@ export default function EditJob() {
 
   return (
     <div className="space-y-6">
+      {showAlert && (
+        <div className="fixed bottom-5 right-5 z-50 
+                   p-4 rounded-lg shadow-sm
+                    bg-green-100/80 border border-cool-sky   text-green-700 animate-slide-in">
+          ✅ Job updated successfully
+        </div>
+      )}
+
       <h2 className="text-2xl font-bold text-[#1e2e3e]">
         Edit Job Experience
       </h2>

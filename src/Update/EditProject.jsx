@@ -169,7 +169,7 @@ const EditProject = () => {
 
       console.log("✅ Old project deleted - Update complete");
 
-      alert("✅ Project Updated Successfully!");
+      // alert("✅ Project Updated Successfully!");
 
       navigate(-1);
     } catch (err) {
