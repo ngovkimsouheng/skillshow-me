@@ -1,16 +1,121 @@
-# React + Vite
+# 🚀 SkillShow – Portfolio Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![SkillShow Preview](https://skillshow-portfolio.vercel.app/preview.png)
 
-Currently, two official plugins are available:
+## 📌 Overview
+**SkillShow** is a modern web-based portfolio builder designed to help users create, customize, and manage professional portfolios efficiently.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+It provides an intuitive interface with powerful features like **drag-and-drop editing**, **real-time preview**, and **customizable templates**, enabling users to showcase their skills, projects, and experiences in a visually appealing way.
 
-## React Compiler
+---
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🎨 **Customizable Templates**  
+  Choose from a variety of modern and responsive portfolio designs.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ⚡ **Drag-and-Drop Builder**  
+  Easily build your portfolio without coding.
+
+- 🖥️ **Real-Time Editing**  
+  Instantly preview changes as you edit your content.
+
+- 📱 **Responsive Design**  
+  Works seamlessly across desktop, tablet, and mobile devices.
+
+- 🔗 **Social Media Integration**  
+  Connect and showcase your online presence.
+
+- 🔒 **Secure Data Management**  
+  Ensures safe handling of user information.
+
+---
+
+## 🎯 Purpose
+
+SkillShow aims to simplify the portfolio creation process for:
+
+- 🎓 Students  
+- 👨‍🏫 Educators  
+- 💼 Professionals  
+
+Helping them build a **strong digital presence** and stand out in their careers.
+
+---
+
+## 🛠️ Tech Stack
+
+- ⚛️ React.js  
+- ⚡ Vite  
+- 🎨 Tailwind CSS  
+- 🌐 Flowbite UI  
+- 🔄 React Router  
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+│── components/     # Reusable UI components
+│── pages/          # Application pages
+│── assets/         # Images, icons
+│── templates/      # Portfolio templates
+│── App.jsx
+│── main.jsx
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+```
+git clone https://github.com/your-username/skillshow.git
+cd skillshow
+```
+
+### 2. Install dependencies
+```
+npm install
+```
+
+### 3. Run the project
+```
+npm run dev
+```
+
+---
+
+## 🌐 Live Demo
+https://skillshow-portfolio.vercel.app/
+
+---
+
+## 📸 Screenshots
+(Add your UI screenshots here)
+
+---
+
+## 🔮 Future Improvements
+
+- 🔐 Authentication system  
+- ☁️ Cloud portfolio storage  
+- 🌍 Custom domain support  
+- 📊 Analytics dashboard  
+
+---
+
+## 🤝 Contributing
+Contributions are welcome!  
+Feel free to fork this repo and submit a pull request.
+
+---
+
+## 📄 License
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+Developed by Kimsouheng Ngov
