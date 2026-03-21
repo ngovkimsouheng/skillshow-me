@@ -5,6 +5,7 @@
 ---
 
 ## 📌 Overview
+
 **SkillShow** is a modern web-based portfolio builder designed to help users create, customize, and manage professional portfolios efficiently.
 
 It offers an intuitive interface with powerful features such as **drag-and-drop editing**, **real-time preview**, and **customizable templates**, allowing users to present their skills, projects, and experiences in a structured and visually appealing way.
@@ -15,9 +16,9 @@ It offers an intuitive interface with powerful features such as **drag-and-drop 
 
 SkillShow aims to simplify the portfolio creation process for:
 
-- 🎓 Students  
-- 👨‍🏫 Educators  
-- 💼 Professionals  
+- 🎓 Students
+- 👨‍🏫 Educators
+- 💼 Professionals
 
 By helping them build a **strong digital presence** and stand out in today’s competitive environment.
 
@@ -29,12 +30,12 @@ By helping them build a **strong digital presence** and stand out in today’s c
 
 ---
 
+<!--
 ## 🔮 Future Improvements
 
-- 🔐 Authentication system  
-- ☁️ Cloud portfolio storage  
-- 🌍 Custom domain support  
-- 📊 Analytics dashboard  
+- 🔐 Authentication system
+- ☁️ Cloud portfolio storage
+- 🌍 Custom domain support
+- 📊 Analytics dashboard
 
----
-
+--- -->
