@@ -73,7 +73,7 @@ export default function SectionMentors() {
       <div
         data-aos="zoom-in"
         data-aos-delay="500"
-        className="md:w-180  border border-b-2 dark:border-secondary-dark border-secondary w-90  h-0.5  "
+        className="md:w-180   border border-b-2 dark:border-secondary-dark border-secondary w-90 max-sm:mt-8 mx-auto  max-sm:w-80 h-0.5  "
       />
 
     </section>

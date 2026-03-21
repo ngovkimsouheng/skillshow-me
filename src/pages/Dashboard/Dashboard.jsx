@@ -571,7 +571,7 @@ export default function Dashboard() {
                 ]}
               />
 
-              <SideGroup
+              {/* <SideGroup
                 id="admin-system"
                 label="System"
                 icon="analytics"
@@ -582,7 +582,7 @@ export default function Dashboard() {
                   { to: "/dashboard/admin/logs", label: "System Logs" },
                   { to: "/dashboard/admin/backup", label: "Backup" },
                 ]}
-              />
+              /> */}
             </>
           ) : (
             <>

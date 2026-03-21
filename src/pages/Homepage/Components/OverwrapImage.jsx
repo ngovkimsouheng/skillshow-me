@@ -25,12 +25,12 @@ export default function OverwrapImage() {
           alt=""
         /> */}
         <img
-          className="absolute block dark:hidden w-15 top-3 z-20 right-75 zoom-rotate"
+          className="absolute max-sm:right-22 max-sm:top-1 block dark:hidden w-15 top-3 z-20 right-75 zoom-rotate"
           src={star}
           alt=""
         />
         <img
-          className="absolute hidden dark:block w-15 top-3 z-20 right-75 zoom-rotate"
+          className="absolute max-sm:right-22 max-sm:top-1 hidden dark:block w-15 top-3 z-20 right-75 zoom-rotate"
           src={starDark}
           alt=""
         />

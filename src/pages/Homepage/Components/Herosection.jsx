@@ -20,7 +20,7 @@ export default function Herosection() {
   return (
     <div>
       {" "}
-      <div className=" h-[105vh] lg:pt-10  max-sm:pt-[140px] max-md:h-[190vh]   relative bg-gradient-to-b dark:bg-grdient dark:from-[#061729] dark:to-gray-800/30  from-[#f6f1cb] to-white w-full flex flex-col justify-center items-center">
+      <div className=" h-[105vh] lg:pt-10  max-sm:pt-[140px] max-md:h-[200vh]   relative bg-gradient-to-b dark:bg-grdient dark:from-[#061729] dark:to-gray-800/30  from-[#f6f1cb] to-white w-full flex flex-col justify-center items-center">
         <div className="text-center font-['Poppins-Bold',_sans-serif] max-sm:text-[40px] max-md:text-[45px] text-[70px] leading-[75px] max-md:leading-[45px] font-bold">
           <span>
             <div
