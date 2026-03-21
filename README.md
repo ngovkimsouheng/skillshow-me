@@ -18,7 +18,7 @@ SkillShow aims to simplify the portfolio creation process for:
 
 - 🎓 Students
 - 👨‍🏫 Educators
-- 💼 Professionals
+- 💼 Professionals ...
 
 By helping them build a **strong digital presence** and stand out in today’s competitive environment.
 
