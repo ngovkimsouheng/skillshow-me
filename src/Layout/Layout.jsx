@@ -32,16 +32,14 @@ export default function Layout() {
         >
           <NavLink to="/">
             <img
-
-              className=" md:h-[65px] dark:hidden max-md:h-[40px]  max-sm:h-[35px]"
+              className=" md:h-[65px] block dark:hidden max-md:h-[40px]  max-sm:h-[35px]"
               src={Logo}
-              alt=""
+              alt="logo"
             />{" "}
             <img
-
               className=" md:h-[65px] hidden dark:block max-md:h-[40px]  max-sm:h-[35px]"
               src={DarkModeLogo}
-              alt=""
+              alt="logo"
             />
           </NavLink>
           <NavBar
