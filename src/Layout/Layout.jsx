@@ -32,21 +32,21 @@ export default function Layout() {
         >
           <NavLink to="/">
             <img
-              data-aos="zoom-in" 
+
               className=" md:h-[65px] dark:hidden max-md:h-[40px]  max-sm:h-[35px]"
               src={Logo}
               alt=""
-            />{" "}  
+            />{" "}
             <img
-              data-aos="zoom-in"
+
               className=" md:h-[65px] hidden dark:block max-md:h-[40px]  max-sm:h-[35px]"
               src={DarkModeLogo}
-              alt=""   
+              alt=""
             />
-          </NavLink>   
+          </NavLink>
           <NavBar
             mobileMenuOpen={mobileMenuOpen}
-            setMobileMenuOpen={setMobileMenuOpen} 
+            setMobileMenuOpen={setMobileMenuOpen}
             user={user}
             isLoading={isLoading}
             setShowProfile={setShowProfile}

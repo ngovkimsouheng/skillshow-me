@@ -85,7 +85,7 @@ function App() {
     AOS.init({
       duration: 900,
       easing: "ease-out-cubic",
-      once: false,
+      once: true,
     });
   }, []);
   const token = localStorage.getItem("token");
