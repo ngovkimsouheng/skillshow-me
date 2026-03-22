@@ -46,7 +46,7 @@ export default function Section03() {
         </span>
       </div>
 
-      <div className="grid place-items-center max-md:gap-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 md:gap-6 container mx-auto lg:px-6">
+      <div className="grid container max-w-7xl mx-auto place-items-center max-md:gap-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 md:gap-6  lg:px-6">
         {/* ✅ FIRST 3 (ALWAYS VISIBLE) */}
 
         <NavLink to="/portfolio4" className="relative md:w-[370px] lg:w-[390px] w-[360px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">

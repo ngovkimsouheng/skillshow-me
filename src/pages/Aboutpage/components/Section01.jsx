@@ -6,7 +6,7 @@ export default function Section01() {
   return (
     <section
       id="tempalte"
-      className="container  relative mx-auto px-4 flex lg:flex-row max-lg:flex-col items-center justify-center"
+      className="  relative container max-w-7xl mx-auto px-4 flex lg:flex-row max-lg:flex-col items-center justify-center"
     >      <div
       data-aos="zoom-in"
       data-aos-delay="400"

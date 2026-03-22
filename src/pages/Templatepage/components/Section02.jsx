@@ -8,7 +8,7 @@ import arrowDark from "./Images/arrow-dark.png";
 import { NavLink } from "react-router";
 export default function Section02() {
   return (
-    <section className="flex px-2 lg:my-0 md:my-8 relative mx-auto flex-wrap max-lg:gap-4 container max-lg:flex-col justify-center items-center">
+    <section className="flex container max-w-7xl mx-auto px-2 lg:my-0 md:my-8 relative mx-auto flex-wrap max-lg:gap-4 container max-lg:flex-col justify-center items-center">
       <div
         data-aos="zoom-in"
         data-aos-delay="400"

@@ -16,7 +16,7 @@ export default function OverwrapImage() {
       <div
         data-aos="fade-up"
         data-aos-duration="1200"
-        className="flex relative md:mt-15 justify-center px-6 container mx-auto items-center"
+        className="flex container max-w-7xl mx-auto relative md:mt-15 justify-center px-6 container mx-auto items-center"
       >
         {/* Star */}
         {/* <img

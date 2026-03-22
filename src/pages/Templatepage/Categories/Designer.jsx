@@ -35,7 +35,7 @@ export default function Designer() {
     ];
 
     return (
-        <section className=' bg-background  dark:bg-background-dark'>
+        <section className='  bg-background  dark:bg-background-dark'>
             <section className='max-md:flex pt-5   container mx-auto max-w-7xl relative max-sm:h-[100vh] sm:h-[85vh] lg:h-[100vh] max-md:flex-col max-md:gap-50'>
 
                 <div className='w-[100%]  sm:h-[85vh]  lg:h-[100vh] max-sm:h-[100vh] max-sm:mt-20 max-sm:my-8  relative' >
@@ -118,7 +118,7 @@ export default function Designer() {
             <div className='mb-8'>
                 <AutoScrollSlider />
             </div>
-            <section id='templates' className="flex  pb-8 justify-center items-center max-lg:pb-8 flex-col md:gap-16 lg:gap-8">
+            <section id='templates' className="flex container max-w-7xl mx-auto pb-8 justify-center items-center max-lg:pb-8 flex-col md:gap-16 lg:gap-8">
                 <div className="text-center font-['Poppins-Bold',_sans-serif] max-sm:text-[40px] max-md:text-[43px] text-[70px] leading-[75px] max-md:leading-[45px] font-bold">
                     <span>
                         <div className="text-primary dark:text-white">

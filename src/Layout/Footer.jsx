@@ -10,7 +10,7 @@ import { NavLink } from "react-router";
 import { DrawCircleText } from "./DrawCircleText";
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-gray-950">
+    <footer className="bg-white  dark:bg-gray-950">
       <style>{`
         .marquee { animation: marquee 18s linear infinite; }
         @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
       </div>
       <DrawCircleText />
-      <div className="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left text-sm sm:text-base">
+      <div className="container max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left text-sm sm:text-base">
         <div className="flex justify-center md:justify-start">
           <NavLink className="">
             <img

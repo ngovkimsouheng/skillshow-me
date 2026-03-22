@@ -4,6 +4,7 @@ import vector2 from "../../Homepage/Components/images/dashVector02.png";
 import vector1Dark from "../../Homepage/Components//images/dashVector01-dark.png";
 import vector2Dark from "../../Homepage/Components//images/dashVector02-dark.png";
 import BlurText from "../../Homepage/Components/BlurText";
+import Particles from "../../Templatepage/Categories/components/Particles";
 export default function Hero() {
   const handleAnimationComplete = () => {
     console.log("Animation completed!");
@@ -11,7 +12,9 @@ export default function Hero() {
   return (
     <div>
       <section className="w-full md:pt-6 max-sm:pt-10 lg:h-[90vh]  overflow-hidden">
+
         <div className="w-full flex items-center justify-center relative">
+        
           <div className="w-full relative h-full max-w-screen relative rounded-tl-3xl rounded-tr-3xl">
             <div
               data-aos="zoom-in"
