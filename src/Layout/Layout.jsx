@@ -97,16 +97,16 @@ export default function Layout() {
                       onClick={() => setShowProfile(true)}
                       className="w-full flex items-center gap-2 text-left px-4 py-3 hover:bg-gray-100 rounded-t-xl"
                     >
-                      <FaUserCircle className="text-[20px] fill-primary" />
+                      <FaUserCircle className="text-[20px] dark:fill-white fill-primary" />
                       Profile Detail
                     </button>
 
                     {/* 📊 Dashboard */}
                     <button
                       onClick={() => navigate("/dashboard")}
-                      className="w-full  flex items-center gap-2 text-left px-4 py-3 hover:bg-gray-100 dark:hover:gray-300/20"
+                      className="w-full dark:text-white flex items-center gap-2 text-left px-4 py-3 hover:bg-gray-100 dark:hover:gray-300/20"
                     >
-                      <HiTemplate className="text-[22px] fill-primary" />{" "}
+                      <HiTemplate className="text-[22px] dark:fill-white fill-primary" />{" "}
                       Dashboard
                     </button>
 

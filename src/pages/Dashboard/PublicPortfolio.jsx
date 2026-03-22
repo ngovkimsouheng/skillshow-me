@@ -9,7 +9,7 @@ export default function PublicPortfolio() {
     const [portfolio, setPortfolio] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
-console.log(username)
+    console.log(username)
     useEffect(() => {
         const fetchPortfolio = async () => {
             try {
@@ -32,7 +32,7 @@ console.log(username)
     }, [username]);
 
     if (loading) return <p className="p-6 text-center">Loading portfolio...</p>;
-    // if (error) return <NotFoundPage />;
+    if (error) return <NotFoundPage />;
 
     // Pass portfolio data as props
     return <UserPortfolio portfolio={portfolio} isPublic={true} />;
