@@ -2,6 +2,10 @@ import React from "react";
 import CardMembers from "./CardMembers";
 import teacher1 from "./Images/teacher1.png";
 import teacher2 from "./Images/teacher2.png";
+import vector1 from "../../Templatepage/Categories/vector1.png";
+import vector2 from "../../Templatepage/Categories/vector2.png";
+import darkvector1 from "../../Templatepage/Categories/darkVector1.png";
+import darkvector2 from "../../Templatepage/Categories/darkVector2.png";
 export default function SectionMentors() {
   const members = [
     {
@@ -24,7 +28,15 @@ export default function SectionMentors() {
     },
   ];
   return (
-    <section className="md:flex    py-8 gap-8 md:flex-col items-center  justify-center sm:gap-8 md:gap-10">
+    <section className="md:flex max-w-7xl container mx-auto relative  py-8 gap-8 md:flex-col items-center  justify-center sm:gap-8 md:gap-10">
+      <img
+        className='lg:w-40 md:w-30 w-30  max-sm:w-15 -rotate-20 left-10 block dark:hidden top-30 absolute' src={vector1} alt="Vector 1" />
+      <img
+        className='lg:w-40 md:w-30 w-30  max-sm:w-15  -rotate-20  right-10 block dark:hidden bottom-30 max-lg:bottom-10  absolute' src={vector2} alt="Vector 2" />
+      <img
+        className='lg:w-40 md:w-30 w-30  max-sm:w-15 -rotate-20  left-10 hidden dark:block top-30 absolute' src={darkvector1} alt="Dark Vector 1" />
+      <img
+        className='lg:w-40 md:w-30 w-30  max-sm:w-15 -rotate-20  right-10 hidden dark:block bottom-30 max-lg:bottom-10  absolute' src={darkvector2} alt="Dark Vector 2" />
       <div className="max-sm:pb-8">
         <span className="text-center  max-sm:text-[40px] max-md:text-[43px]  text-[70px] leading-[75px] max-md:leading-[45px] font-bold">
           <p

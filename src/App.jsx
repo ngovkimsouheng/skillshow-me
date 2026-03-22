@@ -86,7 +86,7 @@ function App() {
     AOS.init({
       duration: 900,
       easing: "ease-out-cubic",
-      once: false,
+      once: true,
     });
   }, []);
   const token = localStorage.getItem("token");
@@ -102,8 +102,8 @@ function App() {
               <Route path="/education/edit/:id" element={<EditEducation />} />
               <Route path="/skills/edit/:id" element={<EditSkill />} />
 
-
-              <Route path="/*" element={<NotFoundPage />}></Route>
+              {/* 
+              <Route path="/*" element={<NotFoundPage />}></Route> */}
               <Route path="/template1" element={<UserTemplate01 />}></Route>
               <Route path="/portfolio" element={<Portfolio />}></Route>{" "}
               <Route path="/portfolio1" element={<Portfolio1 />}></Route>{" "}
