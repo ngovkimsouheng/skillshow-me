@@ -21,7 +21,7 @@ export default function GetPortfolio10({ theme = {} }) {
 
     const links = [
         "home",
-        "about",
+
         "experience",
         "job",
         "school",

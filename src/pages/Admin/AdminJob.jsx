@@ -62,10 +62,11 @@ export default function AdminJob() {
                     placeholder="Search jobs..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary"
+                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary placeholder-gray-400"
                 />
             </div>
 
+            {/* Jobs Table */}
             {/* Jobs Table */}
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
                 <div className="overflow-x-auto">
@@ -75,17 +76,14 @@ export default function AdminJob() {
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Job Title
                                 </th>
-
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Company
                                 </th>
-
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Started
                                 </th>
-
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Ended
+                                    Ended
                                 </th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Actions
@@ -94,52 +92,38 @@ export default function AdminJob() {
                         </thead>
 
                         <tbody className="bg-white divide-y divide-gray-200">
-                            {filteredJobs.map((job) => (
-                                <tr key={job.id} className="hover:bg-gray-50">
-                                    {/* Job Title */}
-                                    <td className="px-6   py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        {job.role || "N/A"}
-                                    </td>
-
-                                    {/* Company */}
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                        {job.company_name || "N/A"}
-                                    </td>
-
-                                    {/* Location */}
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                        {job.started_at || "N/A"}
-                                    </td>
-
-                                    {/* Created */}
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                        {job.created_at
-                                            ? new Date(job.created_at).toLocaleDateString()
-                                            : "N/A"}
-                                    </td>
-
-                                    {/* Actions */}
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                        <button
-                                            onClick={() => handleDelete(job.id)}
-                                            className="text-red-600 hover:text-red-900"
-                                            title="Delete job"
-                                        >
-                                            <FaTrash />
-                                        </button>
+                            {filteredJobs.length > 0 ? (
+                                filteredJobs.map((job) => (
+                                    <tr key={job.id} className="hover:bg-gray-50">
+                                        <td className="px-6 py-4 text-sm font-medium text-gray-900 break-words">
+                                            {job.role || "N/A"}
+                                        </td>
+                                        <td className="px-6 py-4 text-sm text-gray-500">{job.company_name || "N/A"}</td>
+                                        <td className="px-6 py-4 text-sm text-gray-500">{job.started_at || "N/A"}</td>
+                                        <td className="px-6 py-4 text-sm text-gray-500">
+                                            {job.created_at ? new Date(job.created_at).toLocaleDateString() : "N/A"}
+                                        </td>
+                                        <td className="px-6 py-4 text-sm font-medium">
+                                            <button
+                                                onClick={() => handleDelete(job.id)}
+                                                className="text-red-600 hover:text-red-900"
+                                                title="Delete job"
+                                            >
+                                                <FaTrash />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan={5} className="text-center py-10 text-gray-500">
+                                        No contacts found matching your search.
                                     </td>
                                 </tr>
-                            ))}
+                            )}
                         </tbody>
                     </table>
                 </div>
-
-                {/* Empty State */}
-                {jobs.length === 0 && (
-                    <div className="text-center py-10 text-gray-500">
-                        No jobs available
-                    </div>
-                )}
             </div>
         </div>
     );

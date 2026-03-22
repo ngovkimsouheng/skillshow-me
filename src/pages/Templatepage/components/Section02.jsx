@@ -34,7 +34,7 @@ export default function Section02() {
             to="/developer-category"
             data-aos="fade-right"
             data-aos-delay="350"
-            className="w-[300px] hover:shadow-md ring ring-cool-sky shadow-2xs p-4 bg-white rounded-[24px]"
+            className="w-[300px]  hover:shadow-md ring ring-cool-sky shadow-2xs p-4 bg-white rounded-[24px]"
           >
             <img className="rounded-[8px] h-[200px] w-full object-cover" src={template1} alt="" />
             <div className="flex flex-col pt-3.5 gap-3">

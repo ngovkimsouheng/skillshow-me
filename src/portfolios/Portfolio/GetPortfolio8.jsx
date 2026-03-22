@@ -758,11 +758,7 @@ export default function GetPortfolio8({ theme = {} }) {
                                     >
                                         GitHub
                                     </a>
-                                    <span
-                                        className="shrink-0 font-black transition-all text-zinc-300"
-                                    >
-                                        →
-                                    </span>
+                      
                                 </div>
                             ))}
                         </div>

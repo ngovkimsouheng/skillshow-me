@@ -42,14 +42,14 @@ export default function AdminContact() {
 
             {/* Search */}
             <div className="flex flex-col sm:flex-row gap-4 sticky top-20">
-                <div className="relative flex-1">
+                <div className="relative w-xl flex-1">
                     <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
                     <input
                         type="text"
                         placeholder="Search contacts by name or email..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="w-full bg-white pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        className="w-full placeholder-gray-400 bg-white pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
                 </div>
             </div>

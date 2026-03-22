@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import img from "./portfolioProfile07.png";
 export default function Portfolio7() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -52,10 +52,10 @@ export default function Portfolio7() {
   };
 
   return (
-    <div className="bg-white text-slate-800 min-h-screen overflow-x-hidden">
+    <div className="bg-white my-18 text-slate-800 min-h-screen overflow-x-hidden">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
-        * { font-family: 'IBM Plex Mono', monospace; }
+      
         .condensed { font-family: 'Barlow Condensed', sans-serif; }
 
         :root {
@@ -178,10 +178,10 @@ export default function Portfolio7() {
 
       {/* ── NAV ── */}
       <nav
-        className="w-full fixed top-0 z-50 bg-white border-b border-slate-100"
+        className="w-full   z-50 bg-white border-b border-slate-100"
         style={{ boxShadow: "0 1px 0 rgba(27,79,216,0.08)" }}
       >
-        <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto md:max-w-7xl px-4 sm:px-6">
           <div className="flex items-center justify-between h-16 gap-8">
             {/* Logo */}
             <button
@@ -273,7 +273,7 @@ export default function Portfolio7() {
       </nav>
 
       {/* ── TICKER ── */}
-      <div className="bg-cobalt overflow-hidden py-2.5">
+      {/* <div className="bg-cobalt overflow-hidden py-2.5">
         <div className="ticker inline-flex whitespace-nowrap">
           {[...Array(2)].map((_, i) => (
             <span key={i} className="inline-flex items-center">
@@ -303,7 +303,7 @@ export default function Portfolio7() {
             </span>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* ── HOME ── Full-bleed architectural layout */}
       <section id="home" className="blueprint-grid relative overflow-hidden">
@@ -312,9 +312,9 @@ export default function Portfolio7() {
 
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Two-column full-height split */}
-          <div className="grid lg:grid-cols-12 min-h-[90vh] items-stretch">
+          <div className="grid lg:grid-cols-12 ">
             {/* Left — narrow sidebar with vertical text */}
-            <div className="hidden lg:flex lg:col-span-1 flex-col items-center justify-center gap-6 py-16 border-r border-slate-100">
+            <div className="hidden lg:flex lg:col-span-1 flex-col  gap-6 py-16 border-r border-slate-100">
               <span
                 className="condensed font-bold text-xs tracking-[0.3em] uppercase text-slate-300 writing-v"
                 style={{
@@ -329,8 +329,8 @@ export default function Portfolio7() {
             </div>
 
             {/* Center — hero text */}
-            <div className="lg:col-span-7 flex flex-col justify-center py-16 lg:px-10">
-              <div className="flex items-center gap-4 mb-8">
+            <div className="lg:col-span-7 flex flex-col justify-center py-8 ">
+              <div className="flex items-center gap-4">
                 <div className="w-8 h-px bg-cobalt" />
                 <span className="text-cobalt text-xs tracking-[0.3em] uppercase font-medium">
                   UI/UX Designer & Creative Technologist
@@ -374,26 +374,7 @@ export default function Portfolio7() {
                 </button>
               </div>
 
-              {/* Stats — inline horizontal */}
-              <div className="flex gap-0 border border-slate-100 overflow-hidden w-fit">
-                {[
-                  ["years", "Years Exp."],
-                  ["projects", "Projects"],
-                  ["clients", "Clients"],
-                ].map(([key, label], i) => (
-                  <div
-                    key={key}
-                    className={`px-8 py-5 text-center ${i < 2 ? "border-r border-slate-100" : ""} bg-white`}
-                  >
-                    <p className="condensed font-black text-4xl text-cobalt leading-none">
-                      {count[key]}+
-                    </p>
-                    <p className="text-slate-400 text-xs tracking-[0.15em] uppercase mt-1 font-medium">
-                      {label}
-                    </p>
-                  </div>
-                ))}
-              </div>
+
             </div>
 
             {/* Right — image with overlaid elements */}
@@ -402,7 +383,7 @@ export default function Portfolio7() {
               <div className="absolute inset-0 hatch" />
 
               <img
-                src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=600&q=80"
+                src={img}
                 alt="Profile"
                 className="relative w-full h-[80vh] object-cover "
                 style={{ minHeight: "500px", filter: "grayscale(15%)" }}
@@ -418,10 +399,10 @@ export default function Portfolio7() {
               </div>
 
               {/* Corner measurement marks */}
-              <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-cobalt/50" />
-              <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-cobalt/50" />
-              <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-cobalt/50" />
-              <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-cobalt/50" />
+              <div className="absolute top-8 left-0 w-6 h-6 border-t-2 border-l-2 border-cobalt/50" />
+              <div className="absolute top-8 right-0 w-6 h-6 border-t-2 border-r-2 border-cobalt/50" />
+              <div className="absolute bottom-8 left-0 w-6 h-6 border-b-2 border-l-2 border-cobalt/50" />
+              <div className="absolute bottom-8 right-0 w-6 h-6 border-b-2 border-r-2 border-cobalt/50" />
             </div>
           </div>
         </div>
@@ -430,7 +411,7 @@ export default function Portfolio7() {
       {/* ── ABOUT ── Three-column magazine */}
       <section
         id="about"
-        className="py-24 bg-slate-50 relative overflow-hidden"
+        className="py-8 bg-slate-50 relative overflow-hidden"
       >
         <div className="section-num">02</div>
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -548,7 +529,7 @@ export default function Portfolio7() {
       {/* ── EXPERIENCE ── Full-width feature cards with number labels */}
       <section
         id="experience"
-        className="py-24 bg-white relative overflow-hidden"
+        className="py-8 bg-white relative overflow-hidden"
       >
         <div className="section-num">03</div>
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -639,7 +620,7 @@ export default function Portfolio7() {
       </section>
 
       {/* ── JOB ── Precision table layout */}
-      <section id="job" className="py-24 bg-cobalt relative overflow-hidden">
+      <section id="job" className="py-8 bg-cobalt relative overflow-hidden">
         <div className="absolute inset-0 blueprint-grid opacity-30" />
         <div
           className="section-num"
@@ -753,7 +734,7 @@ export default function Portfolio7() {
       </section>
 
       {/* ── SCHOOL ── Architectural card grid */}
-      <section id="school" className="py-24 bg-white relative overflow-hidden">
+      <section id="school" className="py-8 bg-white relative overflow-hidden">
         <div className="section-num">05</div>
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-6 mb-16">
@@ -852,7 +833,7 @@ export default function Portfolio7() {
       {/* ── SKILL ── Two-panel: text left + horizontal skill bars right */}
       <section
         id="skill"
-        className="py-24 bg-slate-50 relative overflow-hidden"
+        className="py-8 bg-slate-50 relative overflow-hidden"
       >
         <div className="section-num">06</div>
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -955,7 +936,7 @@ export default function Portfolio7() {
       </section>
 
       {/* ── CONTACT ── Full-width architectural split */}
-      <section id="contact" className="py-24 bg-white relative overflow-hidden">
+      <section id="contact" className="py-8 bg-white relative overflow-hidden">
         <div className="section-num">07</div>
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-6 mb-16">

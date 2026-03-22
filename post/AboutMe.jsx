@@ -81,7 +81,7 @@ export default function AboutMe({ user, onClose }) {
   /* ================= STYLE SYSTEM ================= */
 
   const inputClass =
-    "w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 text-sm " +
+    "w-full focus:text-[#1e2e3e] text-gray-400 px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 text-sm " +
     "focus:outline-none focus:ring-2 focus:ring-[#1e2e3e] focus:border-[#1e2e3e] " +
     "transition-all duration-200";
 
@@ -117,16 +117,15 @@ export default function AboutMe({ user, onClose }) {
 
         <label
           htmlFor={isEditing ? "profileUpload" : undefined}
-          className={`relative ${
-            isEditing ? "cursor-pointer group" : "cursor-default"
-          }`}
+          className={`relative ${isEditing ? "cursor-pointer group" : "cursor-default"
+            }`}
         >
           <img
             src={
               formData.profile instanceof File
                 ? URL.createObjectURL(formData.profile)
                 : formData.profile ||
-                  "https://via.placeholder.com/100"
+                "https://via.placeholder.com/100"
             }
             alt="profile"
             className="w-24 h-24 rounded-full object-cover border-2 border-[#1e2e3e]"
@@ -244,8 +243,8 @@ export default function AboutMe({ user, onClose }) {
             ? "Saving..."
             : "Save"
           : editLoading
-          ? "Loading..."
-          : "Edit"}
+            ? "Loading..."
+            : "Edit"}
       </button>
 
     </div>

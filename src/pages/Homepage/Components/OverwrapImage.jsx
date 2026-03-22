@@ -2,7 +2,9 @@ import React from "react";
 import star from "./images/star.png";
 import starDark from "./images/starDark.PNG";
 import vector from "./images/vector.png";
+import darkVector from "./images/darkVector.png";
 import vector01 from "./images/vector01.png";
+import darkVector01 from "./images/darkVector01.png";
 import cv1 from "./images/cv1.png";
 import cv2 from "./images/cv2.png";
 import cv3 from "./images/cv3.png";
@@ -105,9 +107,16 @@ export default function OverwrapImage() {
         <img
           data-aos="fade-right"
           data-aos-delay="300"
-          className="w-[39.76px] z-10 h-[48.43px] absolute left-3 top-0"
+          className="w-[39.76px] block dark:hidden z-10 h-[48.43px] absolute left-3 top-0"
           src={vector}
         />
+        <img
+          data-aos="fade-right"
+          data-aos-delay="300"
+          className="w-[39.76px] dark:block hidden z-10 h-[48.43px] absolute left-3 top-0"
+          src={darkVector}
+        />
+
 
         <div
           data-aos="zoom-in"
@@ -122,9 +131,18 @@ export default function OverwrapImage() {
         <img
           data-aos="fade-left"
           data-aos-delay="300"
-          className="w-[39.76px] h-[48.43px] z-10 absolute right-3 bottom-0"
+          className="w-[39.76px] block dark:hidden h-[48.43px] z-10 absolute right-3 bottom-0"
           src={vector01}
         />
+        <img
+          data-aos="fade-left"
+          data-aos-delay="300"
+          className="w-[39.76px] dark:block hidden h-[48.43px] z-10 absolute right-3 bottom-0"
+          src={darkVector01}
+        />
+
+
+
 
 
       </div>

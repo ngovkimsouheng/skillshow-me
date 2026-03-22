@@ -15,11 +15,7 @@ export default function HomePage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location]);
 
-  const title = "SkillShow - Create Your Personal Portfolio in Minutes";
-  const description =
-    "SkillShow lets you build a modern, professional personal portfolio in just a few minutes. Showcase your skills, projects, and achievements effortlessly and impress recruiters or clients.";
-  const url = "https://www.skillshow.com"; // your live URL
-  const image = "https://www.skillshow.com/logo.png"; // absolute URL to your thumbnail
+
 
   return (
     <div className="dark:bg-background-dark overflow-hidden bg-background w-full">

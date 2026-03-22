@@ -11,6 +11,8 @@ import TemplateSticker from "./images/templateSticker.png";
 import Template from "./images/template.png";
 import Arrow01 from "./images/arrow01.png";
 import Arrow02 from "./images/arrow02.png";
+import DarkArrow01 from "./images/darkArrow01.png";
+import DarkArrow02 from "./images/darkArrow02.png";
 import BlurText from "./BlurText";
 
 export default function Herosection() {
@@ -61,7 +63,7 @@ export default function Herosection() {
         </div>
         <p
           data-aos="fade-up"
-          className="text-[24px] dark:text-cool-sky max-lg:text-[20px] max-lg:px-4 mt-4 text-center font-['Poppins-Light',_sans-serif] text-line-height-24"
+          className="text-[24px] text-text-description dark:text-cool-sky max-lg:text-[20px] max-lg:px-4 mt-4 text-center font-['Poppins-Light',_sans-serif] text-line-height-24"
         >
           Create a personalized portfolio website that highlights your talents
         </p>
@@ -213,14 +215,25 @@ export default function Herosection() {
           {/* Arrows */}
           <img
             data-aos="fade-right"
-            className="w-[140px] max-sm:w-[120px] max-sm:-left-0 max-sm:-top-8 absolute -left-13 -top-13"
+            className="w-[140px] block dark:hidden max-sm:w-[120px] max-sm:-left-0 max-sm:-top-8 absolute -left-13 -top-13"
             src={Arrow01}
           />
 
           <img
             data-aos="fadee-rgith"
-            className="w-[140px] absolute -right-8 -bottom-12"
+            className="w-[140px] block dark:hidden absolute -right-8 -bottom-12"
             src={Arrow02}
+          />
+          <img
+            data-aos="fade-right"
+            className="w-[140px] hidden dark:block max-sm:w-[120px] max-sm:-left-0 max-sm:-top-8 absolute -left-13 -top-13"
+            src={DarkArrow01}
+          />
+
+          <img
+            data-aos="fadee-rgith"
+            className="w-[140px] hidden dark:block absolute -right-8 -bottom-12"
+            src={DarkArrow02}
           />
         </section>
       </div>

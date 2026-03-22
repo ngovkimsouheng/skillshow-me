@@ -1,5 +1,5 @@
 import React from "react";
-import Template1 from "./images/sampleTemplate1.png";
+import Template1 from "./images/popular1.png";
 import Template2 from "./images/popular2.png";
 import Template3 from "./images/popular3.png";
 import { FaEdit } from "react-icons/fa";
@@ -7,7 +7,7 @@ import { IoMdEye } from "react-icons/io";
 import { NavLink, useNavigate } from "react-router";
 import { Navigate } from "react-router";
 import RotatingText from "./RotatingText";
-
+import { MdLockOutline } from "react-icons/md";
 export default function () {
   let navigate = useNavigate();
   return (
@@ -65,7 +65,7 @@ export default function () {
         >
           {/* ✅ Image */}
           <img
-            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 group-hover:scale-108"
+            className="rounded-[16px] object-cover h-[230px] w-full transition-transform duration-300 group-hover:scale-108"
             src={Template1}
             alt="template"
           />
@@ -93,9 +93,9 @@ export default function () {
 
               <button
                 onClick={() => navigate("/template1")}
-                className="px-5 cursor-pointer flex gap-2 items-center py-2 bg-primary/90 text-white rounded-lg hover:bg-primary transition"
+                className="px-5 cursor-pointer flex gap-2 items-center py-2 bg-primary/90 text-white rounded-full hover:bg-primary transition"
               >
-                <IoMdEye className="text-[20px]" /> Preview
+                <IoMdEye className="text-[20px]" /> Preview & Edit
               </button>
             </div>
           </div>
@@ -137,9 +137,9 @@ export default function () {
 
               <button
                 onClick={() => console.log("Preview")}
-                className="px-5 flex gap-2 items-center py-2 bg-primary/90 text-white rounded-lg hover:bg-primary transition"
+                className="px-5 flex gap-2 items-center py-2 bg-primary/90 text-white rounded-full hover:bg-primary transition"
               >
-                <IoMdEye className="text-[20px]" /> Preview
+                <IoMdEye className="text-[20px]" /> Preview & Edit
               </button>
             </div>
           </div>
@@ -150,7 +150,9 @@ export default function () {
           data-aos-delay="500"
           className="relative  w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden"
         >
-          {/* ✅ Image */}
+          <div className="absolute bg-secondary  p-2 rounded-full  top-2 right-2 text-2xl text-gray-400">
+            <MdLockOutline className="text-primary" />
+          </div>
           <img
             className="rounded-[16px] object-cover max-h-[230px] w-full transition-transform duration-300 group-hover:scale-108"
             src={Template3}
@@ -179,9 +181,9 @@ export default function () {
 
               <button
                 onClick={() => console.log("/template-01")}
-                className="px-5 flex gap-2 items-center py-2 bg-primary/90 text-white rounded-lg hover:bg-primary transition"
+                className="px-5 flex gap-2 items-center py-2 bg-primary/90 text-white rounded-full hover:bg-primary transition"
               >
-                <IoMdEye className="text-[20px]" /> Preview
+                <IoMdEye className="text-[20px]" /> Preview Only
               </button>
             </div>
           </div>

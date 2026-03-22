@@ -358,7 +358,7 @@ export default function GetPortfolio4() {
 
       {/* ─Project ── */}
       <section
-        id="project"
+        id="projects"
         className="py-10 bg-yellow-300 border-y-4 border-zinc-900"
       >
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -506,7 +506,7 @@ export default function GetPortfolio4() {
       </section>
 
       {/* ── SCHOOL ── */}
-      <section id="school" className="py-10 bg-zinc-50">
+      <section id="education" className="py-10 bg-zinc-50">
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 border-b-4 border-zinc-900 pb-6">
             <div>

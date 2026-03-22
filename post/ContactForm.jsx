@@ -49,10 +49,21 @@ const ContactForm = () => {
 
   /* ================= STYLE (CONSISTENT) ================= */
 
-  const inputClass =
-    "w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 text-sm " +
-    "focus:outline-none focus:ring-2 focus:ring-[#1e2e3e] focus:border-[#1e2e3e] " +
-    "transition-all duration-200";
+  const inputClass = `
+  w-full
+  px-4 py-3
+  text-sm text-gray-700
+  placeholder-gray-400
+  rounded-xl
+  border border-gray-300
+  bg-gray-50
+  focus:outline-none
+  focus:ring-2 focus:ring-[#1e2e3e]
+  focus:border-[#1e2e3e]
+  focus:placeholder-transparent
+  transition-all duration-200
+  placeholder-shown:italic
+`;
 
   const labelClass = "block text-sm font-medium mb-2 text-gray-600";
 

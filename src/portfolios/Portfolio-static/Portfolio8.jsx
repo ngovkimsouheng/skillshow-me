@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
-import { templates } from "../templates";
-import { FaEdit } from "react-icons/fa";
-import { NavLink } from "react-router";
-import ButtonEdit from "./ButtonEdit";
+
 export default function Portfolio8() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
@@ -34,7 +31,7 @@ export default function Portfolio8() {
 
   const links = [
     "home",
-    "about",
+
     "experience",
     "job",
     "school",
@@ -259,7 +256,7 @@ export default function Portfolio8() {
         )}
 
       </nav>
-      <div className="fixed bottom-20 right-20 bg-secondary text-primary animate-bounce text-3xl z-99 rounded-md  px-8 py-1">Pro</div>
+      <button className="fixed hover:cursor-wait bottom-20 right-20 bg-secondary text-primary animate-bounce text-3xl z-99 rounded-full border-primary border-1 px-4 py-2">Comming Soon</button>
       {/* ── TICKER ── */}
       {/* <ButtonEdit onClick={() => handleEditClick(1)} /> */}
       {/* {templates.map((template) => (
@@ -418,7 +415,7 @@ export default function Portfolio8() {
           </div>
         </div>
       </section>
-      <div
+      {/* <div
         className="strip-lime overflow-hidden py-2.5"
         style={{ borderBottom: "2px solid #1C1C1C" }}
       >
@@ -445,7 +442,7 @@ export default function Portfolio8() {
             </span>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* ── EXPERIENCE ── */}
       <section

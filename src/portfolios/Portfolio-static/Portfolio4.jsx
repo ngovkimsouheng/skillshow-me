@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import img from "./image.png";
+import img from "./portfolioProfile04.png";
 import ButtonEdit from "./ButtonEdit";
 // import { NavLink, useNavigate } from "react-router";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -17,7 +17,7 @@ export default function Portfolio4() {
     if (!token) {
       console.log("no token, navigating to login");
       alert("Please login to edit your portfolio");
-      navigate("/login"); // ✅ FIXED
+      navigate("/login");
       return;
     }
 
@@ -51,7 +51,7 @@ export default function Portfolio4() {
   };
 
   return (
-    <div className="bg-zinc-50 my-18 text-zinc-900 min-h-screen overflow-x-hidden">
+    <div className="bg-zinc-50  my-18 text-zinc-900 min-h-screen overflow-x-hidden">
       {/* {templates.map((template) => (
         <NavLink key={template.id} to={`/dashboard/portfolio/1`}>
           <ButtonEdit />
@@ -60,7 +60,7 @@ export default function Portfolio4() {
 
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&display=swap');
-        .bebas { font-family: 'Bebas Neue', cursive; letter-spacing: 0.04em; }
+       
       
         .border-brutal { border: 3px solid #18181b; }
         .shadow-brutal { box-shadow: 6px 6px 0px #18181b; }
@@ -74,16 +74,80 @@ export default function Portfolio4() {
         .diagonal-bg { background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(234,179,8,0.08) 10px, rgba(234,179,8,0.08) 20px); }
         .tag-pill { font-family: 'Bebas Neue', cursive; letter-spacing: 0.1em; }
       `}</style>
+      <header className=" ">
+        {/* ── NAV ── */}
+        <nav className="w-full top-0 z-50 bg-zinc-50 border-b-4 border-zinc-900">
+          <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-16">
+              <button
+                onClick={() => scrollTo("home")}
+                className="bebas text-3xl text-zinc-900 tracking-widest"
+              >
+                HENG
+                <span className="text-rose-500">*</span>
+              </button>
+              {/* Desktop */}
+              <div className="hidden lg:flex items-center gap-0">
+                {links.map((l, i) => (
+                  <button
+                    key={l}
+                    onClick={() => scrollTo(l)}
+                    className={`px-4 py-2 text-xs font-bold uppercase tracking-widest border-r-2 border-zinc-200 transition-all duration-150
+                        ${active === l ? "bg-zinc-900 text-zinc-50" : "hover:bg-yellow-300 text-zinc-600 hover:text-zinc-900"}`}
+                  >
+                    {l}
+                  </button>
+                ))}
+                <button
+                  onClick={() => scrollTo("contact")}
+                  className="ml-4 px-5 py-2 bg-rose-500 text-white text-xs font-bold uppercase tracking-widest border-brutal shadow-brutal hover-lift"
+                >
+                  Hire Me
+                </button>
+              </div>
+              {/* Mobile */}
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="lg:hidden w-10 h-10 border-brutal flex flex-col items-center justify-center gap-1.5"
+              >
+                <span
+                  className={`block w-5 h-0.5 bg-zinc-900 transition-all ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
+                />
+                <span
+                  className={`block w-5 h-0.5 bg-zinc-900 transition-all ${menuOpen ? "opacity-0" : ""}`}
+                />
+                <span
+                  className={`block w-5 h-0.5 bg-zinc-900 transition-all ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+                />
+              </button>
+            </div>
+          </div>
+          {menuOpen && (
+            <div className="lg:hidden border-t-4 border-zinc-900 bg-zinc-50">
+              {links.map((l) => (
+                <button
+                  key={l}
+                  onClick={() => scrollTo(l)}
+                  className={`w-full text-left px-6 py-4 text-sm font-bold uppercase tracking-widest border-b-2 border-zinc-200 transition
+                      ${active === l ? "bg-zinc-900 text-yellow-300" : "hover:bg-yellow-300 text-zinc-700"}`}
+                >
+                  {l}
+                </button>
+              ))}
+            </div>
+          )}
+        </nav>
 
+      </header>
       <ButtonEdit onClick={() => handleEditClick(1)} />
 
       {/* ── HOME ── */}
       <section id="home" className=" py-6   diagonal-bg">
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8 ">
-          <div className="grid lg:grid-cols-12 gap-6 items-start">
+          <div className="grid lg:grid-cols-12 gap-4 items-start">
             {/* Big title — spans 7 cols */}
             <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 bg-yellow-300 border-brutal px-4 py-2 mb-8 shadow-brutal">
+              <div className="inline-flex items-center gap-2 bg-yellow-300 border-brutal px-4 py-2 mb-6 shadow-brutal">
                 <span className="w-2 h-2 bg-rose-500 rounded-full animate-pulse" />
                 <span className="text-xs font-bold uppercase tracking-widest">
                   Available for Work
@@ -105,7 +169,7 @@ export default function Portfolio4() {
                 I specialize in designing modern web and mobile interfaces. I believe good design is simple, purposeful, and impactful .
               </p>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap mb-6 gap-4">
                 <button
                   onClick={() => scrollTo("experience")}
                   className="px-8 py-4 bg-zinc-900 text-zinc-50 text-sm font-bold uppercase tracking-widest border-brutal shadow-brutal hover-lift"
@@ -164,7 +228,7 @@ export default function Portfolio4() {
 
       {/* ── ABOUT ── */}
 
-      <div className="bg-yellow-300 border-b-4 border-zinc-900 py-2 overflow-hidden whitespace-nowrap">
+      {/* <div className="bg-yellow-300 border-b-4 border-zinc-900 py-2 overflow-hidden whitespace-nowrap">
         <div className="marquee inline-flex gap-0">
           {[...Array(2)].map((_, i) => (
             <span
@@ -194,7 +258,7 @@ export default function Portfolio4() {
             </span>
           ))}
         </div>
-      </div>
+      </div> */}
       {/* ── EXPERIENCE ── */}
       <section id="experience" className="py-10 bg-zinc-50">
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -32,7 +32,7 @@ export default function Portfolio10() {
   };
 
   return (
-    <div className="bg-white text-zinc-900 min-h-screen overflow-x-hidden">
+    <div className="bg-white my-18 text-zinc-900 min-h-screen overflow-x-hidden">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap');
       
@@ -56,7 +56,7 @@ export default function Portfolio10() {
       `}</style>
 
       {/* ── NAV ── */}
-      <nav className="w-full fixed top-0 z-50 bg-white/95 backdrop-blur border-b-2 border-zinc-200">
+      <nav className="w-full top-0 z-50 bg-white/95 backdrop-blur border-b-2 border-zinc-200">
         <div className="container mx-auto lg:max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 gap-4">
             {/* Logo */}
@@ -162,7 +162,7 @@ export default function Portfolio10() {
       {/* ── HOME ── */}
       <section
         id="home"
-        className="min-h-screen pt-18 bg-white relative overflow-hidden"
+        className="min-h-screen  bg-white relative overflow-hidden"
       >
         {/* Dot-grid background */}
         <div

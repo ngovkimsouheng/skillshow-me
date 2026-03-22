@@ -79,6 +79,7 @@ import AdminSkill from "./pages/Admin/AdminSkill.jsx";
 import AdminSocial from "./pages/Admin/AdminSocail.jsx";
 import PublicPortfolio from "./pages/Dashboard/PublicPortfolio.jsx";
 import { fa } from "zod/v4/locales";
+import AdminEducations from "./pages/Admin/AdminEducations.jsx";
 function App() {
   const [count, setCount] = useState(0);
   useEffect(() => {
@@ -111,22 +112,25 @@ function App() {
               {" "}
 
               <Route path="/portfolio6" element={<Portfolio6 />}></Route>
-              <Route path="/portfolio7" element={<Portfolio7 />}></Route>
 
               <Route path="/portfolio9" element={<Portfolio9 />}></Route>{" "}
-              <Route path="/portfolio10" element={<Portfolio10 />}></Route>
+
               <Route path="/portfolio11" element={<Portfolio11 />}></Route>
               <Route path="/portfolio12" element={<Portfolio12 />}></Route>
               {/* Layout Routes */}
               <Route path="/:username" element={<PublicPortfolio />} />
               <Route path="/" element={<Layout />}>
-                {/* public portfolio */}
 
 
+                <Route path="/*" element={<NotFoundPage />}></Route>
 
-                {/* portfolio prevview */} <Route path="/portfolio4" element={<Portfolio4 />}></Route>
+                {/* portfolio prevview */}
+                <Route path="/portfolio4" element={<Portfolio4 />}></Route>
                 <Route path="/portfolio5" element={<Portfolio5 />}></Route>
                 <Route path="/portfolio8" element={<Portfolio8 />}></Route>
+                <Route path="/portfolio10" element={<Portfolio10 />}></Route>
+                <Route path="/portfolio7" element={<Portfolio7 />}></Route>
+
                 {/*  category*/}
                 <Route path="/developer-category" element={<Developer />}></Route>
                 <Route path="/photographer-category" element={<Photographer />}></Route>
@@ -186,6 +190,7 @@ function App() {
                 <Route path="admin/contacts" element={<ProtectedRoute requiredRole="admin"><AdminContact /></ProtectedRoute>} />
 
                 <Route path="admin/projects" element={<ProtectedRoute requiredRole="admin"><AdminProject /></ProtectedRoute>} />
+                <Route path="admin/educations" element={<ProtectedRoute requiredRole="admin"><AdminEducations/></ProtectedRoute>} />
                 <Route path="admin/skills" element={<ProtectedRoute requiredRole="admin"><AdminSkill /></ProtectedRoute>} />
                 <Route path="admin/socails" element={<ProtectedRoute requiredRole="admin"><AdminSocial /></ProtectedRoute>} />
                 <Route path="admin/analytics" element={<ProtectedRoute requiredRole="admin"><AdminAnalytics /></ProtectedRoute>} />

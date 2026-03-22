@@ -34,7 +34,7 @@ export default function PortfolioGirl() {
 
   const links = [
     "home",
-    "about",
+
     "experience",
     "job",
     "school",
@@ -146,7 +146,7 @@ export default function PortfolioGirl() {
       ))} */}  <ButtonEdit onClick={() => handleEditClick(1)} />
 
       {/* ── HOME ── */}
-      <section id="home" className="min-h-screen dot-bg">
+      <section id="home" className="my-10 dot-bg">
         <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8  py-6">
           <div className="grid lg:grid-cols-12 gap-6 items-start">
             {/* Text — 7 cols */}
@@ -227,7 +227,7 @@ export default function PortfolioGirl() {
         </div>
       </section>
       {/* ── MARQUEE ── */}
-      <div className="bg-stone-800 border-b-2 border-stone-800 py-2.5 overflow-hidden">
+      {/* <div className="bg-stone-800 border-b-2 border-stone-800 py-2.5 overflow-hidden">
         <div className="marquee inline-flex whitespace-nowrap">
           {[...Array(2)].map((_, i) => (
             <span key={i} className="inline-flex items-center">
@@ -257,7 +257,7 @@ export default function PortfolioGirl() {
             </span>
           ))}
         </div>
-      </div>
+      </div> */}
 
 
       {/* ── EXPERIENCE ── */}

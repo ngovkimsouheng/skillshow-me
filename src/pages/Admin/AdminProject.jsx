@@ -49,7 +49,7 @@ export default function AdminProject() {
                     placeholder="Search projects..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary"
+                    className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary placeholder-gray-400"
                 />
             </div>
 
@@ -59,103 +59,69 @@ export default function AdminProject() {
                     <table className="w-full">
                         <thead className="bg-gray-50">
                             <tr>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                                    Project
-                                </th>
-
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                                    Description
-                                </th>
-
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                                    Status
-                                </th>
-
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                                    Links
-                                </th>
-
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                                    Created
-                                </th>
-
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                                    Actions
-                                </th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Project</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Description</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Links</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Created</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
                             </tr>
                         </thead>
 
                         <tbody className="divide-y divide-gray-200">
-                            {filteredProjects.map((project) => (
-                                <tr key={project.id} className="hover:bg-gray-50">
-                                    {/* Project Name */}
-                                    <td className="px-6 py-4 text-sm font-medium text-gray-900">
-                                        {project.name}
-                                    </td>
-
-                                    {/* Description */}
-                                    <td className="px-6 py-4 text-sm text-gray-500">
-                                        {project.description || "No description"}
-                                    </td>
-
-                                    {/* Status */}
-                                    <td className="px-6 py-4 text-sm">
-                                        {project.is_published ? (
-                                            <span className="px-2 py-1 text-xs bg-green-100 text-green-700 rounded">
-                                                Published
-                                            </span>
-                                        ) : (
-                                            <span className="px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded">
-                                                Draft
-                                            </span>
-                                        )}
-                                    </td>
-
-                                    {/* Links */}
-                                    <td className="px-6 py-4 flex gap-3 text-sm">
-                                        {project.project_url && (
-                                            <a
-                                                href={project.project_url}
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                className="text-blue-600 hover:text-blue-800"
+                            {filteredProjects.length > 0 ? (
+                                filteredProjects.map((project) => (
+                                    <tr key={project.id} className="hover:bg-gray-50">
+                                        <td className="px-6 py-4 text-sm font-medium text-gray-900 break-words">
+                                            {project.name}
+                                        </td>
+                                        <td className="px-6 py-4 text-sm text-gray-500 break-words">
+                                            {project.description || "No description"}
+                                        </td>
+                                        <td className="px-6 py-4 text-sm">
+                                            {project.is_published ? (
+                                                <span className="px-2 py-1 text-xs bg-green-100 text-green-700 rounded">Published</span>
+                                            ) : (
+                                                <span className="px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded">Draft</span>
+                                            )}
+                                        </td>
+                                        <td className="px-6 py-4 flex gap-3 text-sm">
+                                            {project.project_url && (
+                                                <a href={project.project_url} target="_blank" rel="noreferrer" className="text-blue-600 hover:text-blue-800">
+                                                    <FaExternalLinkAlt />
+                                                </a>
+                                            )}
+                                            {project.github_url && (
+                                                <a href={project.github_url} target="_blank" rel="noreferrer" className="text-gray-800 hover:text-black">
+                                                    <FaGithub />
+                                                </a>
+                                            )}
+                                        </td>
+                                        <td className="px-6 py-4 text-sm text-gray-500">
+                                            {new Date(project.created_at).toLocaleDateString()}
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <button
+                                                onClick={() => handleDelete(project.id)}
+                                                className="text-red-600 hover:text-red-900"
                                             >
-                                                <FaExternalLinkAlt />
-                                            </a>
-                                        )}
-
-                                        {project.github_url && (
-                                            <a
-                                                href={project.github_url}
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                className="text-gray-800 hover:text-black"
-                                            >
-                                                <FaGithub />
-                                            </a>
-                                        )}
-                                    </td>
-
-                                    {/* Created */}
-                                    <td className="px-6 py-4 text-sm text-gray-500">
-                                        {new Date(project.created_at).toLocaleDateString()}
-                                    </td>
-
-                                    {/* Actions */}
-                                    <td className="px-6 py-4">
-                                        <button
-                                            onClick={() => handleDelete(project.id)}
-                                            className="text-red-600 hover:text-red-900"
-                                        >
-                                            <FaTrash />
-                                        </button>
+                                                <FaTrash />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan={6} className="text-center py-10 text-gray-500">
+                                        No projects found matching your search.
                                     </td>
                                 </tr>
-                            ))}
+                            )}
                         </tbody>
                     </table>
                 </div>
 
+                {/* API empty state */}
                 {projects.length === 0 && (
                     <div className="text-center py-10 text-gray-500">
                         No projects available

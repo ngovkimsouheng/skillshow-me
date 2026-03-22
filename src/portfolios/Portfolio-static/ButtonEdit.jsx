@@ -15,9 +15,9 @@ export default function ButtonEdit({ onClick }) {
     return (
         <button
             onClick={onClick}
-            className="ml-4 duration-500 animate-bounce cursor-pointer px-5 z-10 flex items-center gap-2 fixed bottom-20 right-35 py-2 bg-secondary text-primary text-xl font-bold uppercase tracking-widest border-brutal rounded-[20px] hover-lift"
+            className="ml-4 duration-500 animate-bounce cursor-pointer px-5 z-10 flex items-center gap-2 fixed bottom-20 right-35 py-2 bg-secondary border-primary border-2 text-primary text-xl font-semibold uppercase tracking-widest border-brutal rounded-full hover-lift"
         >
-            Edit
+            Edit <FaEdit className='text-2xl' />
         </button>
     );
 }
