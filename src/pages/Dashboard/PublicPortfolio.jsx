@@ -9,7 +9,7 @@ export default function PublicPortfolio() {
     const [portfolio, setPortfolio] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
-    console.log(username)
+console.log(username)
     useEffect(() => {
         const fetchPortfolio = async () => {
             try {

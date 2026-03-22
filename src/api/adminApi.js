@@ -39,6 +39,14 @@ export const adminApi = api.injectEndpoints({
       }),
       invalidatesTags: ["Users"],
     }),
+    updatePortfolioVisibility: builder.mutation({
+      query: ({ userId, is_public }) => ({
+        url: `/admin/portfolios/${userId}/visibility`,
+        method: "PUT",
+        body: { is_public },
+      }),
+      invalidatesTags: ["Users"], // refresh user list
+    }),
   }),
   overrideExisting: false,
 });
@@ -49,4 +57,5 @@ export const {
   useUpdateUserMutation,
   useDeleteUserMutation,
   useCreateUserMutation,
+  useUpdatePortfolioVisibilityMutation,
 } = adminApi;

@@ -19,10 +19,11 @@ export const portfolioApi = api.injectEndpoints({
     }),
     /* ================= UPDATE MY PORTFOLIO ================= */
     updateMyPortfolio: builder.mutation({
-      query: () => ({
+      query: (is_public) => ({
         url: "porfolios/me/visibility",
         method: "PUT",
-        body: { is_public: true },
+        // body: { is_public: true },
+        body: { is_public },
       }),
       invalidatesTags: ["Portfolio"],
     }),
