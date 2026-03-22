@@ -107,13 +107,13 @@ export default function Developer() {
 
                 </div>
                 <img data-aos="fade-right"
-                    data-aos-duration="1200" className='w-60 max-sm:w-35  left-10 block dark:hidden top-30 absolute' src={vector1} alt="Vector 1" />
+                    className='w-60 max-sm:w-35  left-10 block dark:hidden top-30 absolute' src={vector1} alt="Vector 1" />
                 <img data-aos="flip-up"
-                    data-aos-duration="1200" className='w-60 max-sm:w-35  right-10 block dark:hidden bottom-30 max-lg:bottom-10  absolute' src={vector2} alt="Vector 2" />
+                    className='w-60 max-sm:w-35  right-10 block dark:hidden bottom-30 max-lg:bottom-10  absolute' src={vector2} alt="Vector 2" />
                 <img data-aos="flip-up"
-                    data-aos-duration="1200" className='w-60 max-sm:w-35 left-10 hidden dark:block top-30 absolute' src={darkvector1} alt="Dark Vector 1" />
+                    className='w-60 max-sm:w-35 left-10 hidden dark:block top-30 absolute' src={darkvector1} alt="Dark Vector 1" />
                 <img data-aos="flip-up"
-                    data-aos-duration="1200" className='w-60 max-sm:w-35 right-10 hidden dark:block bottom-30 max-lg:bottom-10  absolute' src={darkvector2} alt="Dark Vector 2" />
+                    className='w-60 max-sm:w-35 right-10 hidden dark:block bottom-30 max-lg:bottom-10  absolute' src={darkvector2} alt="Dark Vector 2" />
             </section>
             <div className='mb-8'>
                 <AutoScrollSlider />
