@@ -6,12 +6,12 @@ import vector1 from './vector1.png'
 import darkvector1 from './darkVector1.png'
 import vector2 from './vector2.png'
 import darkvector2 from './darkVector2.png'
-import cover1 from "../components/Images/cover1.jpg"
-import cover2 from "../components/Images/cover2.jpg"
-import cover3 from "../components/Images/cover3.jpg"
-import cover4 from "../components/Images/cover4.jpg"
-import cover5 from "../components/Images/cover5.jpg"
-import cover6 from "../components/Images/cover6.jpg"
+import cover2 from "../components/Images/cover18.jpg"
+import cover19 from "../components/Images/popular3.png"
+import cover20 from "../components/Images/popular4.png"
+import cover21 from "../components/Images/cover21.jpg"
+import cover22 from "../components/Images/cover22.jpg"
+import cover23 from "../components/Images/cover16.jpg"
 
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import TextType from '../../Homepage/Components/TypeText';
@@ -146,22 +146,51 @@ export default function Designer() {
                     <NavLink data-aos="flip-up"
                         className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
                         <img
-                            className="rounded-[16px]  w-full transition-transform duration-300 group-hover:scale-108 h-[230px]"
-                            src={cover1}
+                            className="rounded-[16px] object-cover  w-full transition-transform duration-300 group-hover:scale-108 h-[230px]"
+                            src={cover20}
                             alt="template"
                         />
                         <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                             <div className="flex gap-4">
-                                {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                                {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
                                     <FaEdit /> Edit
                                 </button> */}
-                                <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition">
+                                <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition">
+                                    <IoMdEye className="text-[20px]" /> Preview
+                                </button>
+                            </div>
+                        </div>
+                    </NavLink>
+                    <NavLink data-aos="flip-up"
+                        className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                        <img
+                            className="rounded-[16px] object-cover  w-full transition-transform duration-300 group-hover:scale-108 h-[230px]"
+                            src={cover19}
+                            alt="template"
+                        />
+                        <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                            <div className="flex gap-4">
+                                {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
+                                    <FaEdit /> Edit
+                                </button> */}
+                                <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition">
                                     <IoMdEye className="text-[20px]" /> Preview
                                 </button>
                             </div>
                         </div>
                     </NavLink>
 
+
+                    <div data-aos="flip-up" className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                        <p className='absolute text-xl text-end right-2 text-primary bg-secondary px-4 py-1 rounded-full'>Comming soon</p>
+                        <img
+                            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
+                            src={cover22}
+                            alt="template"
+                        />
+
+
+                    </div>
                     <div data-aos="flip-up" className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
                         <p className='absolute text-xl text-end right-2 text-primary bg-secondary px-4 py-1 rounded-full'>Comming soon</p>
                         <img
@@ -171,8 +200,25 @@ export default function Designer() {
                         />
 
 
-                    </div>
+                    </div>     <div data-aos="flip-up" className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                        <p className='absolute text-xl text-end right-2 text-primary bg-secondary px-4 py-1 rounded-full'>Comming soon</p>
+                        <img
+                            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
+                            src={cover21}
+                            alt="template"
+                        />
 
+
+                    </div>     <div data-aos="flip-up" className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                        <p className='absolute text-xl text-end right-2 text-primary bg-secondary px-4 py-1 rounded-full'>Comming soon</p>
+                        <img
+                            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
+                            src={cover23}
+                            alt="template"
+                        />
+
+
+                    </div>
 
                 </div>
             </section>

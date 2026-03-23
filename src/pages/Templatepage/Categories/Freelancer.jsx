@@ -6,12 +6,12 @@ import vector1 from './vector1.png'
 import darkvector1 from './darkVector1.png'
 import vector2 from './vector2.png'
 import darkvector2 from './darkVector2.png'
-import cover1 from "../components/Images/cover1.jpg"
-import cover2 from "../components/Images/cover2.jpg"
-import cover3 from "../components/Images/cover3.jpg"
-import cover4 from "../components/Images/cover4.jpg"
-import cover5 from "../components/Images/cover5.jpg"
-import cover6 from "../components/Images/cover6.jpg"
+import cover7 from "../components/Images/cover7.jpg"
+import cover8 from "../components/Images/cover8.jpg"
+import cover9 from "../components/Images/cover9.jpg"
+import cover10 from "../components/Images/cover10.jpg"
+import cover11 from "../components/Images/cover11.jpg"
+import cover12 from "../components/Images/cover12.jpg"
 
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import TextType from '../../Homepage/Components/TypeText';
@@ -147,7 +147,7 @@ export default function Freelancer() {
                         className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
                         <img
                             className="rounded-[16px]  w-full transition-transform duration-300 group-hover:scale-108 h-[230px]"
-                            src={cover1}
+                            src={cover7}
                             alt="template"
                         />
                         <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
@@ -166,12 +166,53 @@ export default function Freelancer() {
                         <p className='absolute text-xl text-end right-2 text-primary bg-secondary px-4 py-1 rounded-full'>Comming soon</p>
                         <img
                             className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
-                            src={cover2}
+                            src={cover8}
                             alt="template"
                         />
 
 
                     </div>
+                    <div data-aos="flip-up" className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                        <p className='absolute text-xl text-end right-2 text-primary bg-secondary px-4 py-1 rounded-full'>Comming soon</p>
+                        <img
+                            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
+                            src={cover9}
+                            alt="template"
+                        />
+
+
+                    </div>
+                    <div data-aos="flip-up" className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                        <p className='absolute text-xl text-end right-2 text-primary bg-secondary px-4 py-1 rounded-full'>Comming soon</p>
+                        <img
+                            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
+                            src={cover10}
+                            alt="template"
+                        />
+
+
+                    </div>
+                    <div data-aos="flip-up" className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                        <p className='absolute text-xl text-end right-2 text-primary bg-secondary px-4 py-1 rounded-full'>Comming soon</p>
+                        <img
+                            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
+                            src={cover11}
+                            alt="template"
+                        />
+
+
+                    </div>
+                    <div data-aos="flip-up" className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                        <p className='absolute text-xl text-end right-2 text-primary bg-secondary px-4 py-1 rounded-full'>Comming soon</p>
+                        <img
+                            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
+                            src={cover12}
+                            alt="template"
+                        />
+
+
+                    </div>
+
 
 
                 </div>

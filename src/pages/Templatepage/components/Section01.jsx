@@ -32,14 +32,14 @@ export default function Section01() {
           SkillShow helps you create a professional portfolio to showcase your
           skills and stand out.
         </p>
-        <a href="#template">
+        <a href="#templates">
           <button
             data-aos="fade-right"
             data-aos-delay="450"
             className="group max-sm:mb-4 dark:bg-cool-sky  shadow-md w-fit relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-primary px-6 font-medium  transition duration-200 hover:scale-110"
           >
             <span className="flex  dark:text-primary text-secondary items-center">
-              VIEW OUR TEAM{" "}
+              CREATE YOURS{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4 ml-2"

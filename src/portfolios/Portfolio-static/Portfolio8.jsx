@@ -256,7 +256,7 @@ export default function Portfolio8() {
         )}
 
       </nav>
-      <button className="fixed hover:cursor-wait bottom-20 right-20 bg-secondary text-primary animate-bounce text-3xl z-99 rounded-full border-primary border-1 px-4 py-2">Comming Soon</button>
+      {/* <button className="fixed hover:cursor-wait bottom-20 right-20 bg-secondary text-primary animate-bounce text-3xl z-99 rounded-full border-primary border-1 px-4 py-2">Comming Soon</button> */}
       {/* ── TICKER ── */}
       {/* <ButtonEdit onClick={() => handleEditClick(1)} /> */}
       {/* {templates.map((template) => (

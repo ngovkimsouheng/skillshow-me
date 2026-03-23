@@ -7,8 +7,8 @@ import darkvector1 from './darkVector1.png'
 import vector2 from './vector2.png'
 import darkvector2 from './darkVector2.png'
 import { MdLockOutline } from 'react-icons/md';
-import cover1 from "../components/Images/cover1.jpg"
-import cover2 from "../components/Images/cover2.jpg"
+import cover1 from "../components/Images/popular1.png"
+import cover2 from "../components/Images/popular2.png"
 import cover3 from "../components/Images/cover3.jpg"
 import cover4 from "../components/Images/cover4.jpg"
 import cover5 from "../components/Images/cover5.jpg"
@@ -144,38 +144,42 @@ export default function Developer() {
 
 
 
-                    <NavLink data-aos="flip-up"
+                    <NavLink to="/portfolio4" data-aos="flip-up"
                         className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
                         <img
-                            className="rounded-[16px]  w-full transition-transform duration-300 group-hover:scale-108 h-[230px]"
+                            className="rounded-[16px] object-cover  w-full transition-transform duration-300 group-hover:scale-108 h-[230px]"
                             src={cover1}
                             alt="template"
                         />
 
                         <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                             <div className="flex gap-4">
-                                {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                                    <FaEdit /> Edit
-                                </button> */}
-                                <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition">
+
+                                <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition">
                                     <IoMdEye className="text-[20px]" /> Preview
                                 </button>
                             </div>
                         </div>
                     </NavLink>
 
-                    <div data-aos="flip-up" className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
-                        <div className="absolute bg-secondary  p-2 rounded-full  top-2 right-2 text-2xl text-gray-400">
-                            <MdLockOutline className="text-primary" />
-                        </div>
+                    <NavLink to="/portfolio5" data-aos="flip-up"
+                        className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
                         <img
-                            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
+                            className="rounded-[16px] object-cover  w-full transition-transform duration-300 group-hover:scale-108 h-[230px]"
                             src={cover2}
                             alt="template"
                         />
 
+                        <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                            <div className="flex gap-4">
 
-                    </div>
+                                <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition">
+                                    <IoMdEye className="text-[20px]" /> Preview
+                                </button>
+                            </div>
+                        </div>
+                    </NavLink>
+
                     <div data-aos="flip-up" className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
                         <div className="absolute bg-secondary  p-2 rounded-full  top-2 right-2 text-2xl text-gray-400">
                             <MdLockOutline className="text-primary" />

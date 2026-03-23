@@ -6,6 +6,7 @@ import template4 from "./Images/cover23.jpg";
 import arrow from "./Images/arrow.png";
 import arrowDark from "./Images/arrow-dark.png";
 import { NavLink } from "react-router";
+import { MdLockOutline } from "react-icons/md";
 export default function Section02() {
   return (
     <section className="flex container max-w-7xl mx-auto px-2 lg:my-0 md:my-8 relative mx-auto flex-wrap max-lg:gap-4 container max-lg:flex-col justify-center items-center">
@@ -52,12 +53,14 @@ export default function Section02() {
             </div>
           </NavLink>{" "}
           {/* Photo grapher */}
-          <NavLink
-            to="/photographer-category"
+          <div
+            // to="/photographer-category"
             data-aos="fade-right"
             data-aos-delay="550"
-            className="w-[300px] hover:shadow-md ring ring-cool-sky shadow-2xs p-4 bg-white rounded-[24px]"
-          >
+            className="w-[300px] relative cursor-not-allowed hover:shadow-md ring ring-cool-sky shadow-2xs p-4 bg-white rounded-[24px]"
+          >   <div className="absolute bg-secondary  p-2 rounded-full  top-2 right-2 text-2xl text-gray-400">
+              <MdLockOutline className="text-primary" />
+            </div>
             <img className="rounded-[8px] border border-gray-200  h-[200px] w-full object-cover" src={template2} alt="" />
             <div className="flex flex-col pt-3.5 gap-3">
               {" "}
@@ -72,17 +75,20 @@ export default function Section02() {
                 Create a stunning gallery to present your visual stories.
               </p>
             </div>
-          </NavLink>
+          </div>
         </div>
       </div>
       <div className=" relative">
         <div className="flex max-md:flex-col gap-4 max-lg:pb-8 lg:pb-13">
-          <NavLink
-            to="/freelancer-category"
+          <div
+            // to="/freelancer-category"NavLink
+
             data-aos="fade-left"
             data-aos-delay="350"
-            className="w-[300px] hover:shadow-md ring ring-cool-sky shadow-2xs p-4 bg-white rounded-[24px]"
-          >
+            className="w-[300px] cursor-not-allowed hover:shadow-md ring ring-cool-sky shadow-2xs p-4 bg-white rounded-[24px]"
+          > <div className="absolute bg-secondary  p-2 rounded-full  top-2 right-2 text-2xl text-gray-400">
+              <MdLockOutline className="text-primary" />
+            </div>
             <img className="rounded-[8px] border border-gray-200/40 h-[200px] w-full object-cover" src={template3} alt="" />
             <div className="flex flex-col pt-3.5 gap-3">
               {" "}
@@ -97,7 +103,7 @@ export default function Section02() {
                 Highlight your work, clients, and professional achievements.
               </p>
             </div>
-          </NavLink>{" "}
+          </div>{" "}
           <NavLink
             to="/designer-category"
             data-aos="fade-left"

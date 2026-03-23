@@ -61,7 +61,7 @@ export default function Section03() {
                 <FaEdit /> Edit
               </button> */}
               <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-full hover:bg-primary/90 cursor-pointer transition">
-                <IoMdEye className="text-[20px]" /> Preview
+                <IoMdEye className="text-[20px]" /> Preview & Edit
               </button>
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function Section03() {
                 <FaEdit /> Edit
               </button> */}
               <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-full hover:bg-primary/90 cursor-pointer transition">
-                <IoMdEye className="text-[20px]" /> Preview
+                <IoMdEye className="text-[20px]" /> Preview & Edit
               </button>
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function Section03() {
                 <FaEdit /> Edit
               </button> */}
               <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-full hover:bg-primary/90 cursor-pointer transition">
-                <IoMdEye className="text-[20px]" /> Preview
+                <IoMdEye className="text-[20px]" /> Preview Only
               </button>
             </div>
           </div>
@@ -115,7 +115,7 @@ export default function Section03() {
                 <FaEdit /> Edit
               </button> */}
               <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-full hover:bg-primary/90 cursor-pointer transition">
-                <IoMdEye className="text-[20px]" /> Preview
+                <IoMdEye className="text-[20px]" /> Preview Only
               </button>
             </div>
           </div>
@@ -133,144 +133,88 @@ export default function Section03() {
                 <FaEdit /> Edit
               </button> */}
               <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-full hover:bg-primary/90 cursor-pointer transition">
-                <IoMdEye className="text-[20px]" /> Preview
+                <IoMdEye className="text-[20px]" /> Preview Only
               </button>
             </div>
           </div>
         </NavLink>
 
-        <NavLink className="relative md:w-[370px] lg:w-[390px] w-[360px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+        <div data-aos="flip-up" className="relative cursor-not-allowed  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+          <p className='absolute text-xl text-end right-2 text-primary bg-secondary px-4 py-1 rounded-full'>Comming soon</p>
           <img
-            className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108 h-[240px]"
-            src={img6}
+            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
+            src={img9}
             alt="template"
           />
-          <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-            <div className="flex gap-4">
-              {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
-                <FaEdit /> Edit
-              </button> */}
-              <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-full hover:bg-primary/90 cursor-pointer transition">
-                <IoMdEye className="text-[20px]" /> Preview
-              </button>
-            </div>
-          </div>
-        </NavLink>
+
+
+        </div>
 
         {/* ✅ EXTRA TEMPLATES (SHOW ONLY IF showAll = true) */}
 
         {showAll && (
           <>
-            <NavLink className="relative md:w-[370px] lg:w-[390px] w-[360px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+
+            <div data-aos="flip-up" className="relative cursor-not-allowed  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+              <p className='absolute text-xl text-end right-2 text-primary bg-secondary px-4 py-1 rounded-full'>Comming soon</p>
               <img
-                className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108 h-[240px]"
+                className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
                 src={img7}
                 alt="template"
               />
-              <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                <div className="flex gap-4">
-                  {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
-                    <FaEdit /> Edit
-                  </button> */}
-                  <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-full hover:bg-primary/90 cursor-pointer transition">
-                    <IoMdEye className="text-[20px]" /> Preview
-                  </button>
-                </div>
-              </div>
-            </NavLink>
-            <NavLink className="relative md:w-[370px] lg:w-[390px] w-[360px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
-              <img
-                className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108 h-[240px]"
-                src={img8}
-                alt="template"
-              />
-              <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                <div className="flex gap-4">
-                  {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
-                    <FaEdit /> Edit
-                  </button> */}
-                  <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-full hover:bg-primary/90 cursor-pointer transition">
-                    <IoMdEye className="text-[20px]" /> Preview
-                  </button>
-                </div>
-              </div>
-            </NavLink>
-            <NavLink className="relative md:w-[370px] lg:w-[390px] w-[360px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
-              <img
-                className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108 h-[240px]"
-                src={img9}
-                alt="template"
-              />
-              <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                <div className="flex gap-4">
 
-                  <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-full hover:bg-primary/90 cursor-pointer transition">
-                    <IoMdEye className="text-[20px]" /> Preview
-                  </button>
-                </div>
-              </div>
-            </NavLink>{" "}
-            <NavLink className="relative md:w-[370px] lg:w-[390px] w-[360px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
-              <img
-                className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108 h-[240px]"
-                src={img10}
-                alt="template"
-              />
-              <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                <div className="flex gap-4">
 
-                  <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-full hover:bg-primary/90 cursor-pointer transition">
-                    <IoMdEye className="text-[20px]" /> Preview
-                  </button>
-                </div>
-              </div>
-            </NavLink>
-            <NavLink className="relative md:w-[370px] lg:w-[390px] w-[360px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+            </div>
+            <div data-aos="flip-up" className="relative cursor-not-allowed  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+              <p className='absolute text-xl text-end right-2 text-primary bg-secondary px-4 py-1 rounded-full'>Comming soon</p>
               <img
-                className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108 h-[240px]"
+                className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
                 src={img2}
                 alt="template"
               />
-              <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                <div className="flex gap-4">
 
-                  <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-full hover:bg-primary/90 cursor-pointer transition">
-                    <IoMdEye className="text-[20px]" /> Preview
-                  </button>
-                </div>
-              </div>
-            </NavLink>
-            <NavLink className="relative md:w-[370px] lg:w-[390px] w-[360px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+
+            </div>
+            <div data-aos="flip-up" className="relative cursor-not-allowed  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+              <p className='absolute text-xl text-end right-2 text-primary bg-secondary px-4 py-1 rounded-full'>Comming soon</p>
               <img
-                className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108 h-[240px]"
+                className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
+                src={img10}
+                alt="template"
+              />
+
+
+            </div>
+            <div data-aos="flip-up" className="relative cursor-not-allowed  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+              <p className='absolute text-xl text-end right-2 text-primary bg-secondary px-4 py-1 rounded-full'>Comming soon</p>
+              <img
+                className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
                 src={img12}
                 alt="template"
               />
-              <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                <div className="flex gap-4">
 
-                  <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-full hover:bg-primary/90 cursor-pointer transition">
-                    <IoMdEye className="text-[20px]" /> Preview
-                  </button>
-                </div>
-              </div>
-            </NavLink>{" "}
-            <NavLink className="relative md:w-[370px] lg:w-[390px] w-[360px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+
+            </div>
+            <div data-aos="flip-up" className="relative cursor-not-allowed  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+              <p className='absolute text-xl text-end right-2 text-primary bg-secondary px-4 py-1 rounded-full'>Comming soon</p>
               <img
-                className="rounded-[16px] w-full transition-transform duration-300 group-hover:scale-108 h-[240px]"
-                src={img13}
+                className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
+                src={img5}
                 alt="template"
               />
-              <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                <div className="flex gap-4">
 
-                  <button className="px-5 flex gap-2 items-center py-2 bg-primary text-white rounded-full hover:bg-primary/90 cursor-pointer transition">
-                    <IoMdEye className="text-[20px]" /> Preview
-                  </button>
-                </div>
-              </div>
-            </NavLink>
 
+            </div>
+            <div data-aos="flip-up" className="relative cursor-not-allowed  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+              <p className='absolute text-xl text-end right-2 text-primary bg-secondary px-4 py-1 rounded-full'>Comming soon</p>
+              <img
+                className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
+                src={img6}
+                alt="template"
+              />
+
+
+            </div>
           </>
         )}
       </div>

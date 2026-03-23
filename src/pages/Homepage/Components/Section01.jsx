@@ -7,10 +7,10 @@ export default function Section01() {
     <div className="flex w-full overflow-x-hidden  pt-10 flex-col max-sm:gap-5 pb-10">
       <div className="text-center font-['Poppins-Bold',_sans-serif] max-sm:text-[40px] max-md:text-[43px]  text-[70px] leading-[75px] max-md:leading-[45px] font-bold">
         <span>
-          <p
+          <h1
             data-aos="fade-up"
             data-aos-delay="300"
-            className="text-primary dark:text-white"
+            className="text-primary  max-sm:text-[40px] max-md:text-[43px]  text-[70px] leading-[75px] max-md:leading-[45px] font-bold dark:text-white"
           >
             For Creatives, By{" "}
             <span className="text-secondary dark:text-[#1bfffb] ">
@@ -30,7 +30,7 @@ export default function Section01() {
                 cursorBlinkDuration={0.5}
               /> */}
             </span>
-          </p>
+          </h1>
         </span>
       </div>
       <p

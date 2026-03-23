@@ -106,7 +106,7 @@ export default function TemplatePage() {
       </section>
       <AutoScrollSlider />
       <Section02 />
-      <Section03 />
+      <div id="templates">  <Section03 /></div>
     </div>
   );
 }

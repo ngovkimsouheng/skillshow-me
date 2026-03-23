@@ -260,7 +260,21 @@ export default function Dashboard() {
                   // { to: "/dashboard/admin/analytics", label: "Analytics" },
                 ]}
               />
-
+              <SideGroup
+                id="create-group"
+                label="Create"
+                icon="create"
+                expanded={expanded}
+                onToggle={tog}
+                closeSidebarOnMobile={closeSidebarOnMobile}
+                items={[
+                  { to: "/dashboard/create-job", label: "Experience" },
+                  { to: "/dashboard/create-project", label: "Project" },
+                  { to: "/dashboard/create-education", label: "Education" },
+                  { to: "/dashboard/create-skill", label: "Skill" },
+                  { to: "/dashboard/create-social-account", label: "Social Account" },
+                ]}
+              />
               <SideGroup
                 id="admin-content"
                 label="Content"
@@ -307,6 +321,20 @@ export default function Dashboard() {
               />
 
               <SideGroup
+                id="template"
+                label="Edit"
+                icon="edit"
+                expanded={expanded}
+                onToggle={tog}
+                closeSidebarOnMobile={closeSidebarOnMobile}
+                items={[
+                  { to: "/dashboard/portfolio/1", label: "Portfolio1" },
+                  { to: "/dashboard/portfolio/2", label: "Portfolio2" },
+                  { to: "/dashboard/portfolio/3", label: "Portfolio3" },
+                  { to: "/dashboard/portfolio/4", label: "Portfolio4" },
+                ]}
+              />
+              <SideGroup
                 id="create-group"
                 label="Create"
                 icon="create"
@@ -322,20 +350,6 @@ export default function Dashboard() {
                 ]}
               />
 
-              <SideGroup
-                id="template"
-                label="Edit"
-                icon="edit"
-                expanded={expanded}
-                onToggle={tog}
-                closeSidebarOnMobile={closeSidebarOnMobile}
-                items={[
-                  { to: "/dashboard/portfolio/1", label: "Portfolio1" },
-                  { to: "/dashboard/portfolio/2", label: "Portfolio2" },
-                  { to: "/dashboard/portfolio/3", label: "Portfolio3" },
-                  { to: "/dashboard/portfolio/4", label: "Portfolio4" },
-                ]}
-              />
             </>
           )}
 
