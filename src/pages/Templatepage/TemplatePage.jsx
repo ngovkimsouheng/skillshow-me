@@ -8,8 +8,8 @@ import AutoScrollSlider from "./components/AutoScrollSlider";
 import Slider from "./components/Slider";
 import vector1 from "./Categories/vector1.png";
 import vector2 from "./Categories/vector2.png";
-import darkvector1 from "./Categories/darkvector1.png";
-import darkvector2 from "./Categories/darkvector2.png";
+import darkVector1 from "./Categories/darkVector1.png";
+import darkVector2 from "./Categories/darkVector2.png";
 import Particles from "./Categories/components/Particles";
 export default function TemplatePage() {
   const location = useLocation();
@@ -98,9 +98,9 @@ export default function TemplatePage() {
           <img
             className='w-60 max-sm:w-35  right-10 block dark:hidden bottom-30 max-lg:bottom-10  absolute' src={vector2} alt="Vector 2" />
           <img
-            className='w-60 max-sm:w-35 left-10 hidden dark:block top-30 absolute' src={darkvector1} alt="Dark Vector 1" />
+            className='w-60 max-sm:w-35 left-10 hidden dark:block top-30 absolute' src={darkVector1} alt="Dark Vector 1" />
           <img
-            className='w-60 max-sm:w-35 right-10 hidden dark:block bottom-30 max-lg:bottom-10  absolute' src={darkvector2} alt="Dark Vector 2" />
+            className='w-60 max-sm:w-35 right-10 hidden dark:block bottom-30 max-lg:bottom-10  absolute' src={darkVector2} alt="Dark Vector 2" />
         </section>
         <Section01 />
       </section>
