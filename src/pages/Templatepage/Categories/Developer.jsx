@@ -6,6 +6,7 @@ import vector1 from './vector1.png'
 import darkvector1 from './darkVector1.png'
 import vector2 from './vector2.png'
 import darkvector2 from './darkVector2.png'
+import { MdLockOutline } from 'react-icons/md';
 import cover1 from "../components/Images/cover1.jpg"
 import cover2 from "../components/Images/cover2.jpg"
 import cover3 from "../components/Images/cover3.jpg"
@@ -150,6 +151,7 @@ export default function Developer() {
                             src={cover1}
                             alt="template"
                         />
+
                         <div className="absolute inset-0 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
                             <div className="flex gap-4">
                                 {/* <button className="px-5 flex gap-2 items-center py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
@@ -163,7 +165,9 @@ export default function Developer() {
                     </NavLink>
 
                     <div data-aos="flip-up" className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
-                        <p className='absolute text-xl text-end right-2 text-primary bg-secondary px-4 py-1 rounded-full'>Comming soon</p>
+                        <div className="absolute bg-secondary  p-2 rounded-full  top-2 right-2 text-2xl text-gray-400">
+                            <MdLockOutline className="text-primary" />
+                        </div>
                         <img
                             className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
                             src={cover2}
@@ -172,8 +176,54 @@ export default function Developer() {
 
 
                     </div>
+                    <div data-aos="flip-up" className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                        <div className="absolute bg-secondary  p-2 rounded-full  top-2 right-2 text-2xl text-gray-400">
+                            <MdLockOutline className="text-primary" />
+                        </div>
+                        <img
+                            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
+                            src={cover3}
+                            alt="template"
+                        />
 
 
+                    </div>
+                    <div data-aos="flip-up" className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                        <div className="absolute bg-secondary  p-2 rounded-full  top-2 right-2 text-2xl text-gray-400">
+                            <MdLockOutline className="text-primary" />
+                        </div>
+                        <img
+                            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
+                            src={cover4}
+                            alt="template"
+                        />
+
+
+                    </div>
+
+                    <div data-aos="flip-up" className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                        <div className="absolute bg-secondary  p-2 rounded-full  top-2 right-2 text-2xl text-gray-400">
+                            <MdLockOutline className="text-primary" />
+                        </div>
+                        <img
+                            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
+                            src={cover5}
+                            alt="template"
+                        />
+
+
+                    </div>    <div data-aos="flip-up" className="relative  w-[370px] lg:w-[390px] p-2 max-sm:w-[350px] rounded-[24px] bg-white shadow-md group overflow-hidden">
+                        <div className="absolute bg-secondary  p-2 rounded-full  top-2 right-2 text-2xl text-gray-400">
+                            <MdLockOutline className="text-primary" />
+                        </div>
+                        <img
+                            className="rounded-[16px] h-[230px] w-full transition-transform duration-300 "
+                            src={cover6}
+                            alt="template"
+                        />
+
+
+                    </div>
                 </div>
             </section>
         </section>
