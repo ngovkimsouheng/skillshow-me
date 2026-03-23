@@ -11,132 +11,130 @@ import { DrawCircleText } from "./DrawCircleText";
 export default function Footer() {
   return (
     <footer className="bg-white  dark:bg-gray-950">
-      <style>{`
+      <div>
+        <style>{`
         .marquee { animation: marquee 18s linear infinite; }
         @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     
       `}</style>
-      <div className="bg-secondary dark:bg-secondary-dark border-b-4 border-zinc-900 py-2 overflow-hidden whitespace-nowrap">
-        <div className="marquee inline-flex gap-0">
-          {[...Array(2)].map((_, i) => (
-            <span
-              key={i}
-              className="bebas text-zinc-900 text-lg tracking-widest mr-0"
+        <div className="bg-secondary dark:bg-secondary-dark border-b-4 border-zinc-900 py-2 overflow-hidden whitespace-nowrap">
+          <div className="marquee inline-flex gap-0">
+            {[...Array(2)].map((_, i) => (
+              <span
+                key={i}
+                className="bebas text-zinc-900 text-lg tracking-widest mr-0"
+              >
+                {[
+                  "UI DESIGN",
+                  "✦",
+                  "UX RESEARCH",
+                  "✦",
+                  "BRANDING",
+                  "✦",
+                  "FRONTEND DEV",
+                  "✦",
+                  "MOTION",
+                  "✦",
+                  "PROTOTYPING",
+                  "✦",
+                  "DESIGN SYSTEMS",
+                  "✦",
+                ].map((t, j) => (
+                  <span key={j} className="mx-6">
+                    {t}
+                  </span>
+                ))}
+              </span>
+            ))}
+          </div>
+        </div>
+        <DrawCircleText />
+        <div className="container max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left text-sm sm:text-base">
+          <div className="flex justify-center md:justify-start">
+            <NavLink className="">
+              <img
+                src={Logo}
+                alt="Logo 1"
+                className="w-60 h-40  block dark:hidden object-contain"
+              />{" "}
+              <img
+                src={DarkModeLogo}
+                alt="Logo 1"
+                className="w-60 dark:block hidden h-40 object-contain"
+              />
+            </NavLink>
+          </div>
+
+          <div className="flex flex-col max-lg:mt-3 items-center md:items-start gap-5">
+            <h4 className="text-primary  dark:text-cool-sky font-semibold text-lg">
+              Social media
+            </h4>
+            <div className="flex gap-4 text-primary">
+              {/* <!-- Facebook --> */}
+
+              <NavLink className="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out active:translate-y-[2px] active:shadow-none">
+                <FaFacebookF className="text-[28px]" />
+              </NavLink>
+
+              {/* <!-- TikTok --> */}
+              <NavLink className="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out active:translate-y-[2px] active:shadow-none">
+                <FaTiktok className="text-[28px]" />
+              </NavLink>
+
+              {/* <!-- YouTube --> */}
+              <NavLink className="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out active:translate-y-[2px] active:shadow-none">
+                <FaFacebookMessenger className="text-[28px]" />
+              </NavLink>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-5 items-center md:items-start">
+            <h4 className="text-primary dark:text-cool-sky font-semibold text-lg">
+              Links
+            </h4>
+            <NavLink className="text-[18px] text-accent dark:text-white transition">
+              Home
+            </NavLink>
+            <NavLink
+              to="/about"
+              className="text-[18px] text-accent dark:text-white transition"
             >
-              {[
-                "UI DESIGN",
-                "✦",
-                "UX RESEARCH",
-                "✦",
-                "BRANDING",
-                "✦",
-                "FRONTEND DEV",
-                "✦",
-                "MOTION",
-                "✦",
-                "PROTOTYPING",
-                "✦",
-                "DESIGN SYSTEMS",
-                "✦",
-              ].map((t, j) => (
-                <span key={j} className="mx-6">
-                  {t}
-                </span>
-              ))}
-            </span>
-          ))}
-        </div>
-      </div>
-      <DrawCircleText />
-      <div className="container max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left text-sm sm:text-base">
-        <div className="flex justify-center md:justify-start">
-          <NavLink className="">
-            <img
-              src={Logo}
-              alt="Logo 1"
-              className="w-60 h-40  block dark:hidden object-contain"
-            />{" "}
-            <img
-              src={DarkModeLogo}
-              alt="Logo 1"
-              className="w-60 dark:block hidden h-40 object-contain"
-            />
-          </NavLink>
-        </div>
-
-        <div className="flex flex-col max-lg:mt-3 items-center md:items-start gap-5">
-          <h4 className="text-primary  dark:text-cool-sky font-semibold text-lg">
-            Social media
-          </h4>
-          <div className="flex gap-4 text-primary">
-            {/* <!-- Facebook --> */}
-
-            <NavLink className="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out active:translate-y-[2px] active:shadow-none">
-              <FaFacebookF className="text-[28px]" />
+              About
+            </NavLink>{" "}
+            <NavLink
+              to="/template"
+              className="text-[18px] text-accent dark:text-white transition"
+            >
+              Template
             </NavLink>
+          </div>
 
-            {/* <!-- TikTok --> */}
-            <NavLink className="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out active:translate-y-[2px] active:shadow-none">
-              <FaTiktok className="text-[28px]" />
-            </NavLink>
+          <div className="flex flex-col gap-5 items-center md:items-start">
+            <h4 className="text-primary dark:text-cool-sky font-semibold text-lg max-sm:text-center">
+              Sponsored and organized by
+            </h4>
+            {/* <!-- <p className="dark:text-accent">
+            Institute of Science and Technology Advanced Development (ISTAD)
+          </p> --> */}
+            <NavLink to="https://www.facebook.com/share/1CSuMWRR43/?mibextid=wwXIfr">
+              {/* <!-- Light mode logo --> */}
+              <img
+                src={IstadLogo}
+                alt="Logo"
+                className="w-50 object-contain dark:hidden"
+              />
 
-            {/* <!-- YouTube --> */}
-            <NavLink className="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out active:translate-y-[2px] active:shadow-none">
-              <FaFacebookMessenger className="text-[28px]" />
+              {/* <!-- Dark mode logo --> */}
+              <img
+                src={IstadLogoDark}
+                alt="Logo White"
+                className="w-50 object-contain hidden dark:block"
+              />
             </NavLink>
           </div>
         </div>
 
-        <div className="flex flex-col gap-5 items-center md:items-start">
-          <h4 className="text-primary dark:text-cool-sky font-semibold text-lg">
-            Links
-          </h4>
-          <NavLink className="text-[18px] text-accent dark:text-white transition">
-            Home
-          </NavLink>
-          <NavLink
-            to="/about"
-            className="text-[18px] text-accent dark:text-white transition"
-          >
-            About
-          </NavLink>{" "}
-          <NavLink
-            to="/template"
-            className="text-[18px] text-accent dark:text-white transition"
-          >
-            Template
-          </NavLink>
-        </div>
-
-        <div className="flex flex-col gap-5 items-center md:items-start">
-          <h4 className="text-primary dark:text-cool-sky font-semibold text-lg max-sm:text-center">
-            Sponsored and organized by
-          </h4>
-          {/* <!-- <p className="dark:text-accent">
-            Institute of Science and Technology Advanced Development (ISTAD)
-          </p> --> */}
-          <NavLink>
-            {/* <!-- Light mode logo --> */}
-            <img
-              src={IstadLogo}
-              alt="Logo"
-              className="w-50 object-contain dark:hidden"
-            />
-
-            {/* <!-- Dark mode logo --> */}
-            <img
-              src={IstadLogoDark}
-              alt="Logo White"
-              className="w-50 object-contain hidden dark:block"
-            />
-          </NavLink>
-        </div>
       </div>
-      {/* <div className="text-center text-sm text-gray-500 dark:text-gray-400 py-4">
-        <p>
-          Showcase your skill now .
-        </p>
-      </div> */}
     </footer>
   );
 }

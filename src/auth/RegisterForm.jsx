@@ -146,7 +146,7 @@ export default function RegisterForm() {
       //  Redirect to login
       setTimeout(() => {
         navigate("/login", { replace: true });
-      }, 8000);
+      }, 1500);
     } catch (err) {
       console.error("Registration error:", err);
 
