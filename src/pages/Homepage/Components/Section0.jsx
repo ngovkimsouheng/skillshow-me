@@ -83,7 +83,7 @@ export default function Section0() {
                 >
                   <IoIosCloudDownload className="text-[28px] fill-primary" />
                   <p className="text-lg sm:text-xl md:text-xl bg-gradient-to-r from-gray-600 to-primary bg-clip-text text-transparent">
-                    Free Downloads
+                    Free Publish
                   </p>
                 </div>
 

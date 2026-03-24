@@ -99,7 +99,7 @@ const EditEducation = () => {
             value={form.degree_name}
             onChange={handleChange}
             placeholder="Degree Name"
-            className="w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e2e3e] focus:border-[#1e2e3e]"
+            className="w-full border bg-white border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e2e3e] focus:border-[#1e2e3e]"
             required
           />
         </div>
@@ -114,7 +114,7 @@ const EditEducation = () => {
             value={form.institute_name}
             onChange={handleChange}
             placeholder="Institute Name"
-            className="w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e2e3e] focus:border-[#1e2e3e]"
+            className="w-full border bg-white border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e2e3e] focus:border-[#1e2e3e]"
             required
           />
         </div>
@@ -129,7 +129,7 @@ const EditEducation = () => {
             value={form.institute_url}
             onChange={handleChange}
             placeholder="Institute URL"
-            className="w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e2e3e] focus:border-[#1e2e3e]"
+            className="w-full border bg-white border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e2e3e] focus:border-[#1e2e3e]"
           />
         </div>
 
@@ -144,7 +144,7 @@ const EditEducation = () => {
               name="started_at"
               value={form.started_at}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e2e3e] focus:border-[#1e2e3e]"
+              className="w-full border bg-white border-gray-300 rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#1e2e3e] focus:border-[#1e2e3e]"
               required
             />
           </div>
