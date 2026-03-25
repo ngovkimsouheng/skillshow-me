@@ -14,7 +14,7 @@ export default function SectionMembers() {
     {
       id: 1,
       name: "Ngov Kimsouheng",
-      role: "UI/UX Designer ",
+      role: "Leader",
       image: leader,
       facebook: "https://facebook.com",
       github: "https://github.com",
@@ -23,7 +23,7 @@ export default function SectionMembers() {
     {
       id: 2,
       name: "Phoeurn Solyta",
-      role: "UI/UX Designer ",
+      role: "Sub Leader ",
       image: lyta,
       facebook: "https://facebook.com",
       github: "https://facebook.com",
