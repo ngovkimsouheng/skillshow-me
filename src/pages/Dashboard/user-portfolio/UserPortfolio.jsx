@@ -642,7 +642,7 @@ export default function UserPortfolio({ portfolio: propPortfolio, isPublic = fal
             < footer className="bg-zinc-900 border-t-4 border-zinc-700 py-8" >
                 <div className="container mx-auto md:max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
                     <span className="bebas text-2xl text-yellow-300 tracking-widest">
-                        SOK<span className="text-rose-500">*</span>
+                        {portfolio?.user?.first_name}  <span className="text-rose-500">*</span>
                     </span>
                     <p className="text-zinc-500 text-xs font-bold uppercase tracking-widest">
                         © 2026 Sok Designer — All rights reserved
