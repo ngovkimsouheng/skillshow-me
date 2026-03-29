@@ -243,11 +243,11 @@ export default function UserPortfolio({ portfolio: propPortfolio, isPublic = fal
 
 
                                 {/* Role badge */}
-                                <div className="absolute bottom-4 left-4 bg-rose-500 border-brutal px-4 py-2 shadow-brutal">
+                                {/* <div className="absolute bottom-4 left-4 bg-rose-500 border-brutal px-4 py-2 shadow-brutal">
                                     <p className="text-white text-xs font-bold uppercase tracking-widest">
                                         Senior UI/UX Designer
                                     </p>
-                                </div>
+                                </div> */}
                             </div>
 
                             {/* Stats row */}
